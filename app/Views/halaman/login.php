@@ -13,16 +13,17 @@
         .box{
             position: absolute;
             width: 500px;
-            height: 938px;
+            height: 818px;
             right: 0px;
             top: 1px;
+            
 
             background: linear-gradient(160.63deg, rgba(1, 146, 213, 0) 0%, #0192D5 78.55%);
         }
     </style>
   </head>
   <body>
-    <img class="img" src="/asset/foto login.png" width="100%">
+    <img class="img" src="<?php echo base_url("public/asset/foto_login.png");?>" width="100%">
     <div class="box"></div>
     
     
