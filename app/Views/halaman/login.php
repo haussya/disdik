@@ -23,7 +23,7 @@
     </style>
   </head>
   <body>
-    <img class="img" src="<?php echo base_url("public/asset/foto_login.png");?>">
+    <img class="img" src="<?php echo base_url("public/asset/foto_login.png");?>" width="100%">
     <div class="box"></div>
     
     
