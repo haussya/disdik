@@ -10,10 +10,10 @@
 
     <title>Login - Sistem Informasi Data Sekolah Dinas Pendidikan Kota Banjarbaru</title>
     <style>
-        .box{
+        div.box{
             position: absolute;
             width: 500px;
-            height: 818px;
+            height: 100%;
             right: 0px;
             top: 1px;
             
@@ -23,7 +23,7 @@
     </style>
   </head>
   <body>
-    <img class="img" src="<?php echo base_url("public/asset/foto_login.png");?>" width="100%">
+    <img class="img" src="<?php echo base_url("public/asset/foto_login.png");?>">
     <div class="box"></div>
     
     
