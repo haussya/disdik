@@ -10,4 +10,29 @@
 
 .content{
     padding-top: 30px;
+    margin-left: 5px;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar .content .item .description{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #5A5B5A;
+    position: absolute;
+
+}
+
+.sidebar .content .item{
+  margin-top: 40px;
+  
+
+}
+
+.sidebar .content .item .icon{
+    margin-right: 7px;
 }

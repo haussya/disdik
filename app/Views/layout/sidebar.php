@@ -8,6 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    <!-- Font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,400&display=swap"
+        rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="<?php echo base_url("public/css/sidebar.css");?>">
 
@@ -17,63 +22,49 @@
     <div class="sidebar">
         <div class="header">
             <div class="logo-details">
-                <img src="<?php echo base_url("/public/asset/Logo Disdik rounded.png");?>" width="159px" alt="">
+                <img src="<?php echo base_url("/public/asset/logo_disdik_rounded.png");?>" width="159px" alt="">
             </div>
         </div>
         <div class="content">
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Siswa</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Guru</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sarpras</a>
-                </li>
-            </ul>
+        <div class="item">
+                <a href="#">
+                    <img src="<?php echo base_url("/public/asset/home.png");?>" alt="" class="icon">
+                    <span class="description">Dashboard</span>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <img src="<?php echo base_url("/public/asset/siswa.png");?>" alt="" class="icon">
+                    <span class="description">Siswa</span>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <img src="<?php echo base_url("/public/asset/guru.png");?>" alt="" class="icon">
+                    <span class="description">Guru</span>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <img src="<?php echo base_url("/public/asset/sarpras.png");?>" alt="" class="icon">
+                    <span class="description">Sarpras</span>
+                </a>
+            </div>
         </div>
 
-        <!-- <ul class="nav-links">
-        <li>
-            <a href="<?= base_url('/') ?>">
-                <i class='bx bxs-home-alt-2'></i>
-                <span class="link_name">Dashboard</span>
-            </a>
-        <li>
-            <a href="<?= base_url('/BerandaSiswa') ?>">
-                <i class='bx bxs-archive'></i>
-                <span class="link_name">Siswa</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">Data Siswa</a></li>
-            </ul>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">Beasiswa</a></li>
-            </ul>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">DO dan LTM</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="<?= base_url('/BerandaGuru') ?>">
-                <i class='bx bxs-archive'></i>
-                <span class="link_name">Guru</span>
-            </a>
-        </li>
-        <li>
-            <a href="<?= base_url('/BerandaSarpras') ?>">
-                <i class='bx bxs-archive'></i>
-                <span class="link_name">Sarpras</span>
-            </a>
-        </li>
-    </ul>
-</div> -->
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
         </script>
 </body>
 
