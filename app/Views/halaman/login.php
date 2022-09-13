@@ -23,8 +23,19 @@
     </style>
   </head>
   <body>
-    <img class="img" src="<?php echo base_url("public/asset/foto_login.png");?>" width="100%">
-    <div class="box"></div>
+    <img class="img" src="<?php echo base_url("public/asset/foto_login.png");?>" width="100%" height="830 px">
+    <div class="box">
+      <div class="box1" width="200px">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Password</span>
+          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1" >User ID</span>
+          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+    </div>
     
     
     <!-- Optional JavaScript; choose one of the two! -->
