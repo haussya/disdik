@@ -29,18 +29,29 @@
           left: 30px;
           top: 30px;
         }
+        .tombol {
+          padding-left: 160px;
+        }
+        .org{
+          padding-left: 150px;
+          padding-bottom: 15px;
+        }
     </style>
   </head>
   <body>
     <img class="img" src="<?php echo base_url("public/asset/foto_login.png");?>" width="100%" height="746px">
     <div >
       <div class="logo">
-        <img class="img" src="<?php echo base_url("public/asset/Logo Disdik rounded.png");?>" width="150px">
+        <img class="img" src="<?php echo base_url("public/asset/logo_disdik_rounded.png");?>" width="150px">
         <link rel="stylesheet" href="">
       </div>
     </div>
     <div class="box">
       <div class="box1">
+        <div class="org">
+          <img class="img" src="<?php echo base_url("public/asset/orgx.png");?>" width="80px">
+          <link rel="stylesheet" href="">
+        </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1" >User ID</span>
           <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
@@ -49,8 +60,10 @@
           <span class="input-group-text" id="basic-addon1">Password</span>
           <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
         </div>
-
-        <button type="button" class="btn btn-light">Light</button>
+        <div class="tombol">
+          <button type="button" class="btn btn-light">Login</button>
+        </div>
+        
     </div>
     
     
