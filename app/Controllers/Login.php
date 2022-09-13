@@ -8,4 +8,8 @@ class Login extends BaseController
     {
         return view('halaman/login');
     }
+    
+    public function sidebar(){
+        return view('layout/sidebar');
+    }
 }

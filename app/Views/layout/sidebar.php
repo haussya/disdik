@@ -9,7 +9,7 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="<?php echo base_url("/css/sidebar.css");?>">
+    <link rel="stylesheet" href="<?php echo base_url("public/css/sidebar.css");?>">
 
 </head>
 
@@ -17,7 +17,7 @@
     <div class="sidebar">
         <div class="header">
             <div class="logo-details">
-                <img src="<?php echo base_url("/asset/disdik.png");?>" width="159px" alt="">
+                <img src="<?php echo base_url("/public/asset/disdik.png");?>" width="159px" alt="">
             </div>
         </div>
         <div class="content">
