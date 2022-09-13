@@ -17,7 +17,7 @@
     <div class="sidebar">
         <div class="header">
             <div class="logo-details">
-                <img src="<?php echo base_url("/public/asset/disdik.png");?>" width="159px" alt="">
+                <img src="<?php echo base_url("/public/asset/Logo Disdik rounded.png");?>" width="159px" alt="">
             </div>
         </div>
         <div class="content">
@@ -26,13 +26,13 @@
                     <a class="nav-link active" href="#">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#">Siswa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">Guru</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
+                    <a class="nav-link" href="#">Sarpras</a>
                 </li>
             </ul>
         </div>
