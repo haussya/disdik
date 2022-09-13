@@ -16,25 +16,41 @@
             height: 100%;
             right: 0px;
             top: 1px;
-            
-
             background: linear-gradient(160.63deg, rgba(1, 146, 213, 0) 0%, #0192D5 78.55%);
+        }
+        .box1{
+            padding-top: 250px;
+            padding-bottom: 250px;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        .logo{
+          position: absolute;  
+          left: 30px;
+          top: 30px;
         }
     </style>
   </head>
   <body>
-    <img class="img" src="<?php echo base_url("public/asset/foto_login.png");?>" width="100%" height="830 px">
+    <img class="img" src="<?php echo base_url("public/asset/foto_login.png");?>" width="100%" height="746px">
+    <div >
+      <div class="logo">
+        <img class="img" src="<?php echo base_url("public/asset/Logo Disdik rounded.png");?>" width="150px">
+        <link rel="stylesheet" href="">
+      </div>
+    </div>
     <div class="box">
-      <div class="box1" width="200px">
+      <div class="box1">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1" >User ID</span>
+          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        </div>        
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1">Password</span>
           <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
         </div>
-        </div>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1" >User ID</span>
-          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
+
+        <button type="button" class="btn btn-light">Light</button>
     </div>
     
     
