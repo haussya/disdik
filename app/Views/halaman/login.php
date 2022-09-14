@@ -15,7 +15,7 @@
             width: 500px;
             height: 100%;
             right: 0px;
-            top: 1px;
+            top: 0px;
             background: linear-gradient(160.63deg, rgba(1, 146, 213, 0) 0%, #0192D5 78.55%);
         }
         .box1{
@@ -37,7 +37,7 @@
           padding-bottom: 15px;
         }
         body{
-          display: flex;
+          display: flex;  
         }
     </style>
   </head>
@@ -55,12 +55,14 @@
           <img class="img" src="<?php echo base_url("public/asset/orgx.png");?>" width="80px">
           <link rel="stylesheet" href="">
         </div>
+        <label class="label" for="password">User ID</label>
         <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1" >User ID</span>
+          <!-- <span class="input-group-text" id="basic-addon1" >User ID</span> -->
           <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
         </div>        
+        <label class="label" for="password">Password</label>
         <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">Password</span>
+          <!-- <span class="input-group-text" id="basic-addon1">Password</span> -->
           <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
         </div>
         <div class="tombol">
