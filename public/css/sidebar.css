@@ -24,13 +24,10 @@
     line-height: 30px;
     color: #5A5B5A;
     position: absolute;
-
 }
 
 .sidebar .content .item{
   margin-top: 40px;
-  
-
 }
 
 .sidebar .content .item .icon{
@@ -40,5 +37,4 @@
 .dropdown{
         position: relative;
         display: inline-block;
-      
 }
