@@ -12,10 +12,10 @@
     <style>
         div.box{
             position: absolute;
-            width: 500px;
-            height: 100%;
+            width: 35%;
+            height: 100vh;
             right: 0px;
-            top: 0px;
+            top: 0px;   
             background: linear-gradient(160.63deg, rgba(1, 146, 213, 0) 0%, #0192D5 78.55%);
         }
         .box1{
@@ -30,45 +30,57 @@
           top: 30px;
         }
         .tombol {
-          padding-left: 160px;
+          padding-left: 40%;
         }
         .org{
-          padding-left: 150px;
+          padding-left: 40%;
           padding-bottom: 15px;
         }
         body{
           display: flex;  
         }
+        .label{
+          color: white;
+        }
+        .imgbg{
+          height: 100vh;
+          width: 100%;
+        }
     </style>
   </head>
+
   <body>
-    <img class="img" src="<?php echo base_url("public/asset/foto_login.png");?>" width="100%" height="80%">
+    <img class="imgbg" src="<?php echo base_url("public/asset/foto_login.png");?>">
     <div >
       <div class="logo">
-        <img class="img" src="<?php echo base_url("public/asset/logo_disdik_rounded.png");?>" width="150px">
+        <img class="imgdisdik" src="<?php echo base_url("public/asset/logo_disdik_rounded.png");?>" width="150px">
         <link rel="stylesheet" href="">
       </div>
     </div>
     <div class="box">
       <div class="box1">
         <div class="org">
-          <img class="img" src="<?php echo base_url("public/asset/orgx.png");?>" width="80px">
+          <img class="imgorg-center" src="<?php echo base_url("public/asset/orgx.png");?>" width="80px">
           <link rel="stylesheet" href="">
         </div>
+
         <label class="label" for="password">User ID</label>
+
         <div class="input-group mb-3">
           <!-- <span class="input-group-text" id="basic-addon1" >User ID</span> -->
           <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
         </div>        
+
         <label class="label" for="password">Password</label>
+
         <div class="input-group mb-3">
           <!-- <span class="input-group-text" id="basic-addon1">Password</span> -->
           <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
         </div>
+
         <div class="tombol">
           <button type="button" class="btn btn-light">Login</button>
         </div>
-        
     </div>
     
     
