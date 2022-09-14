@@ -36,3 +36,9 @@
 .sidebar .content .item .icon{
     margin-right: 7px;
 }
+
+.dropdown{
+        position: relative;
+        display: inline-block;
+      
+}

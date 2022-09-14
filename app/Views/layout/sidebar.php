@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="content">
-        <div class="item">
+            <div class="item">
                 <a href="#">
                     <img src="<?php echo base_url("/public/asset/home.png");?>" alt="" class="icon">
                     <span class="description">Dashboard</span>
@@ -39,10 +39,16 @@
                 </a>
             </div>
             <div class="item">
-                <a href="#">
+                <div class="dropdown">
                     <img src="<?php echo base_url("/public/asset/guru.png");?>" alt="" class="icon">
                     <span class="description">Guru</span>
-                </a>
+                    <div class="dropdown-content">
+                     <div> <a href="">Data Siswa</a> </div>
+                     <div> <a href="">Beasiswa</a> </div>
+                     <div> <a href="">DO dan LTM</a> </div>     
+                    </div>
+
+                </div>
             </div>
             <div class="item">
                 <a href="#">
