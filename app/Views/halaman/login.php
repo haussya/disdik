@@ -36,10 +36,13 @@
           padding-left: 150px;
           padding-bottom: 15px;
         }
+        body{
+          display: flex;
+        }
     </style>
   </head>
   <body>
-    <img class="img" src="<?php echo base_url("public/asset/foto_login.png");?>" width="100%" height="746px">
+    <img class="img" src="<?php echo base_url("public/asset/foto_login.png");?>" width="100%" height="80%">
     <div >
       <div class="logo">
         <img class="img" src="<?php echo base_url("public/asset/logo_disdik_rounded.png");?>" width="150px">
