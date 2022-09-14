@@ -46,24 +46,6 @@
           </button>
         </div>
 
-        <!-- <label class="label" for="password">User ID</label>
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1" >User ID</span>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
-
-      <label class="label" for="password">Password</label>
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Password</span>
-        <input type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
-      </div>
-
-      <div class="tombol">
-        <button type="button" class="btn btn-light">Login</button>
-      </div>
-    </div> -->
-
-
         <!-- Optional JavaScript; choose one of the two! -->
 
         <!-- Option 1: Bootstrap Bundle with Popper -->
