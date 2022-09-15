@@ -12,39 +12,40 @@
   <title>Login - Sistem Informasi Data Sekolah Dinas Pendidikan Kota Banjarbaru</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="<?php echo base_url("public/css/login.css"); ?>">
+  <!-- <link rel="stylesheet" href="<?php echo base_url("public/css/dashboard.css"); ?>"> -->
+    <style>
+        nav{
+            position: flex;
+            height: 50px;
+            width: 85%;
+            background: rebeccapurple;
+            padding: 12px;  
+
+        }
+        .imgbg{
+            height: 100vh;
+            width: 100%;
+        }
+        .orgx{
+            padding-right: 15px;
+            padding-top: 12px;
+            padding-bottom: 25px;   
+            border: 1px;
+        }
+    </style>
 </head>
 
 <body>
-  <img class="imgbg" src="<?php echo base_url("public/asset/foto_login.png"); ?>">
-  <div>
-    <div class="logo">
-      <img class="imgdisdik" src="<?php echo base_url("public/asset/logo_disdik_rounded.png"); ?>" width="150px">
-      <link rel="stylesheet" href="">
-    </div>
-  </div>
-  <div class="box">
-    <div class="box1">
-      <div class="org">
-        <img class="imgorg-center" src="<?php echo base_url("public/asset/orgx.png"); ?>" width="80px">
-        <link rel="stylesheet" href="">
-      </div>
 
-      <form method="POST" action="<?= base_url('/auth/process') ?>">
-        <?= csrf_field() ?>
-        <div class="mb-3">
-          <label for="exampleInputUsername1" class="form-label">Username</label>
-          <input type="username" class="form-control" id="exampleInputUsername1" name="username">
+    <nav>
+
+        <div class="org">
+            <img class="imgorg-center" src="<?php echo base_url("public/asset/orgx.png"); ?>" width="25px">
+            <link rel="stylesheet" href="">
         </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-        </div>
-        <div class="tombol">
-          <button type="submit" class="btn btn-light">
-            Login
-          </button>
-        </div>
+    </nav>
+
+  <img class="imgbg" src="<?php echo base_url("public/asset/foto_dashboard.png"); ?>">
 
         <!-- Optional JavaScript; choose one of the two! -->
 

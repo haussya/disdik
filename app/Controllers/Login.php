@@ -9,7 +9,13 @@ class Login extends BaseController
         return view('halaman/login');
     }
     
-    public function sidebar(){
+    public function sidebar()
+    {
         return view('layout/sidebar');
+    }
+
+    public function dash()
+    {
+        return view('halaman/HalamanAwal');
     }
 }
