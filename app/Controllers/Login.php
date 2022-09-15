@@ -19,3 +19,4 @@ class Login extends BaseController
         return view('halaman/HalamanAwal');
     }
 }
+    
