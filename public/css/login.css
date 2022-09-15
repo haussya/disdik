@@ -41,3 +41,8 @@ div.box {
       height: 100vh;
       width: 100%;
     }
+
+    *{
+      font-family: 'Poppins', sans-serif;
+  }
+  
