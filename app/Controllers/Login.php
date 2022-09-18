@@ -18,5 +18,10 @@ class Login extends BaseController
     {
         return view('halaman/HalamanAwal');
     }
+
+    public function input()
+    {
+        return view('halaman/HalamanInput');
+    }
 }
     

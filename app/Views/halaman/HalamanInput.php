@@ -9,11 +9,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Dashboard - Sistem Informasi Data Sekolah Dinas Pendidikan Kota Banjarbaru</title>
+    <title>Input Data - Sistem Informasi Data Sekolah Dinas Pendidikan Kota Banjarbaru</title>
 
     <!-- CSS -->
-
-
 
     <style>
         * {
@@ -25,7 +23,6 @@
             min-height: 100vh;
             display: flex;
             justify-content: flex-end;
-
         }
 
         nav {
@@ -62,56 +59,6 @@
             border: 1px;
         }
 
-        .kartusiswa {
-            position: absolute;
-            width: 277px;
-            height: 144px;
-            left: 355px;
-            top: 96px;
-            background: #ffffff;
-            border-radius: 5px;
-            box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
-        }
-
-        .kartuguru {
-            position: absolute;
-            width: 277px;
-            height: 144px;
-            left: 680px;
-            top: 96px;
-
-            background: #ffffff;
-            border-radius: 5px;
-            box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
-        }
-
-        .kartusarpras {
-            position: absolute;
-            width: 277px;
-            height: 144px;
-            left: 1005px;
-            top: 96px;
-
-            background: #ffffff;
-            border-radius: 5px;
-            box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
-        }
-
-        /* .kartuall {
-            display: flex;
-            flex-direction: column;
-
-            position: absolute;
-            width: 277px;
-            height: 144px;
-            left: 1005px;
-            top: 96px;
-
-            background: #ffffff;
-            border-radius: 5px;
-            box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
-        } */
-
         p {
             font-size: 12px;
             font-weight: bold;
@@ -120,21 +67,22 @@
             color: #5A5B5A;
         }
 
-        .fotokartu {
+        .box {
             position: absolute;
-            width: 115px;
-            height: 115px;
-            left: 14px;
-            top: 14px;
+            width: 76%;
+            height: 85%;
+            margin-top: 5%;
+            margin-left: 22%;
+            
 
-            background: #D9D9D9;
-            border-radius: 3px;
+            background-color: #ffffff;
+            box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
         }
 
-        .tulisankartu {
-            font-size: 20px;
-            padding-top: 12px;
-            padding-left: 140px;
+        .headline{
+            font-size: 28px;
+            font-weight: bold;
+            padding: 20px;
         }
     </style>
 </head>
@@ -151,22 +99,8 @@
     </nav>
 
     <div class="content">
-        <div class="kartuall">
-            <div class="kartusiswa">
-                <div class="fotokartu">
-                </div>
-                <p class="tulisankartu">SISWA</p>
-            </div>
-            <div class="kartuguru">
-                <div class="fotokartu">
-                </div>
-                <p class="tulisankartu">GURU</p>
-            </div>
-            <div class="kartusarpras">
-                <div class="fotokartu">
-                </div>
-                <p class="tulisankartu">SARPRAS</p>
-            </div>
+        <div class="box">
+            <p class="headline"> INPUT DATA</p>
         </div>
     </div>
     <img class="imgbg" src="<?php echo base_url("public/asset/foto_dashboard.png"); ?>" width="25px">

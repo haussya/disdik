@@ -38,6 +38,7 @@ $routes->set404Override();
 $routes->get('/', 'Login::index');
 $routes->get('/sidebar', 'Login::sidebar');
 $routes->get('/dashboard', 'Login::dash');
+$routes->get('/input', 'Login::input');
 
 /*
  * --------------------------------------------------------------------
