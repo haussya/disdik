@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div class="sidebar">
+    <nav class="sidebar">
         <div class="header">
             <div class="logo-details">
                 <img src="<?php echo base_url("/public/asset/logo_disdik_rounded.png"); ?>" width="159px" alt="">
@@ -31,6 +31,10 @@
                 </a>
             </div>
             <div class="item">
+                <a href="#" class="siswa-btn">
+                    <img src="<?php echo base_url("/public/asset/siswa.png");?>" alt="" class="icon">
+                    <span class="collapsible">Siswa</span>
+
                 <a href="#">
                     <img src="<?php echo base_url("/public/asset/siswa.png"); ?>" alt="" class="icon">
                     <span class="description">Siswa</span>
@@ -40,6 +44,11 @@
                         <div> <a href="">DO dan LTM</a> </div>
                     </div>
                 </a>
+                <ul class="dropdown-content-siswa">
+                    <li class="dropdown-description"> <a href="">Data Siswa</a> </li>
+                    <li class="dropdown-description"> <a href="">Beasiswa</a> </li>
+                    <li class="dropdown-description"> <a href="">DO dan LTM</a> </li>
+                </ul>
             </div>
             <div class="item">
                 <div class="dropdown">
@@ -55,6 +64,13 @@
             </div>
         </div>
 
+        
+    </nav>
+    <script>
+        $('.collapsible').click(function(){
+            $('.dropdown-content-siswa').toggleClass("show")
+        });
+        </script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
 

@@ -24,6 +24,9 @@
     line-height: 30px;
     color: #5A5B5A;
     position: absolute;
+
+    padding-bottom: 11px;
+
 }
 
 .sidebar .content .item{
@@ -37,4 +40,51 @@
 .dropdown{
         position: relative;
         display: inline-block;
+      
+}
+
+.sidebar .content .item .collapsible{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #5A5B5A;
+    position: absolute;
+    padding-bottom: 11px;
+}
+
+/* ul .dropdown-content-siswa .show{
+
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+overflow: hidden;
+position: relative;
+top: -100%;
+padding-top: 11px;
+padding-left: 36px;
+color: #5A5B5A;
+
+} */
+
+ul li{
+    padding-top: 11px;
+    padding-left: 5px;
+}
+
+.show{
+    display: block;
+}
+
+.dropdown-content-siswa{
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+overflow: hidden;
+position: relative;
+top: -100%;
+display: none;
+color: #5A5B5A;
 }
