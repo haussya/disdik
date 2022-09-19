@@ -36,8 +36,6 @@
                     <span class="collapsible">Siswa</span>
 
                 <a href="#">
-                    <img src="<?php echo base_url("/public/asset/siswa.png"); ?>" alt="" class="icon">
-                    <span class="description">Siswa</span>
                     <div class="dropdown-content">
                         <div> <a href="">Data Siswa</a> </div>
                         <div> <a href="">Beasiswa</a> </div>
