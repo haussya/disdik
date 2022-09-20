@@ -32,8 +32,8 @@
 <body>
     <div class="sidebar close">
         <div class="logo-details">
-            <i href="<?= base_url('')?>"></i>
-            <span class="logo_name">Disdik</span>
+            <img src="<?= base_url('public/asset/logo_disdik_rounded.png')?>" alt="">
+            <span class="logo_name">Dinas Pendidikan</span>
         </div>
         <ul class="nav-links">
             <li>

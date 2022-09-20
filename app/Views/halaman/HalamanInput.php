@@ -73,16 +73,28 @@
             height: 85%;
             margin-top: 5%;
             margin-left: 22%;
-            
+
 
             background-color: #ffffff;
             box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
         }
 
-        .headline{
-            font-size: 28px;
+        .headline {
+            font-size: 22px;
             font-weight: bold;
-            padding: 20px;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 5px;
+        }
+
+        .jenis {
+            font-size: 14px;
+        }
+
+        .kolom {
+            padding-left: 20px;
+            padding-right: 20px;
         }
     </style>
 </head>
@@ -101,6 +113,70 @@
     <div class="content">
         <div class="box">
             <p class="headline"> INPUT DATA</p>
+            <div class="kolom">
+                <p class="jenis">NISN</p>
+                <input type="nisn" class="form-control" id="exampleInputUsername1" name="nisn" placeholder="Masukkan NISN...">
+            </div>
+
+            <div class="kolom">
+                <p class="jenis">Nama</p>
+                <input type="nama" class="form-control" id="exampleInputUsername1" name="nama" placeholder="Masukkan Nama...">
+            </div>
+
+            <div class="kolom">
+                <p class="jenis">Tempat \ Tanggal Lahir</p>
+            </div>
+
+            <div class="kolom">
+                <p class="jenis">Gender</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" class="kelamin">
+                    <label class="form-check-label" for="flexRadioDefault1">Laki-Laki</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" class="kelamin" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">Perempuan</label>
+                </div>
+            </div>
+
+            <div class="kolom">
+                <p class="jenis">Domisili</p>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected dis>Masukkan Domisili...</option>
+                    <option value="Kota Banjarmasin">Kota Banjarmasin</option>
+                    <option value="Kota Banjarbaru">Kota Banjarbaru</option>
+                    <option value="Kab. Balangan">Kab. Balangan</option>
+                    <option value="Kab. Banjar">Kab. Banjar</option>
+                    <option value="Kab. Barito Kuala">Kab. Barito Kuala</option>
+                    <option value="Kab. Hulu Sungai Selatan">Kab. Hulu Sungai Selatan</option>
+                    <option value="Kab. Hulu Sungai Tengah">Kab. Hulu Sungai Tengah</option>
+                    <option value="Kab. Hulu Sungai Utara">Kab. Hulu Sungai Utara</option>
+                    <option value="Kab. Kotabaru">Kab. Kotabaru</option>
+                    <option value="Kab. Tabalong">Kab. Tabalong</option>
+                    <option value="Kab. Tanah Bumbu">Kab. Tanah Bumbu</option>
+                    <option value="Kab. Tanah Laut">Kab. Tanah Laut</option>
+                    <option value="Kab. Tapin">Kab. Tapin</option>
+                </select>
+            </div>
+
+            <div class="kolom">
+                <p class="jenis">Keterangan Lulus</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" class="lulus">
+                    <label class="form-check-label" for="flexRadioDefault1">Lulus</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" class="lulus">
+                    <label class="form-check-label" for="flexRadioDefault2">Tidak Lulus</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" class="lulus" checked>
+                    <label class="form-check-label" for="flexRadioDefault3">Pindah</label>
+                </div>
+            </div>
+            <div class="kolom">
+                <p class="jenis">Sekolah Tujuan</p>
+            </div>
         </div>
     </div>
     <img class="imgbg" src="<?php echo base_url("public/asset/foto_dashboard.png"); ?>" width="25px">
