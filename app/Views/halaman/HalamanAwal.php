@@ -150,6 +150,8 @@
 
     </nav>
 
+    
+
     <div class="content">
         <div class="kartuall">
             <div class="kartusiswa">
