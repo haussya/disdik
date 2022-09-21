@@ -32,17 +32,17 @@
 <body>
     <div class="sidebar close">
         <div class="logo-details">
-            <img src="<?= base_url('public/asset/logo_disdik_rounded.png')?>" alt="">
+            <i class='bx bx-menu'></i>
             <span class="logo_name">Dinas Pendidikan</span>
         </div>
         <ul class="nav-links">
             <li>
                 <a href="#">
-                    <i class='bx bx-grid-alt'></i>
+                    <i class='bx bxs-dashboard'></i> 
                     <span class="link_name">Dashboard</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Siswa</a></li>
+                    <li><a class="link_name" href="#">Dashboard</a></li>
                 </ul>
             </li>
             <li>
@@ -83,7 +83,7 @@
                 <ul class="sub-menu blank">
                     <li><a class="link_name" href="#">Sarpras</a></li>
                 </ul>
-            </li>   
+            </li>
             <li>
                 <div class="profile-details">
                     <div class="profile-content">
@@ -100,8 +100,8 @@
     </div>
     <section class="home-section">
         <div class="home-content">
-            <i class='bx bx-menu'></i>
-            <span class="text">Drop Down Sidebar</span>
+
+            <img src="<?= base_url('public/asset/logo_disdik_rounded.png')?>" alt="">
         </div>
     </section>
     <script>
