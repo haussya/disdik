@@ -136,6 +136,12 @@
             padding-top: 12px;
             padding-left: 140px;
         }
+
+        .link_name {
+            font-size: 10px;
+            color: black;
+            padding-left: 150px;
+        }
     </style>
 </head>
 
@@ -150,7 +156,7 @@
 
     </nav>
 
-    
+
 
     <div class="content">
         <div class="kartuall">
@@ -158,16 +164,19 @@
                 <div class="fotokartu">
                 </div>
                 <p class="tulisankartu">SISWA</p>
+                <a class="link_name" href="#">Lihat Lebih Lanjut</a>
             </div>
             <div class="kartuguru">
                 <div class="fotokartu">
                 </div>
                 <p class="tulisankartu">GURU</p>
+                <a class="link_name" href="#">Lihat Lebih Lanjut</a>
             </div>
             <div class="kartusarpras">
                 <div class="fotokartu">
                 </div>
                 <p class="tulisankartu">SARPRAS</p>
+                <a class="link_name" href="#">Lihat Lebih Lanjut</a>
             </div>
         </div>
     </div>

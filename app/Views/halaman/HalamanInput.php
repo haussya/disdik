@@ -74,7 +74,6 @@
             margin-top: 5%;
             margin-left: 22%;
 
-
             background-color: #ffffff;
             box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
         }
@@ -107,7 +106,7 @@
             height: 90%;
             width: 500px;
             right: 2px;
-            top: 12%;
+            top: 75px;
         }
         .botton {
             margin-top: 20px;
@@ -162,7 +161,7 @@
                 <div class="kolom">
                     <p class="jenis">Domisili</p>
                     <select class="form-select" aria-label="Default select example">
-                        <option selected dis>Masukkan Domisili...</option>
+                        <option selected disabled>Masukkan Domisili...</option>
                         <option value="Kota Banjarmasin">Kota Banjarmasin</option>
                         <option value="Kota Banjarbaru">Kota Banjarbaru</option>
                         <option value="Kab. Balangan">Kab. Balangan</option>
@@ -191,6 +190,10 @@
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="lulus" id="flexRadioDefault3" class="lulus" checked>
+                        <label class="form-check-label" for="flexRadioDefault3">Aktif</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="lulus" id="flexRadioDefault3" class="lulus" checked>
                         <label class="form-check-label" for="flexRadioDefault3">Pindah</label>
                     </div>
                 </div>
@@ -198,11 +201,22 @@
             </div>
             <div class="inputan2">
                 <div class="kolom">
+                    <p class="jenis">Tingkatan</p>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected dis>Masukkan Tingkatan...</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>                        
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+
                     <p class="jenis">Sekolah Tujuan</p>
                     <select class="form-select" aria-label="Default select example">
                         <option selected dis>Masukkan Sekolah Tujuan...</option>
-                        <option value="Kota Banjarmasin">SD NEGERI 5 SUNGAI ULIN</option>
-                        <option value="Kota Banjarbaru">SD NEGERI 3 KOMET</option>
+                        <option value="SDN5SU">SD NEGERI 5 SUNGAI ULIN</option>
+                        <option value="SDN3K">SD NEGERI 3 KOMET</option>
                     </select>
                 </div>
                 <div class="botton">
