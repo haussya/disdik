@@ -130,11 +130,11 @@
             <div class="kolom">
                 <p class="jenis">Gender</p>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" class="kelamin">
+                    <input class="form-check-input" type="radio" name="kelamin" id="flexRadioDefault1">
                     <label class="form-check-label" for="flexRadioDefault1">Laki-Laki</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" class="kelamin" checked>
+                    <input class="form-check-input" type="radio" name="kelamin" id="flexRadioDefault2" checked>
                     <label class="form-check-label" for="flexRadioDefault2">Perempuan</label>
                 </div>
             </div>
@@ -162,20 +162,23 @@
             <div class="kolom">
                 <p class="jenis">Keterangan Lulus</p>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" class="lulus">
+                    <input class="form-check-input" type="radio" name="lulus" id="flexRadioDefault1" class="lulus">
                     <label class="form-check-label" for="flexRadioDefault1">Lulus</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" class="lulus">
+                    <input class="form-check-input" type="radio" name="lulus" id="flexRadioDefault2" class="lulus">
                     <label class="form-check-label" for="flexRadioDefault2">Tidak Lulus</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" class="lulus" checked>
+                    <input class="form-check-input" type="radio" name="lulus" id="flexRadioDefault3" class="lulus" checked>
                     <label class="form-check-label" for="flexRadioDefault3">Pindah</label>
                 </div>
             </div>
             <div class="kolom">
                 <p class="jenis">Sekolah Tujuan</p>
+            </div>
+            <div class="botton">
+                
             </div>
         </div>
     </div>

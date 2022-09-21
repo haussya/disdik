@@ -40,6 +40,10 @@ $routes->get('/sidebar', 'Login::sidebar');
 $routes->get('/dashboard', 'Login::dash');
 $routes->get('/input', 'Login::input');
 
+$routes->post('/Auth/process', 'Auth::process');
+
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
