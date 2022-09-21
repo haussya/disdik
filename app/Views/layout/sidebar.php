@@ -55,7 +55,7 @@
                 </div>
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">Siswa</a></li>
-                    <li><a href="#">Data Siswa</a></li>
+                    <li><a href="Login/input">Data Siswa</a></li>
                     <li><a href="#">Beasiswa</a></li>
                     <li><a href="#">DO & LTM</a></li>
                 </ul>
