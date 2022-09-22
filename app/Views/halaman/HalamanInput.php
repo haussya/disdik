@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="kolom">
-                    <p class="jenis">Tempat \ Tanggal Lahir</p>
+                    <p class="jenis">Tempat\Tanggal Lahir</p>
                 </div>
 
                 <div class="kolom">
@@ -56,23 +56,15 @@
                     </div>
                 </div>
 
-                <div class="kolom">
-                    <p class="jenis">Domisili</p>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected disabled>Masukkan Domisili...</option>
-                        <option value="Kota Banjarmasin">Kota Banjarmasin</option>
-                        <option value="Kota Banjarbaru">Kota Banjarbaru</option>
-                        <option value="Kab. Balangan">Kab. Balangan</option>
-                        <option value="Kab. Banjar">Kab. Banjar</option>
-                        <option value="Kab. Barito Kuala">Kab. Barito Kuala</option>
-                        <option value="Kab. Hulu Sungai Selatan">Kab. Hulu Sungai Selatan</option>
-                        <option value="Kab. Hulu Sungai Tengah">Kab. Hulu Sungai Tengah</option>
-                        <option value="Kab. Hulu Sungai Utara">Kab. Hulu Sungai Utara</option>
-                        <option value="Kab. Kotabaru">Kab. Kotabaru</option>
-                        <option value="Kab. Tabalong">Kab. Tabalong</option>
-                        <option value="Kab. Tanah Bumbu">Kab. Tanah Bumbu</option>
-                        <option value="Kab. Tanah Laut">Kab. Tanah Laut</option>
-                        <option value="Kab. Tapin">Kab. Tapin</option>
+                <div class="form-group">
+                    <label for="domisili">Domisili</label>
+                    <select class="form-control" id="domisili" name="domisili">
+                        <option selected disabled value="">Masukkan Domisili...</option>
+                        <?php
+                        foreach ($dataDomisili as $row) {
+                        ?>
+                            <option value="<?= $row['domisili_id'] ?>" <?= ($row['domisili_id'] == $dataDomisili['domisili_id']) ? 'selected' : ''; ?>><?= $row['domisili'] ?></option>
+                        <?php } ?>
                     </select>
                 </div>
 
@@ -105,7 +97,7 @@
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                        <option value="4">4</option>                        
+                        <option value="4">4</option>
                         <option value="5">5</option>
                         <option value="6">6</option>
                     </select>
