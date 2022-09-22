@@ -98,12 +98,7 @@
             </li>
         </ul>
     </div>
-    <section class="home-section">
-        <div class="home-content">
-
-            <img src="<?= base_url('public/asset/logo_disdik_rounded.png')?>" alt="">
-        </div>
-    </section>
+ 
     <script>
     let arrow = document.querySelectorAll(".arrow");
     for (var i = 0; i < arrow.length; i++) {

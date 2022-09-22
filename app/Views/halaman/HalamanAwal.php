@@ -32,8 +32,8 @@
             display: flex;
             justify-content: flex-end;
             height: 50px;
-            width: 100vw;
-            min-width: 100vw;
+            width: 100%;
+            min-width: 80%;
             background: #FFFFFF;
             box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.25);
             position: absolute;
@@ -122,15 +122,13 @@
             padding-left: 140px;
         }
 
-        .link_name {
-            font-size: 10px;
-            color: black;
-            padding-left: 140px;
-        }
+      
     </style>
+    
 </head>
 
 <body>
+<?= $this->section('layout/sidebar'); ?>
     <nav>
         <p>Admin Dinas Pendidikan <br>
             Muhammad Hanan Ababil S.Kom
@@ -149,7 +147,7 @@
                 <div class="fotokartu">
                 </div>
                 <p class="tulisankartu">SISWA</p>
-                <a class="link_name" href="http://localhost/disdik/public/tabelsiswa">Lihat Lebih Lanjut</a>
+                <a class="link_name" href="http://localhost/disdik/public/tabelguru">Lihat Lebih Lanjut</a>
             </div>
             <div class="kartuguru">
                 <div class="fotokartu">
@@ -166,9 +164,25 @@
         </div>
     </div>
     <img class="imgbg" src="<?php echo base_url("public/asset/foto_dashboard.png"); ?>" width="25px">
-
+  
 
 </body>
+
+<script>
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+        arrow[i].addEventListener("click", (e) => {
+            let arrowParent = e.target.parentElement.parentElement; //selecting main parent of arrow
+            arrowParent.classList.toggle("showMenu");
+        });
+    }
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".bx-menu");
+    console.log(sidebarBtn);
+    sidebarBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+    });
+    </script>
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->

@@ -12,105 +12,7 @@
     <title>Input Data - Sistem Informasi Data Sekolah Dinas Pendidikan Kota Banjarbaru</title>
 
     <!-- CSS -->
-
-    <style>
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        nav {
-            display: flex;
-            justify-content: flex-end;
-            height: 50px;
-            width: 100vw;
-            min-width: 100vw;
-            background: #FFFFFF;
-            box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.25);
-            position: absolute;
-            right: 0;
-        }
-
-        .imgbg {
-            display: flex;
-            justify-content: space-between 20;
-            height: 100vh;
-            width: 100%;
-        }
-
-        .org {
-            padding-top: 12px;
-            padding-right: 12px;
-            display: flex-end;
-
-        }
-
-        .orgx {
-
-            padding-right: 15px;
-            padding-top: 12px;
-            padding-bottom: 25px;
-            border: 1px;
-        }
-
-        p {
-            font-size: 12px;
-            font-weight: bold;
-            padding-top: 7px;
-            padding-right: 20px;
-            color: #5A5B5A;
-        }
-
-        .box {
-            position: absolute;
-            width: 76%;
-            height: 75%;
-            margin-top: 9%;
-            margin-left: 22%;
-
-            background-color: #ffffff;
-            box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
-        }
-
-        .headline {
-            font-size: 22px;
-            font-weight: bold;
-            padding-top: 20px;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-bottom: 5px;
-        }
-
-        .box1 {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        .ddsekolah {
-            position: absolute;
-            width: 300px;
-            height: 30px;
-            margin-top: 5%;
-            margin-left: 23%;
-
-            background-color: #ffffff;
-            box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
-        }
-
-        .tombol {
-            position: absolute;
-            height: 30px;
-            margin-top: 5%;
-            margin-left: 75%;
-            box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    <link rel="stylesheet" href="<?php echo base_url("public/css/halamantabelsiswa.css"); ?>">
 </head>
 
 <body>
@@ -139,7 +41,7 @@
         <div class="tombol">
             <a href="#" class="btn btn-primary">Tambah Data</a>
         </div>
-        
+
         <div class="box">
             <p class="headline"> TABEL DATA SISWA</p>
             <div class="box1">
