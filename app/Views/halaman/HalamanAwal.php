@@ -8,19 +8,6 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,400&display=swap"
-        rel="stylesheet">
-        <!----===== Boxicons CSS ===== -->
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <!-- CSS -->
-    <link rel="stylesheet" href=" <?= base_url('public/css/style.css') ?>">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-    
 
     <title>Dashboard - Sistem Informasi Data Sekolah Dinas Pendidikan Kota Banjarbaru</title>
 
@@ -45,7 +32,7 @@
             display: flex;
             justify-content: flex-end;
             height: 50px;
-            width: 80%;
+            width: 100%;
             min-width: 80%;
             background: #FFFFFF;
             box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.25);
@@ -149,10 +136,14 @@
             padding-top: 12px;
             padding-left: 140px;
         }
+
+      
     </style>
+    
 </head>
 
 <body>
+<?= $this->section('layout/sidebar'); ?>
     <nav>
         <p>Admin Dinas Pendidikan <br>
             Muhammad Hanan Ababil S.Kom
@@ -163,7 +154,7 @@
 
     </nav>
 
-    <?= $this->include('layout/sidebar'); ?>
+    
 
     <div class="content">
         <div class="kartuall">
@@ -171,6 +162,7 @@
                 <div class="fotokartu">
                 </div>
                 <p class="tulisankartu">SISWA</p>
+              
             </div>
             <div class="kartuguru">
                 <div class="fotokartu">
@@ -185,7 +177,7 @@
         </div>
     </div>
     <img class="imgbg" src="<?php echo base_url("public/asset/foto_dashboard.png"); ?>" width="25px">
-
+  
 
 </body>
 
