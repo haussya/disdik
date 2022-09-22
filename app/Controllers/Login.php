@@ -28,5 +28,15 @@ class Login extends BaseController
     {
         return view('Halaman/HalamanTabelSiswa');
     }
+
+    public function tabelguru()
+    {
+        return view('Halaman/HalamanTabelGuru');
+    }
+
+    public function tabelsarpras()
+    {
+        return view('Halaman/HalamanTabelSarpras');
+    }
 }
     
