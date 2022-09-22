@@ -140,7 +140,7 @@
         .link_name {
             font-size: 10px;
             color: black;
-            padding-left: 150px;
+            padding-left: 140px;
         }
     </style>
 </head>
@@ -164,7 +164,7 @@
                 <div class="fotokartu">
                 </div>
                 <p class="tulisankartu">SISWA</p>
-                <a class="link_name" href="#">Lihat Lebih Lanjut</a>
+                <a class="link_name" href="http://localhost/disdik/public/tabelsiswa">Lihat Lebih Lanjut</a>
             </div>
             <div class="kartuguru">
                 <div class="fotokartu">
