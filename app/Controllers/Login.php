@@ -2,13 +2,16 @@
 
 namespace App\Controllers;
 
+use App\Models\Domisili;
+
+
 class Login extends BaseController
 {
     public function index()
     {
         return view('halaman/login');
     }
-    
+
     public function sidebar()
     {
         return view('layout/sidebar');
@@ -21,12 +24,14 @@ class Login extends BaseController
 
     public function input()
     {
-        return view('halaman/HalamanInput');
+        $dataDomisili = new Domisili();
+        $data['dataDomisili'] = $dataDomisili->getDomisili();
+
+        return view('halaman/HalamanInput', $data);
     }
 
     public function tabelsiswa()
     {
-        return view('Halaman/HalamanTabelSiswa');
+        return view('halaman/HalamanTabelSiswa');
     }
 }
-    
