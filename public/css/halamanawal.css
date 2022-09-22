@@ -1,0 +1,123 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  height: 50px;
+  width: 100vw;
+  min-width: 100vw;
+  background: #ffffff;
+  box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  right: 0;
+}
+
+.imgbg {
+  display: flex;
+  justify-content: space-between 20;
+  height: 100vh;
+  width: 100%;
+}
+
+.org {
+  padding-top: 12px;
+  padding-right: 12px;
+  display: flex-end;
+}
+
+.orgx {
+  padding-right: 15px;
+  padding-top: 12px;
+  padding-bottom: 25px;
+  border: 1px;
+}
+
+.kartusiswa {
+  position: absolute;
+  width: 277px;
+  height: 144px;
+  left: 355px;
+  top: 96px;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
+}
+
+.kartuguru {
+  position: absolute;
+  width: 277px;
+  height: 144px;
+  left: 680px;
+  top: 96px;
+
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
+}
+
+.kartusarpras {
+  position: absolute;
+  width: 277px;
+  height: 144px;
+  left: 1005px;
+  top: 96px;
+
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
+}
+
+/* .kartuall {
+            display: flex;
+            flex-direction: column;
+
+            position: absolute;
+            width: 277px;
+            height: 144px;
+            left: 1005px;
+            top: 96px;
+
+            background: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
+        } */
+
+p {
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 7px;
+  padding-right: 20px;
+  color: #5a5b5a;
+}
+
+.fotokartu {
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  left: 14px;
+  top: 14px;
+
+  background: #d9d9d9;
+  border-radius: 3px;
+}
+
+.tulisankartu {
+  font-size: 20px;
+  padding-top: 12px;
+  padding-left: 140px;
+}
+
+.link_name {
+  font-size: 10px;
+  color: black;
+  padding-left: 140px;
+}
