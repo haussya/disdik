@@ -33,7 +33,7 @@
     <div class="sidebar close">
         <div class="logo-details">
             <i class='bx bx-menu'></i>
-            <img src="<?= base_url('/public/asset/logo_disdik_rounded.png') ?>" alt="" class="logo_name ">
+            <img src="<?= base_url('/public/asset/logo_disdik_rounded.png') ?>" alt="" class="logo_name " height="35px">
         </div>
         <ul class="nav-links">
             <li>
