@@ -13,8 +13,6 @@
 
     <!-- CSS -->
 
-
-
     <style>
         * {
             font-family: 'Poppins', sans-serif;
@@ -127,7 +125,7 @@
             display: flex;
             justify-content: flex-end;
             font-size: 10px;
-            padding-right : 15px;
+            padding-right: 15px;
             padding-top: 110px;
         }
     </style>
@@ -135,23 +133,14 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-    <?= $this->section('layout/sidebar'); ?>
-=======
-
->>>>>>> ed54146ee87ab31111a12a6f6c53d26eeeee70af
     <nav>
-    
+
         <div class="org">
             <img class="imgorg-center" src="<?php echo base_url("public/asset/orgx.png"); ?>" width="25px">
         </div>
     </nav>
 
-<<<<<<< HEAD
-
-=======
     <?= $this->include('layout/sidebar'); ?>
->>>>>>> ed54146ee87ab31111a12a6f6c53d26eeeee70af
 
     <div class="content">
         <div class="kartuall">
@@ -159,7 +148,7 @@
                 <div class="fotokartu">
                     <p class="tulisankartu">SISWA</p>
                 </div>
-                <a class="link" href="http://localhost/disdik/public/tabelguru">Lihat Lebih Lanjut</a>
+                <a class="link" href="http://localhost/disdik/public/tabelsiswa">Lihat Lebih Lanjut</a>
             </div>
             <div class="kartuguru">
                 <div class="fotokartu">

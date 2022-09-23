@@ -141,7 +141,7 @@
         </div>
         
         <div class="box">
-            <p class="headline"> TABEL DATA SISWA</p>
+            <p class="headline">TABEL DATA GURU</p>
             <div class="box1">
                 <table class="table table-info">
                     <thead>
