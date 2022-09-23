@@ -115,18 +115,18 @@
         }
 
         .tulisankartu {
-            font-size: 20px;
-            padding-top: 0px;
-            padding-left: 125px;
+            position: relative;
+            font-size: 22px;
+            padding-top: 10px;
+            padding-left: 140px;
         }
 
         .link {
-
             display: flex;
             justify-content: flex-end;
             font-size: 10px;
             padding-right: 15px;
-            padding-top: 110px;
+            padding-top: 55px;
         }
     </style>
 
@@ -146,23 +146,30 @@
         <div class="kartuall">
             <div class="kartusiswa">
                 <div class="fotokartu">
-                    <p class="tulisankartu">SISWA</p>
+                    <img class="imgcard-center" src="<?php echo base_url("public/asset/gambar_siswa.png"); ?>">
                 </div>
-                <a class="link" href="http://localhost/disdik/public/tabelsiswa">Lihat Lebih Lanjut</a>
+                <div class="text">
+                    <p class="tulisankartu">SISWA</p>
+                    <a class="link" href="http://localhost/disdik/public/tabelsiswa">Lihat Lebih Lanjut</a>
+                </div>
             </div>
             <div class="kartuguru">
                 <div class="fotokartu">
-                    <p class="tulisankartu">GURU</p>
+                    <img class="imgcard-center" src="<?php echo base_url("public/asset/gambar_guru.png"); ?>">
                 </div>
-
-                <a class="link" href="http://localhost/disdik/public/tabelguru">Lihat Lebih Lanjut</a>
+                <div class="text">
+                    <p class="tulisankartu">GURU</p>
+                    <a class="link" href="http://localhost/disdik/public/tabelguru">Lihat Lebih Lanjut</a>
+                </div>
             </div>
             <div class="kartusarpras">
                 <div class="fotokartu">
-                    <p class="tulisankartu">SARPRAS</p>
+                    <img class="imgcard-center" src="<?php echo base_url("public/asset/gambar_sarpras.png"); ?>">
                 </div>
-
-                <a class="link" href="http://localhost/disdik/public/tabelsarpras">Lihat Lebih Lanjut</a>
+                <div class="text">
+                    <p class="tulisankartu">SARPRAS</p>
+                    <a class="link" href="http://localhost/disdik/public/tabelsarpras">Lihat Lebih Lanjut</a>
+                </div>
             </div>
         </div>
     </div>
