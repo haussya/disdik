@@ -40,6 +40,9 @@ $routes->get('/sidebar', 'Login::sidebar');
 $routes->get('/dashboard', 'Login::dash');
 $routes->get('/input', 'Login::input');
 $routes->get('/tabelsiswa', 'Login::tabelsiswa');
+$routes->get('/tabelguru', 'Login::tabelguru');
+$routes->get('/tabelsarpras', 'Login::tabelsarpras');
+
 
 $routes->post('/Auth/process', 'Auth::process');
 

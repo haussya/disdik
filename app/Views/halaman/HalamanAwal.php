@@ -97,21 +97,6 @@
             box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
         }
 
-        /* .kartuall {
-            display: flex;
-            flex-direction: column;
-
-            position: absolute;
-            width: 277px;
-            height: 144px;
-            left: 1005px;
-            top: 96px;
-
-            background: #ffffff;
-            border-radius: 5px;
-            box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
-        } */
-
         p {
             font-size: 12px;
             font-weight: bold;
@@ -160,17 +145,19 @@
                 <div class="fotokartu">
                 </div>
                 <p class="tulisankartu">SISWA</p>
-              
+                <a class="link_name" href="http://localhost/disdik/public/tabelguru">Lihat Lebih Lanjut</a>
             </div>
             <div class="kartuguru">
                 <div class="fotokartu">
                 </div>
                 <p class="tulisankartu">GURU</p>
+                <a class="link_name" href="http://localhost/disdik/public/tabelguru">Lihat Lebih Lanjut</a>
             </div>
             <div class="kartusarpras">
                 <div class="fotokartu">
                 </div>
                 <p class="tulisankartu">SARPRAS</p>
+                <a class="link_name" href="http://localhost/disdik/public/tabelsarpras">Lihat Lebih Lanjut</a>
             </div>
         </div>
     </div>
