@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Input Data - Sistem Informasi Data Sekolah Dinas Pendidikan Kota Banjarbaru</title>
+    <title>Data Sarana Prasarana - Sistem Informasi Data Sekolah Dinas Pendidikan Kota Banjarbaru</title>
 
     <!-- CSS -->
 
@@ -121,7 +121,6 @@
         <div class="org">
             <img class="imgorg-center" src="<?php echo base_url("public/asset/orgx.png"); ?>" width="25px">
         </div>
-
     </nav>
 
     <div class="content">
@@ -141,18 +140,16 @@
         </div>
         
         <div class="box">
-            <p class="headline"> TABEL DATA SISWA</p>
+            <p class="headline"> TABEL DATA SARANA PRASARANA</p>
             <div class="box1">
                 <table class="table table-info">
                     <thead>
                         <tr>
                             <th scope="col">No.</th>
-                            <th scope="col">NISN</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Kelamin</th>
-                            <th scope="col">Tingkatan</th>
-                            <th scope="col">Domisili</th>
-                            <th scope="col">Status</th>
+                            <th scope="col">ID barang</th>
+                            <th scope="col">Nama barang</th>
+                            <th scope="col">Jumlah</th>
+                            <th scope="col">Kondisi</th>
                             <th scope="col">Keterangan</th>
                             <th scope="col">Edit</th>
                         </tr>
@@ -161,36 +158,30 @@
                         <tr>
                             <th scope="row">1</th>
                             <td>1234567890</td>
-                            <td>Otto hasibuan</td>
-                            <td>L</td>
+                            <td>Meja Rapat</td>
                             <td>2</td>
-                            <td>Kota Banjarbaru</td>
-                            <td>Aktif</td>
+                            <td>Baik</td>
                             <td>-</td>
-                            <td>tmbol</td>
+                            <td>tombol</td>
                         </tr>
 
                         <tr>
                             <th scope="row">2</th>
                             <td>1234567891</td>
-                            <td>Otto nasution</td>
-                            <td>L</td>
-                            <td>2</td>
-                            <td>Kab. Banjar</td>
-                            <td>Pindah</td>
-                            <td>Pindah ke SD Negri 3 kotabaru</td>
+                            <td>Meja Siswa</td>
+                            <td>20</td>
+                            <td>Baik</td>
+                            <td>-</td>
                             <td>tombol</td>
                         </tr>
 
                         <tr>
                             <th scope="row">3</th>
                             <td>1234567892</td>
-                            <td>Dian siahaan</td>
-                            <td>p</td>
-                            <td>2</td>
-                            <td>Kab. Tanah Laut</td>
-                            <td>Keluar</td>
-                            <td>bantu ortu mining crypto</td>
+                            <td>Kursi Rapat</td>
+                            <td>20</td>
+                            <td>cukup Baik</td>
+                            <td>beberapa mulai terdapat karat</td>
                             <td>tombol</td>
                         </tr>
                     </tbody>

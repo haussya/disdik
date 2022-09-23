@@ -118,57 +118,72 @@
 
         .tulisankartu {
             font-size: 20px;
-            padding-top: 12px;
-            padding-left: 140px;
+            padding-top: 0px;
+            padding-left: 125px;
         }
 
-      
+        .link {
+
+            display: flex;
+            justify-content: flex-end;
+            font-size: 10px;
+            padding-right : 15px;
+            padding-top: 110px;
+        }
     </style>
-    
+
 </head>
 
 <body>
-<?= $this->section('layout/sidebar'); ?>
+<<<<<<< HEAD
+    <?= $this->section('layout/sidebar'); ?>
+=======
+
+>>>>>>> ed54146ee87ab31111a12a6f6c53d26eeeee70af
     <nav>
-        <p>Admin Dinas Pendidikan <br>
-            Muhammad Hanan Ababil S.Kom
-        </p>
+    
         <div class="org">
             <img class="imgorg-center" src="<?php echo base_url("public/asset/orgx.png"); ?>" width="25px">
         </div>
-
     </nav>
 
-    
+<<<<<<< HEAD
+
+=======
+    <?= $this->include('layout/sidebar'); ?>
+>>>>>>> ed54146ee87ab31111a12a6f6c53d26eeeee70af
 
     <div class="content">
         <div class="kartuall">
             <div class="kartusiswa">
                 <div class="fotokartu">
+                    <p class="tulisankartu">SISWA</p>
                 </div>
-                <p class="tulisankartu">SISWA</p>
-                <a class="link_name" href="http://localhost/disdik/public/tabelguru">Lihat Lebih Lanjut</a>
+                <a class="link" href="http://localhost/disdik/public/tabelguru">Lihat Lebih Lanjut</a>
             </div>
             <div class="kartuguru">
                 <div class="fotokartu">
+                    <p class="tulisankartu">GURU</p>
                 </div>
-                <p class="tulisankartu">GURU</p>
-                <a class="link_name" href="http://localhost/disdik/public/tabelguru">Lihat Lebih Lanjut</a>
+
+                <a class="link" href="http://localhost/disdik/public/tabelguru">Lihat Lebih Lanjut</a>
             </div>
             <div class="kartusarpras">
                 <div class="fotokartu">
+                    <p class="tulisankartu">SARPRAS</p>
                 </div>
-                <p class="tulisankartu">SARPRAS</p>
-                <a class="link_name" href="http://localhost/disdik/public/tabelsarpras">Lihat Lebih Lanjut</a>
+
+                <a class="link" href="http://localhost/disdik/public/tabelsarpras">Lihat Lebih Lanjut</a>
             </div>
         </div>
     </div>
     <img class="imgbg" src="<?php echo base_url("public/asset/foto_dashboard.png"); ?>" width="25px">
-  
+
 
 </body>
 
 <script>
+<<<<<<< HEAD
     let arrow = document.querySelectorAll(".arrow");
     for (var i = 0; i < arrow.length; i++) {
         arrow[i].addEventListener("click", (e) => {
@@ -182,7 +197,11 @@
     sidebarBtn.addEventListener("click", () => {
         sidebar.classList.toggle("close");
     });
+</script>
+=======
+
     </script>
+>>>>>>> ed54146ee87ab31111a12a6f6c53d26eeeee70af
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->

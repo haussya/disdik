@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Input Data - Sistem Informasi Data Sekolah Dinas Pendidikan Kota Banjarbaru</title>
+    <title>Data Guru - Sistem Informasi Data Sekolah Dinas Pendidikan Kota Banjarbaru</title>
 
     <!-- CSS -->
 
@@ -147,13 +147,13 @@
                     <thead>
                         <tr>
                             <th scope="col">No.</th>
-                            <th scope="col">NISN</th>
+                            <th scope="col">NIP</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Kelamin</th>
-                            <th scope="col">Tingkatan</th>
+                            <th scope="col">Kelas</th>
                             <th scope="col">Domisili</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Keterangan</th>
+                            <th scope="col">Jabatan</th>
                             <th scope="col">Edit</th>
                         </tr>
                     </thead>
@@ -161,36 +161,36 @@
                         <tr>
                             <th scope="row">1</th>
                             <td>1234567890</td>
-                            <td>Otto hasibuan</td>
+                            <td>Thomson hasibuan S.Pd</td>
                             <td>L</td>
                             <td>2</td>
                             <td>Kota Banjarbaru</td>
-                            <td>Aktif</td>
-                            <td>-</td>
-                            <td>tmbol</td>
+                            <td>ASN</td>
+                            <td>Guru Biologi</td>
+                            <td>tombol</td>
                         </tr>
 
                         <tr>
                             <th scope="row">2</th>
                             <td>1234567891</td>
-                            <td>Otto nasution</td>
+                            <td>Hasan Nasution S.Pd</td>
                             <td>L</td>
-                            <td>2</td>
+                            <td>3</td>
                             <td>Kab. Banjar</td>
-                            <td>Pindah</td>
-                            <td>Pindah ke SD Negri 3 kotabaru</td>
+                            <td>Non ASN</td>
+                            <td>Guru Fisika</td>
                             <td>tombol</td>
                         </tr>
 
                         <tr>
                             <th scope="row">3</th>
                             <td>1234567892</td>
-                            <td>Dian siahaan</td>
+                            <td>Dian Purnama S.Pd</td>
                             <td>p</td>
                             <td>2</td>
                             <td>Kab. Tanah Laut</td>
-                            <td>Keluar</td>
-                            <td>bantu ortu mining crypto</td>
+                            <td>ASN</td>
+                            <td>Wali Kelas</td>
                             <td>tombol</td>
                         </tr>
                     </tbody>
