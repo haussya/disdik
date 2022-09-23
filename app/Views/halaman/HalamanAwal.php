@@ -183,7 +183,6 @@
 </body>
 
 <script>
-<<<<<<< HEAD
     let arrow = document.querySelectorAll(".arrow");
     for (var i = 0; i < arrow.length; i++) {
         arrow[i].addEventListener("click", (e) => {
@@ -198,10 +197,6 @@
         sidebar.classList.toggle("close");
     });
 </script>
-=======
-
-    </script>
->>>>>>> ed54146ee87ab31111a12a6f6c53d26eeeee70af
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
