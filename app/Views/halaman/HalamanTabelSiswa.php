@@ -17,13 +17,9 @@
 
 <body>
     <nav>
-        <p>Admin Dinas Pendidikan <br>
-            Muhammad Hanan Ababil S.Kom
-        </p>
         <div class="org">
             <img class="imgorg-center" src="<?php echo base_url("public/asset/orgx.png"); ?>" width="25px">
         </div>
-
     </nav>
 
 

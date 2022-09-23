@@ -23,7 +23,6 @@
         <div class="org">
             <img class="imgorg-center" src="<?php echo base_url("public/asset/orgx.png"); ?>" width="25px">
         </div>
-
     </nav>
 
     <div class="content">

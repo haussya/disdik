@@ -12,8 +12,8 @@
     <title>Dashboard - Sistem Informasi Data Sekolah Dinas Pendidikan Kota Banjarbaru</title>
 
     <!-- CSS -->
-
-    <style>
+    <link rel="stylesheet" href="<?php echo base_url("public/css/halamanawal.css"); ?>">
+    <!-- <style>
         * {
             font-family: 'Poppins', sans-serif;
         }
@@ -128,13 +128,12 @@
             padding-right: 15px;
             padding-top: 55px;
         }
-    </style>
+    </style> -->
 
 </head>
 
 <body>
     <nav>
-
         <div class="org">
             <img class="imgorg-center" src="<?php echo base_url("public/asset/orgx.png"); ?>" width="25px">
         </div>
