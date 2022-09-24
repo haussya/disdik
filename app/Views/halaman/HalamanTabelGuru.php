@@ -68,11 +68,12 @@
         }
 
         .box {
+            display: flex;
             position: absolute;
             width: 76%;
             height: 75%;
-            margin-top: 9%;
-            margin-left: 22%;
+            /* margin-top: 9%; */
+            /* margin-left: 22%; */
 
             background-color: #ffffff;
             box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
@@ -114,6 +115,8 @@
 </head>
 
 <body>
+<?= $this->include('layout/sidebar'); ?>
+
     <nav>
         <p>Admin Dinas Pendidikan <br>
             Muhammad Hanan Ababil S.Kom
@@ -196,7 +199,7 @@
                     </tbody>
                 </table>
             </div>
-
+   
         </div>
 
     </div>

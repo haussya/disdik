@@ -12,7 +12,7 @@
   left: 0;
   height: 100%;
   width: 260px;
-  background: rgb(0, 0, 0);
+  background: rgb(96, 167, 255);
   z-index: 100;
   transition: all 0.5s ease;
 }
