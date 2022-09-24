@@ -7,7 +7,7 @@ class DataSiswaSD extends Model
 {
     protected $table = 'data_siswa_sd';
     protected $primaryKey = 'nisn';
-    protected $allowedFields = ['nama', 'kelamin', 'tingkat', 'domisili'];
+    protected $allowedFields = ['nama', 'kelamin', 'tanggal_lahir', 'tingkat', 'domisili', 'nama_ibu', 'status'. 'keterangan'];
 
     public function hitungDataSiswaSD()
     {
