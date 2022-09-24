@@ -51,6 +51,7 @@
                             <th scope="col">NISN</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Kelamin</th>
+                            <th scope="col">Tanggal Lahir</th>
                             <th scope="col">Tingkatan</th>
                             <th scope="col">Domisili</th>
                             <th scope="col">Status</th>
@@ -58,42 +59,23 @@
                             <th scope="col">Edit</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>1234567890</td>
-                            <td>Otto hasibuan</td>
-                            <td>L</td>
-                            <td>2</td>
-                            <td>Kota Banjarbaru</td>
-                            <td>Aktif</td>
-                            <td>-</td>
-                            <td>tmbol</td>
-                        </tr>
+                    <tbody>\
+                        <?php $no = 1 ?>
+                        <?php foreach ($datasiswa as $row) : ?>
+                            <tr>
+                                <th scope="row" class="text-center"><?= $no++; ?></th>
+                                <td><?= $row['nisn']; ?></td>
+                                <td><?= $row['nama']; ?></td>
+                                <td><?= $row['kelamin']; ?></td>
+                                <td class="text-center"><?= $row['tanggal_lahir']; ?></td>
+                                <td class="text-center"><?= $row['tingkat']; ?></td>
+                                <td><?= $row['domisili']; ?></td>
+                                <td><?= $row['nama_ibu']; ?></td>
+                                <td><?= $row['status']; ?></td>
+                                <td class="text-center"><?= $row['keterangan']; ?></td>
 
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>1234567891</td>
-                            <td>Otto nasution</td>
-                            <td>L</td>
-                            <td>2</td>
-                            <td>Kab. Banjar</td>
-                            <td>Pindah</td>
-                            <td>Pindah ke SD Negri 3 kotabaru</td>
-                            <td>tombol</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>1234567892</td>
-                            <td>Dian siahaan</td>
-                            <td>p</td>
-                            <td>2</td>
-                            <td>Kab. Tanah Laut</td>
-                            <td>Keluar</td>
-                            <td>bantu ortu mining crypto</td>
-                            <td>tombol</td>
-                        </tr>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

@@ -10,7 +10,10 @@ class inputsiswa extends BaseController
     public function index()
     {
         $dataSiswaSD = new DataSiswaSD();
-        $data['dataSiswaSD'] = $dataSiswaSD->getSiswaSD();
+        $data = [
+            'datasiswa' => $this->DataSiswaSD->select('nisn')->findAll(),
+        ];
+        // $data['dataSiswaSD'] = $dataSiswaSD->getSiswaSD();
 
         return view('halaman\HalamanTabelSiswa', $data);
     }
