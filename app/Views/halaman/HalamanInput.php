@@ -16,6 +16,8 @@
 </head>
 
 <body>
+<?= $this->include('layout/sidebar'); ?>
+
     <nav>
         <p>Admin Dinas Pendidikan <br>
             Muhammad Hanan Ababil S.Kom
