@@ -149,7 +149,7 @@
                 </div>
                 <div class="text">
                     <p class="tulisankartu">SISWA</p>
-                    <a class="link" href="http://localhost/disdik/public/tabelsiswa">Lihat Lebih Lanjut</a>
+                    <a class="link" href="http://localhost/disdik/public/InputSiswaSD">Lihat Lebih Lanjut</a>
                 </div>
             </div>
             <div class="kartuguru">

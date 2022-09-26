@@ -13,6 +13,9 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="<?php echo base_url("public/css/halamantabelsiswa.css"); ?>">
+
+    <!-- boxicon -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 
 <body>
@@ -24,7 +27,7 @@
 
 
     <div class="content">
-        <div class="ddsekolah">
+        <!-- <div class="ddsekolah">
             <select class="form-select" aria-label="Default select example">
                 <option selected dis>Sekolah</option>
                 <option value="SDN2LUB">SD NEGERI 2 LANDASAN ULIN BARAT</option>
@@ -34,7 +37,7 @@
                 <option value="SDN1LUB">SD NEGERI 1 LANDASAN ULIN BARAT</option>
                 <option value="SDN3LUB">SD NEGERI 3 LANDASAN ULIN BARAT</option>
             </select>
-        </div>
+        </div> -->
         <div class="tombol">
             <a href="#" class="btn btn-primary">Tambah Data</a>
         </div>
@@ -52,28 +55,33 @@
                             <th scope="col">Tanggal Lahir</th>
                             <th scope="col">Tingkatan</th>
                             <th scope="col">Domisili</th>
+                            <th scope="col">nama Orangtua</th>
                             <th scope="col">Status</th>
                             <th scope="col">Keterangan</th>
                             <th scope="col">Edit</th>
                         </tr>
                     </thead>
-                    <tbody>\
+                    <tbody>
                         <?php $no = 1 ?>
-                        <?php foreach ($datasiswa as $row) : ?>
+                        <?php foreach ($datasiswaSD as $sd) : ?>
                             <tr>
-                                <th scope="row" class="text-center"><?= $no++; ?></th>
-                                <td><?= $row['nisn']; ?></td>
-                                <td><?= $row['nama']; ?></td>
-                                <td><?= $row['kelamin']; ?></td>
-                                <td class="text-center"><?= $row['tanggal_lahir']; ?></td>
-                                <td class="text-center"><?= $row['tingkat']; ?></td>
-                                <td><?= $row['domisili']; ?></td>
-                                <td><?= $row['nama_ibu']; ?></td>
-                                <td><?= $row['status']; ?></td>
-                                <td class="text-center"><?= $row['keterangan']; ?></td>
-
+                                <td><?= $no ?></td>
+                                <td><?= $sd['nisn']; ?></td>
+                                <td><?= $sd['nama']; ?></td>
+                                <td><?= $sd['kelamin']; ?></td>
+                                <td><?= $sd['tanggal_lahir']; ?></td>
+                                <td><?= $sd['tingkat']; ?></td>
+                                <td><?= $sd['domisili_id']; ?></td>
+                                <td><?= $sd['nama_ibu']; ?></td>
+                                <td><?= $sd['status']; ?></td>
+                                <td><?= $sd['keterangan']; ?></td>
+                                <td>
+                                    <box-icon name='edit'></box-icon>
+                                </td>
                             </tr>
+                            <?php $no++ ?>
                         <?php endforeach; ?>
+
                     </tbody>
                 </table>
             </div>
@@ -81,12 +89,7 @@
         </div>
 
     </div>
-
-
-
-    </div>
-    </div>
-    <img class="imgbg" src="<?php echo base_url("public/asset/foto_dashboard.png"); ?>" width="25px">
+    <img class="imgbg" src="<?php echo base_url("public/asset/foto_dashboard.png"); ?>" >
 
 
 </body>

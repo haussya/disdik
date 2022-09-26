@@ -42,7 +42,7 @@ $routes->get('/input', 'Login::input');
 $routes->get('/tabelsiswa', 'Login::tabelsiswa');
 $routes->get('/tabelguru', 'Login::tabelguru');
 $routes->get('/tabelsarpras', 'Login::tabelsarpras');
-
+$routes->get('/InputSiswaSD', 'InputSiswaSD::index');
 
 $routes->post('/Auth/process', 'Auth::process');
 

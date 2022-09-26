@@ -5,16 +5,21 @@ namespace App\Controllers;
 use App\Models\DataSiswaSD;
 use App\Models\Domisili;
 
-class inputsiswa extends BaseController
+class InputSiswaSD extends BaseController
 {
+
+    protected $siswaSDModel;
+
+    public function __construct()
+	{
+		$this->siswaSDModel = new DataSiswaSD();
+
+	}
     public function index()
     {
-        $dataSiswaSD = new DataSiswaSD();
         $data = [
-            'datasiswa' => $this->DataSiswaSD->select('nisn')->findAll(),
+            'datasiswaSD' => $this->siswaSDModel->findAll(),
         ];
-        // $data['dataSiswaSD'] = $dataSiswaSD->getSiswaSD();
-
         return view('halaman\HalamanTabelSiswa', $data);
     }
 }
