@@ -8,10 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"> -->
 
-
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
 
     <!-- Font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +50,7 @@
                 </div>
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">Siswa</a></li>
-                    <li><a href="Login/input">Data Siswa</a></li>
+                    <li><a href="http://localhost/disdik/public/InputSiswaSD">Data Siswa</a></li>
                     <li><a href="#">Beasiswa</a></li>
                     <li><a href="#">DO & LTM</a></li>
                 </ul>
