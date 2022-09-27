@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 260px;
+  width: 197px;
   background: rgb(96, 167, 255);
   z-index: 100;
   transition: all 0.5s ease;
@@ -124,7 +124,7 @@
   opacity: 1;
 }
 .sidebar.close .nav-links li .sub-menu{
-  position: absolute;
+  posfixed;
   left: 100%;
   top: -10px;
   margin-top: 0;
@@ -208,12 +208,12 @@
 .sidebar .profile-details .job{
   font-size: 12px;
 }
-/* .home-section{
+.home-section{
   position: relative;
   height: 100vh;
   width: calc(100% - 260px);
   transition: all 0.5s ease;
-} */
+}
 .sidebar.close ~ .home-section{
   left: 78px;
   width: calc(100% - 78px);
@@ -260,7 +260,7 @@
 
 /* Login */
 div.box {
-  position: absolute;
+  posfixed;
   width: 35%;
   height: 100vh;
   right: 0px;
@@ -276,7 +276,7 @@ div.box {
 }
 
 .logo {
-  position: absolute;
+  posfixed;
   left: 30px;
   top: 30px;
 }

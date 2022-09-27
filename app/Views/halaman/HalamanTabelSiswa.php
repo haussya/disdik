@@ -67,16 +67,19 @@
             color: #5A5B5A;
         }
 
-        .box {
-            position: absolute;
+        .a {
+            position: fixed;
             width: 90%;
             height: 75%;
             margin-top: 9%;
             margin-left: 5%;
 
+            
+
             background-color: #ffffff;
             box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
         }
+
 
         .headline {
             font-size: 22px;
@@ -104,20 +107,27 @@
         }
 
         .tombol {
+            display: flexbox;
+            flex-direction: column-reverse;
             position: absolute;
             height: 30px;
             margin-top: 5%;
-            margin-left: 85%;
-            box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
+            margin-left: 45%;
+            /* box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2); */
         }
     </style>
+
+
 
     <!-- boxicon -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 
 <body>
+    <?= $this->include('layout/sidebar'); ?>
+
     <div class="content">
+
         <div class="ddsekolah">
             <select class="form-select" aria-label="Default select example">
                 <option selected dis>Sekolah</option>
@@ -133,7 +143,7 @@
             <a href="http://localhost/disdik/public/input" class="btn btn-primary">Tambah Data</a>
         </div>
 
-        <div class="box">
+        <div class="a">
             <p class="headline">TABEL DATA SISWA</p>
             <div class="box1">
                 <table class="table table-info">

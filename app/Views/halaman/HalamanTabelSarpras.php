@@ -113,6 +113,8 @@
     </style>
 </head>
 
+
+
 <body>
     <div class="content">
         <div class="ddsekolah">
@@ -178,7 +180,7 @@
         </div>
     </div>
     <img class="imgbg" src="<?php echo base_url("public/asset/foto_dashboard.png"); ?>" width="25px">
-</body>
+n</body>
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
