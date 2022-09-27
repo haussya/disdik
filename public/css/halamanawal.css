@@ -1,14 +1,12 @@
 * {
   font-family: "Poppins", sans-serif;
 }
-
 body {
   position: relative;
   min-height: 100vh;
   display: flex;
   justify-content: flex-end;
 }
-
 nav {
   display: flex;
   justify-content: flex-end;
@@ -20,27 +18,23 @@ nav {
   position: absolute;
   right: 0;
 }
-
 .imgbg {
   display: flex;
   justify-content: space-between 20;
   height: 100vh;
   width: 100%;
 }
-
 .org {
   padding-top: 12px;
   padding-right: 12px;
   display: flex-end;
 }
-
 .orgx {
   padding-right: 15px;
   padding-top: 12px;
   padding-bottom: 25px;
   border: 1px;
 }
-
 .kartusiswa {
   position: absolute;
   width: 277px;
@@ -51,7 +45,6 @@ nav {
   border-radius: 5px;
   box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
 }
-
 .kartuguru {
   position: absolute;
   width: 277px;
@@ -63,7 +56,6 @@ nav {
   border-radius: 5px;
   box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
 }
-
 .kartusarpras {
   position: absolute;
   width: 277px;
@@ -75,7 +67,6 @@ nav {
   border-radius: 5px;
   box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
 }
-
 p {
   font-size: 12px;
   font-weight: bold;
@@ -83,7 +74,6 @@ p {
   padding-right: 20px;
   color: #5a5b5a;
 }
-
 .fotokartu {
   position: absolute;
   width: 115px;
@@ -94,14 +84,12 @@ p {
   background: #d9d9d9;
   border-radius: 3px;
 }
-
 .tulisankartu {
   position: relative;
   font-size: 22px;
   padding-top: 10px;
   padding-left: 140px;
 }
-
 .link {
   display: flex;
   justify-content: flex-end;

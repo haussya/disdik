@@ -1,14 +1,12 @@
 * {
   font-family: "Poppins", sans-serif;
 }
-
 body {
   position: relative;
   min-height: 100vh;
   display: flex;
   justify-content: flex-end;
 }
-
 nav {
   display: flex;
   justify-content: flex-end;
@@ -20,27 +18,23 @@ nav {
   position: absolute;
   right: 0;
 }
-
 .imgbg {
   display: flex;
   justify-content: space-between 20;
   height: 100vh;
   width: 100%;
 }
-
 .org {
   padding-top: 12px;
   padding-right: 12px;
   display: flex-end;
 }
-
 .orgx {
   padding-right: 15px;
   padding-top: 12px;
   padding-bottom: 25px;
   border: 1px;
 }
-
 p {
   font-size: 12px;
   font-weight: bold;
@@ -48,7 +42,6 @@ p {
   padding-right: 20px;
   color: #5a5b5a;
 }
-
 .box {
   position: absolute;
   width: 76%;
@@ -59,7 +52,6 @@ p {
   background-color: #ffffff;
   box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
 }
-
 .headline {
   font-size: 22px;
   font-weight: bold;
@@ -68,21 +60,17 @@ p {
   padding-right: 20px;
   padding-bottom: 5px;
 }
-
 .jenis {
   font-size: 14px;
 }
-
 .kolom {
   padding-left: 20px;
   padding-right: 20px;
 }
-
 .inputan1 {
   height: 90%;
   width: 500px;
 }
-
 .inputan2 {
   position: absolute;
   height: 90%;
