@@ -124,7 +124,7 @@
   opacity: 1;
 }
 .sidebar.close .nav-links li .sub-menu{
-  posfixed;
+  position: fixed;;
   left: 100%;
   top: -10px;
   margin-top: 0;
