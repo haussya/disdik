@@ -31,7 +31,7 @@
             height: 50px;
             width: 100vw;
             min-width: 100vw;
-            background: #FFFFFF;
+            background: #ffffff;
             box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.25);
             position: absolute;
             right: 0;
@@ -68,12 +68,11 @@
         }
 
         .box {
-            display: flex;
             position: absolute;
-            width: 76%;
+            width: 90%;
             height: 75%;
-            /* margin-top: 9%; */
-            /* margin-left: 22%; */
+            margin-top: 9%;
+            margin-left: 5%;
 
             background-color: #ffffff;
             box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
@@ -98,7 +97,7 @@
             width: 300px;
             height: 30px;
             margin-top: 5%;
-            margin-left: 23%;
+            margin-left: 5%;
 
             background-color: #ffffff;
             box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
@@ -108,25 +107,13 @@
             position: absolute;
             height: 30px;
             margin-top: 5%;
-            margin-left: 75%;
+            margin-left: 85%;
             box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 
 <body>
-<?= $this->include('layout/sidebar'); ?>
-
-    <nav>
-        <p>Admin Dinas Pendidikan <br>
-            Muhammad Hanan Ababil S.Kom
-        </p>
-        <div class="org">
-            <img class="imgorg-center" src="<?php echo base_url("public/asset/orgx.png"); ?>" width="25px">
-        </div>
-
-    </nav>
-
     <div class="content">
         <div class="ddsekolah">
             <select class="form-select" aria-label="Default select example">
@@ -142,7 +129,6 @@
         <div class="tombol">
             <a href="#" class="btn btn-primary">Tambah Data</a>
         </div>
-        
         <div class="box">
             <p class="headline">TABEL DATA GURU</p>
             <div class="box1">
@@ -172,7 +158,6 @@
                             <td>Guru Biologi</td>
                             <td>tombol</td>
                         </tr>
-
                         <tr>
                             <th scope="row">2</th>
                             <td>1234567891</td>
@@ -184,7 +169,6 @@
                             <td>Guru Fisika</td>
                             <td>tombol</td>
                         </tr>
-
                         <tr>
                             <th scope="row">3</th>
                             <td>1234567892</td>
@@ -199,18 +183,9 @@
                     </tbody>
                 </table>
             </div>
-   
         </div>
-
-    </div>
-
-
-
-    </div>
     </div>
     <img class="imgbg" src="<?php echo base_url("public/asset/foto_dashboard.png"); ?>" width="25px">
-
-
 </body>
 <!-- Optional JavaScript; choose one of the two! -->
 
