@@ -18,7 +18,7 @@ class InputSiswaSD extends BaseController
     public function index()
     {
         $data = [
-            'datasiswaSD' => $this->siswaSDModel->findAll(),
+            'dataSiswaSD' => $this->siswaSDModel->findAll(),
         ];
         return view('halaman\HalamanTabelSiswa', $data);
     }

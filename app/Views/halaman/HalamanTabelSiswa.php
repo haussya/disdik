@@ -154,7 +154,7 @@
                     </thead>
                     <tbody>
                         <?php $no = 1 ?>
-                        <?php foreach ($datasiswaSD as $sd) : ?>
+                        <?php foreach ($dataSiswaSD as $sd) : ?>
                             <tr>
                                 <td><?= $no ?></td>
                                 <td><?= $sd['nisn']; ?></td>
