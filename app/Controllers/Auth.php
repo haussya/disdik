@@ -27,7 +27,6 @@ class Auth extends BaseController
             ];
             session()->set($sessLogin);
             return redirect()->to('public/dashboard');
-
         }
     }
 }
