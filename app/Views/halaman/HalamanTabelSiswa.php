@@ -130,7 +130,7 @@
             </select>
         </div>
         <div class="tombol">
-            <a href="#" class="btn btn-primary">Tambah Data</a>
+            <a href="http://localhost/disdik/public/input" class="btn btn-primary">Tambah Data</a>
         </div>
 
         <div class="box">

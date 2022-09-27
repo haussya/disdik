@@ -16,20 +16,9 @@
 </head>
 
 <body>
-<?= $this->include('layout/sidebar'); ?>
-
-    <nav>
-        <p>Admin Dinas Pendidikan <br>
-            Muhammad Hanan Ababil S.Kom
-        </p>
-        <div class="org">
-            <img class="imgorg-center" src="<?php echo base_url("public/asset/orgx.png"); ?>" width="25px">
-        </div>
-    </nav>
-
     <div class="content">
         <div class="box">
-            <p class="headline"> INPUT DATA</p>
+            <p class="headline">INPUT DATA</p>
             <div class="inputan1">
                 <div class="kolom">
                     <p class="jenis">NISN</p>
@@ -58,15 +47,15 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="domisili">Domisili</label>
-                    <select class="form-control" id="domisili" name="domisili">
-                        <option selected disabled value="">Masukkan Domisili...</option>
-                        <?php
-                        foreach ($dataDomisili as $row) {
-                        ?>
-                            <option value="<?= $row['domisili_id'] ?>" <?= ($row['domisili_id'] == $dataDomisili['domisili_id']) ? 'selected' : ''; ?>><?= $row['domisili'] ?></option>
-                        <?php } ?>
-                    </select>
+                <label for="domisili">Domisili</label>
+                <select class="form-control" id="domisili" name="domisili">
+                    <option selected disabled value="">Masukkan Domisili ...</option>
+                    <?php
+                    foreach ($dataDomisili as $row) {
+                    ?>
+                        <option value="<?= $row['domisili_id'] ?>"> <?= $row['domisili'] ?></option>
+                    <?php } ?>
+                </select>
                 </div>
 
                 <div class="kolom">
