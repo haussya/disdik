@@ -17,35 +17,14 @@
     <!-- boxicon -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
-
 <body>
-<?= $this->include('layout/sidebar'); ?>
-
-    <nav>
-        <div class="org">
-            <img class="imgorg-center" src="<?php echo base_url("public/asset/orgx.png"); ?>" width="25px">
-        </div>
-    </nav>
-
-
     <div class="content">
-        <!-- <div class="ddsekolah">
-            <select class="form-select" aria-label="Default select example">
-                <option selected dis>Sekolah</option>
-                <option value="SDN2LUB">SD NEGERI 2 LANDASAN ULIN BARAT</option>
-                <option value="SDN1LUU">SD NEGERI 1 LANDASAN ULIN UTARA</option>
-                <option value="SDN1LUT">SD NEGERI 1 LANDASAN ULIN TENGAH</option>
-                <option value="SDN1LUS">SD NEGERI 1 LANDASAN ULIN SELATAN</option>
-                <option value="SDN1LUB">SD NEGERI 1 LANDASAN ULIN BARAT</option>
-                <option value="SDN3LUB">SD NEGERI 3 LANDASAN ULIN BARAT</option>
-            </select>
-        </div> -->
         <div class="tombol">
             <a href="#" class="btn btn-primary">Tambah Data</a>
         </div>
 
         <div class="box">
-            <p class="headline"> TABEL DATA SISWA</p>
+            <p class="headline">TABEL DATA SISWA</p>
             <div class="box1">
                 <table class="table table-info">
                     <thead>
@@ -83,17 +62,12 @@
                             </tr>
                             <?php $no++ ?>
                         <?php endforeach; ?>
-
                     </tbody>
                 </table>
             </div>
-
         </div>
-
     </div>
-    <img class="imgbg" src="<?php echo base_url("public/asset/foto_dashboard.png"); ?>" >
-
-
+    <img class="imgbg" src="<?php echo base_url("public/asset/foto_dashboard.png"); ?>">
 </body>
 <!-- Optional JavaScript; choose one of the two! -->
 
@@ -105,5 +79,4 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
-
 </html>
