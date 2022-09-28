@@ -7,7 +7,7 @@
   font-family: 'Poppins', sans-serif;
 }
 .sidebar{
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
@@ -163,7 +163,7 @@
 .sidebar .profile-details{
   position: fixed;
   bottom: 0;
-  width: 260px;
+  width: 197px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -196,7 +196,8 @@
 .sidebar .profile-details .profile_name,
 .sidebar .profile-details .job{
   color: #fff;
-  font-size: 18px;
+  padding-left: 10px;
+  font-size: 15px;
   font-weight: 500;
   white-space: nowrap;
 }

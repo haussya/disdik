@@ -69,15 +69,13 @@
 
         .a {
             position: fixed;
-            width: 90%;
+       
             height: 75%;
             margin-top: 9%;
             margin-left: 5%;
+            padding-left: 124px;
 
-            
-
-            background-color: #ffffff;
-            box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
+         
         }
 
 
@@ -90,7 +88,7 @@
             padding-bottom: 5px;
         }
 
-        .box1 {
+        .bo {
             padding-left: 20px;
             padding-right: 20px;
         }
@@ -145,7 +143,7 @@
 
         <div class="a">
             <p class="headline">TABEL DATA SISWA</p>
-            <div class="box1">
+            <div class="bo">
                 <table class="table table-info">
                     <thead>
                         <tr>
