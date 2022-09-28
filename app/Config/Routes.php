@@ -37,10 +37,12 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::login');
 
+//login
 $routes->get('/login', 'Home::login');
 $routes->post('/process', 'Home::process');
 $routes->add('/auth/(:any)', 'Home::$1');
 
+//
 $routes->get('/sidebar', 'Login::sidebar');
 $routes->get('/dashboard', 'Login::dash');
 $routes->get('/input', 'Login::input');
@@ -48,8 +50,6 @@ $routes->get('/tabelsiswa', 'Login::tabelsiswa');
 $routes->get('/tabelguru', 'Login::tabelguru');
 $routes->get('/tabelsarpras', 'Login::tabelsarpras');
 $routes->get('/InputSiswaSD', 'InputSiswaSD::index');
-
-$routes->post('/Auth/process', 'Auth::process');
 
 
 
