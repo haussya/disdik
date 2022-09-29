@@ -33,12 +33,10 @@
       <form method="POST" action="<?= base_url('/auth/process') ?>">
         <?= csrf_field() ?>
         <div class="mb-3">
-          <label for="exampleInputUsername1" class="form-label">Username</label>
-          <input type="username" class="form-control" id="exampleInputUsername1" name="username">
+          <input type="username" class="form-control" id="exampleInputUsername" name="username" placeholder="Username">
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+          <input type="password" class="form-control" id="exampleInputPassword" name="password" placeholder="Password">
         </div>
         <div class="tombol">
           <button type="submit" class="btn btn-light">
