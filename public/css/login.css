@@ -40,4 +40,7 @@ body {
 .imgbg {
   height: 100vh;
   width: 100%;
+  pointer-events: none;
+  object-position: center;
+  object-fit: cover;
 }
