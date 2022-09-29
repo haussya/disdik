@@ -19,7 +19,9 @@ class Login extends BaseController
 
     public function dash()
     {
-        return view('halaman/HalamanAwal');
+        return view('admin/dashboard', [
+            'title' => 'Dashboard'
+        ]);
     }
 
     public function input()

@@ -30,7 +30,7 @@
         <link rel="stylesheet" href="">
       </div>
 
-      <form method="POST" action="<?= base_url('/process') ?>">
+      <form method="POST" action="<?= base_url('/auth/process') ?>">
         <?= csrf_field() ?>
         <div class="mb-3">
           <label for="exampleInputUsername1" class="form-label">Username</label>

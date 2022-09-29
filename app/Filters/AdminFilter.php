@@ -11,15 +11,14 @@ class AdminFilter implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         if (session()->role == "") {
-            return redirect()->to('/home/login');
+            return redirect()->to('/auth/login');
         }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        dd(session()->role);
         if (session()->role == "admin") {
-            return redirect()->to('/login');
+            return redirect()->to('/');
         }
     }
 }

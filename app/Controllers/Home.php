@@ -7,6 +7,10 @@ use App\Models\UserModel;
 
 class Home extends BaseController
 {
+    public function index() {
+        return redirect()->to('/dashboard');
+    }
+
     public function login()
     {
         return view('halaman/login');
@@ -26,10 +30,12 @@ class Home extends BaseController
         $password = sha1($this->request->getVar('password'));
         $dataUser = $userModel->where('username', $data)->first();
         if (!$dataUser) {
+            dd('kontol1');
             session()->setFlashdata('pesan', 'Username tidak ditemukan');
             return redirect()->to('/');
         }
         if ($password !== $dataUser['password']) {
+            dd('kontol2');
             session()->setFlashdata('pesan', 'Password salah');
             return redirect()->to('/');
         } else {
@@ -37,6 +43,7 @@ class Home extends BaseController
                 'username' => $dataUser['username'],
                 'role' => $dataUser['role']
             ];
+            dd('kontol3');
             session()->set($sessLogin);
             return redirect()->to('/dashboard');
         }

@@ -34,23 +34,25 @@ class Filters extends BaseConfig
      * @var array
      */
     public $globals = [
+        // public
         'before' => [
             'csrf',
             'adminfilter' => [
                 'except' => [
-                    '/', '/home/*'
+                    '/auth', '/auth/*'
                 ]
             ],
-            'userfilter' => [
-                'except' => [
-                    '/', '/home/*'
-                ]
-            ]
         ],
+        // private
         'after' => [
             'toolbar',
             // 'honeypot',
             // 'secureheaders',
+            'adminfilter' => [
+                'except' => [
+                    '/', '/dashboard', '/auth/logout',
+                ]
+            ],
         ],
     ];
 
