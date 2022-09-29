@@ -48,6 +48,7 @@ $routes->get('/dashboard', 'Login::dash');
 $routes->get('/input', 'Login::input');
 $routes->get('/tabelsiswa', 'Login::tabelsiswa');
 $routes->get('/tabelguru', 'Login::tabelguru');
+$routes->get('/testing', 'Login::testing');
 $routes->get('/tabelsarpras', 'Login::tabelsarpras');
 $routes->get('/InputSiswaSD', 'InputSiswaSD::index');
 

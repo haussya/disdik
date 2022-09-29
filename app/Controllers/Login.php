@@ -44,4 +44,9 @@ class Login extends BaseController
     {
         return view('Halaman/HalamanTabelSarpras');
     }
+
+    public function testing()
+    {
+        return view('mazer/index');
+    }
 }
