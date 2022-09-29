@@ -18,7 +18,7 @@ class UserFilter implements FilterInterface
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
         if (session()->role == "user") {
-            return redirect()->to('/user');
+            return redirect()->to('/login');
         }
     }
 }
