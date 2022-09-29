@@ -12,7 +12,7 @@
     <title>Input Data - Sistem Informasi Data Sekolah Dinas Pendidikan Kota Banjarbaru</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="<?php echo base_url("public/css/halamaninput.css"); ?>">
+    <link rel="stylesheet" href="<?php echo base_url("/css/halamaninput.css"); ?>">
 </head>
 
 <body>
@@ -107,7 +107,7 @@
 
         </div>
     </div>
-    <img class="imgbg" src="<?php echo base_url("public/asset/foto_dashboard.png"); ?>" width="25px">
+    <img class="imgbg" src="<?php echo base_url("/asset/foto_dashboard.png"); ?>" width="25px">
 
 
 </body>

@@ -179,7 +179,7 @@
             </div>
         </div>
     </div>
-    <img class="imgbg" src="<?php echo base_url("public/asset/foto_dashboard.png"); ?>" width="25px">
+    <img class="imgbg" src="<?php echo base_url("/asset/foto_dashboard.png"); ?>" width="25px">
 n</body>
 <!-- Optional JavaScript; choose one of the two! -->
 

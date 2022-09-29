@@ -38,7 +38,7 @@ class Home extends BaseController
                 'role' => $dataUser['role']
             ];
             session()->set($sessLogin);
-            return redirect()->to('public/dashboard');
+            return redirect()->to('/dashboard');
         }
     }
 }

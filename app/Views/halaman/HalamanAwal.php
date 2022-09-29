@@ -12,50 +12,50 @@
     <title>Dashboard - Sistem Informasi Data Sekolah Dinas Pendidikan Kota Banjarbaru</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="<?php echo base_url("public/css/halamanawal.css"); ?>">
+    <link rel="stylesheet" href="<?php echo base_url("/css/halamanawal.css"); ?>">
 </head>
 
 <body>
     <nav>
         <div class="org">
-            <img class="imgorg-center" src="<?php echo base_url("public/asset/orgx.png"); ?>" width="25px">
+            <img class="imgorg-center" src="<?php echo base_url("/asset/orgx.png"); ?>" width="25px">
         </div>
     </nav>
 
-    <?= $this->include('layouts/app'); ?>
+    <?= $this->include('layout/sidebar'); ?>
 
     <div class="content">
         <div class="kartuall">
             <div class="kartusiswa">
                 <div class="fotokartu">
-                    <img class="imgcard-center" src="<?php echo base_url("public/asset/gambar_siswa.png"); ?>">
+                    <img class="imgcard-center" src="<?php echo base_url("/asset/gambar_siswa.png"); ?>">
                 </div>
                 <div class="text">
                     <p class="tulisankartu">SISWA</p>
-                    <a class="link" href="http://localhost/disdik/public/InputSiswaSD">Lihat Lebih Lanjut</a>
+                    <a class="link" href="http://localhost/disdik//InputSiswaSD">Lihat Lebih Lanjut</a>
                 </div>
             </div>
             <div class="kartuguru">
                 <div class="fotokartu">
-                    <img class="imgcard-center" src="<?php echo base_url("public/asset/gambar_guru.png"); ?>">
+                    <img class="imgcard-center" src="<?php echo base_url("/asset/gambar_guru.png"); ?>">
                 </div>
                 <div class="text">
                     <p class="tulisankartu">GURU</p>
-                    <a class="link" href="http://localhost/disdik/public/tabelguru">Lihat Lebih Lanjut</a>
+                    <a class="link" href="http://localhost/disdik//tabelguru">Lihat Lebih Lanjut</a>
                 </div>
             </div>
             <div class="kartusarpras">
                 <div class="fotokartu">
-                    <img class="imgcard-center" src="<?php echo base_url("public/asset/gambar_sarpras.png"); ?>">
+                    <img class="imgcard-center" src="<?php echo base_url("/asset/gambar_sarpras.png"); ?>">
                 </div>
                 <div class="text">
                     <p class="tulisankartu">SARPRAS</p>
-                    <a class="link" href="http://localhost/disdik/public/tabelsarpras">Lihat Lebih Lanjut</a>
+                    <a class="link" href="http://localhost/disdik//tabelsarpras">Lihat Lebih Lanjut</a>
                 </div>
             </div>
         </div>
     </div>
-    <img class="imgbg" src="<?php echo base_url("public/asset/foto_dashboard.png"); ?>" width="25px">
+    <img class="imgbg" src="<?php echo base_url("/asset/foto_dashboard.png"); ?>" width="25px">
 
 
 </body>

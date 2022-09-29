@@ -12,25 +12,25 @@
   <title>Login - Sistem Informasi Data Sekolah Dinas Pendidikan Kota Banjarbaru</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="<?php echo base_url("public/css/login.css"); ?>">
+  <link rel="stylesheet" href="<?php echo base_url("/css/login.css"); ?>">
 </head>
 
 <body>
-  <img class="imgbg" src="<?php echo base_url("public/asset/foto_login.png"); ?>">
+  <img class="imgbg" src="<?php echo base_url("/asset/foto_login.png"); ?>">
   <div>
     <div class="logo">
-      <img class="imgdisdik" src="<?php echo base_url("public/asset/logo_disdik_rounded.png"); ?>" width="150px">
+      <img class="imgdisdik" src="<?php echo base_url("/asset/logo_disdik_rounded.png"); ?>" width="150px">
       <link rel="stylesheet" href="">
     </div>
   </div>
   <div class="box">
     <div class="box1">
       <div class="org">
-        <img class="imgorg-center" src="<?php echo base_url("public/asset/orgx.png"); ?>" width="80px">
+        <img class="imgorg-center" src="<?php echo base_url("/asset/orgx.png"); ?>" width="80px">
         <link rel="stylesheet" href="">
       </div>
 
-      <form method="POST" action="<?= base_url('public/process') ?>">
+      <form method="POST" action="<?= base_url('/process') ?>">
         <?= csrf_field() ?>
         <div class="mb-3">
           <label for="exampleInputUsername1" class="form-label">Username</label>
