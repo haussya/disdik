@@ -27,11 +27,11 @@ class Home extends BaseController
         $dataUser = $userModel->where('username', $data)->first();
         if (!$dataUser) {
             session()->setFlashdata('pesan', 'Username tidak ditemukan');
-            return redirect()->to('/public');
+            return redirect()->to('/');
         }
         if ($password !== $dataUser['password']) {
             session()->setFlashdata('pesan', 'Password salah');
-            return redirect()->to('/public');
+            return redirect()->to('/');
         } else {
             $sessLogin = [
                 'username' => $dataUser['username'],
