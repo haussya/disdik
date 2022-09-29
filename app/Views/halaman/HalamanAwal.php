@@ -22,7 +22,7 @@
         </div>
     </nav>
 
-    <?= $this->include('layout/sidebar'); ?>
+    <?= $this->include('layouts/app'); ?>
 
     <div class="content">
         <div class="kartuall">
