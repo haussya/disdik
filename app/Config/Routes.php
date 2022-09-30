@@ -47,6 +47,14 @@ $routes->group('auth', function ($routes) {
     $routes->add('login', 'Auth::login');
 });
 
+//admin
+$routes->get('/datasiswa', 'Admin::datasiswa');
+$routes->get('/beasiswa', 'Admin::beasiswa');
+$routes->get('/do&ltm', 'Admin::do&ltm');
+$routes->get('/tabelguru', 'Admin::tabelguru');
+$routes->get('/tabelsarpras', 'Admin::tabelsarpras');
+
+
 //
 $routes->get('/sidebar', 'Login::sidebar');
 $routes->get('/dashboard', 'Login::dash');
