@@ -46,8 +46,6 @@ class Filters extends BaseConfig
         // private
         'after' => [
             'toolbar',
-            // 'honeypot',
-            // 'secureheaders',
             'adminfilter' => [
                 'except' => [
                     '/*', '/dashboard', '/auth/logout',  

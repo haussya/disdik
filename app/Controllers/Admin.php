@@ -15,10 +15,14 @@ class Admin extends BaseController
 
     public function index()
     {
+        return view('admin/dashboard', [
+            'title' => 'Dashboard'
+        ]);
     }
 
     public function datasiswa($nisn)
     {
+        return view('halaman/HalamanTabelSiswa');
     }
 
     public function beasiswa($nisn)
@@ -31,9 +35,11 @@ class Admin extends BaseController
 
     public function tabelguru()
     {
+        return view('Halaman/HalamanTabelGuru');
     }
 
     public function tabelsarpras()
     {
+        return view('Halaman/HalamanTabelSarpras');
     }
 }
