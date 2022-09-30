@@ -11,7 +11,7 @@
       </div>
       <div class="text">
         <p class="tulisankartu">DATA SISWA</p>
-        <a class="link" href="<?= base_url("/InputSiswaSD"); ?>">Lihat Lebih Lanjut</a>
+        <a class="link" href="<?= base_url("/datasiswa"); ?>">Lihat Lebih Lanjut</a>
       </div>
     </div>
     <div class="kartusiswa">
@@ -20,7 +20,7 @@
       </div>
       <div class="text">
         <p class="tulisankartu">BEASISWA</p>
-        <a class="link" href="<?= base_url("/InputSiswaSD"); ?>">Lihat Lebih Lanjut</a>
+        <a class="link" href="<?= base_url("/beasiswa"); ?>">Lihat Lebih Lanjut</a>
       </div>
     </div>
     <div class="kartusiswa">
@@ -29,7 +29,7 @@
       </div>
       <div class="text">
         <p class="tulisankartu">DO & LTM</p>
-        <a class="link" href="<?= base_url("/InputSiswaSD"); ?>">Lihat Lebih Lanjut</a>
+        <a class="link" href="<?= base_url("/do&ltm"); ?>">Lihat Lebih Lanjut</a>
       </div>
     </div>
     <div class="kartuguru">
