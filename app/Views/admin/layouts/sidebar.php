@@ -5,6 +5,8 @@ $uri2 = $uri[2] ?? '';
 $uri3 = $uri[3] ?? '';
 ?>
 
+
+
 <div id="sidebar" class="active">
     <div class="sidebar-wrapper active">
         <div class="sidebar-header">
@@ -23,11 +25,24 @@ $uri3 = $uri[3] ?? '';
                     </a>
                 </li>
 
-                <li class="sidebar-item <?= ($uri1 == 'siswa') ? 'active' : '' ?> ">
-                    <a href="/admin/siswa" class='sidebar-link'>
-                        <i class="bi bi-laptop-fill"></i>
+               
+                <li class="sidebar-item <?= ($uri1 == 'components') ? 'active' : '' ?> has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-stack"></i>
                         <span>Siswa</span>
                     </a>
+                    <ul class="submenu <?= ($uri1 == 'Siswa') ? 'active' : '' ?>">
+                        <li class="submenu-item <?= ($uri2 == 'alert') ? 'active' : '' ?>">
+                            <a href="/mazer/components/alert">Data Siswa</a>
+                        </li>
+                        <li class="submenu-item <?= ($uri2 == 'badge') ? 'active' : '' ?>">
+                            <a href="/mazer/components/badge">Beasiswa</a>
+                        </li>
+                        <li class="submenu-item <?= ($uri2 == 'breadcrumb') ? 'active' : '' ?>">
+                            <a href="/mazer/components/breadcrumb">DO & LTM</a>
+                        </li>
+                 
+                    </ul>
                 </li>
 
                 <li class="sidebar-item <?= ($uri1 == 'guru') ? 'active' : '' ?> ">
