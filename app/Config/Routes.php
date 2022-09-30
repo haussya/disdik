@@ -45,6 +45,7 @@ $routes->add('/auth/(:any)', 'Home::$1');
 $routes->group('auth', function ($routes) {
     $routes->post('process', 'Auth::process');
     $routes->add('login', 'Auth::login');
+    $routes->get('tabelsiswa', 'Login::tabelsiswa');
 });
 
 //admin
@@ -60,7 +61,6 @@ $routes->get('/tabelsarpras', 'Admin::tabelsarpras');
 $routes->get('/sidebar', 'Login::sidebar');
 $routes->get('/dashboard', 'Login::dash');
 $routes->get('/input', 'Login::input');
-$routes->get('/tabelsiswa', 'Login::tabelsiswa');
 $routes->get('/tabelguru', 'Login::tabelguru');
 $routes->get('/tabelsarpras', 'Login::tabelsarpras');
 $routes->get('/InputSiswaSD', 'InputSiswaSD::index');

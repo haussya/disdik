@@ -50,7 +50,7 @@ class Filters extends BaseConfig
             // 'secureheaders',
             'adminfilter' => [
                 'except' => [
-                    '/', '/dashboard', '/auth/logout',
+                    '/*', '/dashboard', '/auth/logout',  
                 ]
             ],
         ],

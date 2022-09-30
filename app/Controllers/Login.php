@@ -34,6 +34,7 @@ class Login extends BaseController
 
     public function tabelsiswa()
     {
+        dd('kontol');
         return view('halaman/HalamanTabelSiswa');
     }
 
