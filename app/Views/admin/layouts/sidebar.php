@@ -26,34 +26,34 @@ $uri3 = $uri[3] ?? '';
                 </li>
 
                
-                <li class="sidebar-item <?= ($uri1 == 'components') ? 'active' : '' ?> has-sub">
-                    <a href="#" class='sidebar-link'>
+                <li class="sidebar-item <?= ($uri1 == 'siswa') ? 'active' : '' ?> has-sub">
+                    <a href="/datasiswa" class='sidebar-link'>
                         <i class="bi bi-stack"></i>
                         <span>Siswa</span>
                     </a>
-                    <ul class="submenu <?= ($uri1 == 'Siswa') ? 'active' : '' ?>">
-                        <li class="submenu-item <?= ($uri2 == 'alert') ? 'active' : '' ?>">
-                            <a href="/mazer/components/alert">Data Siswa</a>
+                    <ul class="submenu <?= ($uri1 == 'siswa') ? 'active' : '' ?>">
+                        <li class="submenu-item <?= ($uri2 == 'datasiswa') ? 'active' : '' ?>">
+                            <a href="/datasiswa">Data Siswa</a>
                         </li>
-                        <li class="submenu-item <?= ($uri2 == 'badge') ? 'active' : '' ?>">
-                            <a href="/mazer/components/badge">Beasiswa</a>
+                        <li class="submenu-item <?= ($uri2 == 'beasiswa') ? 'active' : '' ?>">
+                            <a href="/beasiswa">Beasiswa</a>
                         </li>
-                        <li class="submenu-item <?= ($uri2 == 'breadcrumb') ? 'active' : '' ?>">
-                            <a href="/mazer/components/breadcrumb">DO & LTM</a>
+                        <li class="submenu-item <?= ($uri2 == 'doltm') ? 'active' : '' ?>">
+                            <a href="/doltm">DO & LTM</a>
                         </li>
                  
                     </ul>
                 </li>
 
                 <li class="sidebar-item <?= ($uri1 == 'guru') ? 'active' : '' ?> ">
-                    <a href="/admin/guru" class='sidebar-link'>
+                    <a href="/tabelguru" class='sidebar-link'>
                         <i class="bi bi-cart-fill"></i>
                         <span>Guru</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item <?= ($uri1 == 'sarpras') ? 'active' : '' ?> ">
-                    <a href="/admin/sarpras" class='sidebar-link'>
+                    <a href="/tabelsarpras" class='sidebar-link'>
                         <i class="bi bi-person-fill"></i>
                         <span>Sarpras</span>
                     </a>
