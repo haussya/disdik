@@ -10,7 +10,7 @@
         <img class="imgcard-center" src="<?= base_url("/asset/gambar_siswa.png"); ?>">
       </div>
       <div class="text">
-        <p class="tulisankartu">DATA SISWA</p>
+        <p class="tulisankartu">Data Siswa</p>
         <a class="link" href="<?= base_url("/datasiswa"); ?>">Lihat Lebih Lanjut</a>
       </div>
     </div>
@@ -19,7 +19,7 @@
         <img class="imgcard-center" src="<?= base_url("/asset/gambar_beasiswa.png"); ?>">
       </div>
       <div class="text">
-        <p class="tulisankartu">BEASISWA</p>
+        <p class="tulisankartu">Beasiswa</p>
         <a class="link" href="<?= base_url("/beasiswa"); ?>">Lihat Lebih Lanjut</a>
       </div>
     </div>
@@ -37,7 +37,7 @@
         <img class="imgcard-center" src="<?= base_url("/asset/gambar_guru.png"); ?>">
       </div>
       <div class="text">
-        <p class="tulisankartu">GURU</p>
+        <p class="tulisankartu">Guru</p>
         <a class="link" href="<?= base_url("/tabelguru"); ?>">Lihat Lebih Lanjut</a>
       </div>
     </div>
@@ -46,7 +46,7 @@
         <img class="imgcard-center" src="<?php echo base_url("/asset/gambar_sarpras.png"); ?>">
       </div>
       <div class="text">
-        <p class="tulisankartu">SARPRAS</p>
+        <p class="tulisankartu">Sarpras</p>
         <a class="link" href="<?= base_url("/tabelsarpras"); ?>">Lihat Lebih Lanjut</a>
       </div>
     </div>
