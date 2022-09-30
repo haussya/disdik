@@ -10,7 +10,25 @@
         <img class="imgcard-center" src="<?= base_url("/asset/gambar_siswa.png"); ?>">
       </div>
       <div class="text">
-        <p class="tulisankartu">SISWA</p>
+        <p class="tulisankartu">DATA SISWA</p>
+        <a class="link" href="<?= base_url("/InputSiswaSD"); ?>">Lihat Lebih Lanjut</a>
+      </div>
+    </div>
+    <div class="kartusiswa">
+      <div class="fotokartu">
+        <img class="imgcard-center" src="<?= base_url("/asset/gambar_siswa.png"); ?>">
+      </div>
+      <div class="text">
+        <p class="tulisankartu">BEASISWA</p>
+        <a class="link" href="<?= base_url("/InputSiswaSD"); ?>">Lihat Lebih Lanjut</a>
+      </div>
+    </div>
+    <div class="kartusiswa">
+      <div class="fotokartu">
+        <img class="imgcard-center" src="<?= base_url("/asset/gambar_siswa.png"); ?>">
+      </div>
+      <div class="text">
+        <p class="tulisankartu">DO & LTM</p>
         <a class="link" href="<?= base_url("/InputSiswaSD"); ?>">Lihat Lebih Lanjut</a>
       </div>
     </div>
@@ -29,7 +47,7 @@
       </div>
       <div class="text">
         <p class="tulisankartu">SARPRAS</p>
-        <a class="link" href="http://localhost/disdik//tabelsarpras">Lihat Lebih Lanjut</a>
+        <a class="link" href="<?= base_url("/tabelsarpras"); ?>">Lihat Lebih Lanjut</a>
       </div>
     </div>
   </div>

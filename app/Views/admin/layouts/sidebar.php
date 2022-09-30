@@ -10,7 +10,7 @@ $uri3 = $uri[3] ?? '';
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="index.html"><img src="/assets/images/logo/logo.png" alt="Logo" srcset=""></a>
+                    <a href="/dashboard"><img src="/asset/logo_disdik_rounded.png" alt="Logo" srcset=""></a>
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -20,39 +20,32 @@ $uri3 = $uri[3] ?? '';
         <div class="sidebar-menu">
             <ul class="menu">
                 <li class="sidebar-item <?= ($uri1 == 'index') ? 'active' : '' ?> ">
-                    <a href="/admin" class='sidebar-link'>
+                    <a href="/dashboard" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item <?= ($uri1 == 'product') ? 'active' : '' ?> ">
-                    <a href="/admin/product" class='sidebar-link'>
+                <li class="sidebar-item <?= ($uri1 == 'siswa') ? 'active' : '' ?> ">
+                    <a href="/admin/siswa" class='sidebar-link'>
                         <i class="bi bi-laptop-fill"></i>
-                        <span>Products</span>
+                        <span>Siswa</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item <?= ($uri1 == 'transaction') ? 'active' : '' ?> ">
-                    <a href="/admin/transaction" class='sidebar-link'>
+                <li class="sidebar-item <?= ($uri1 == 'guru') ? 'active' : '' ?> ">
+                    <a href="/admin/guru" class='sidebar-link'>
                         <i class="bi bi-cart-fill"></i>
-                        <span>Transactions</span>
+                        <span>Guru</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item <?= ($uri1 == 'user') ? 'active' : '' ?> ">
-                    <a href="/admin/user" class='sidebar-link'>
+                <li class="sidebar-item <?= ($uri1 == 'sarpras') ? 'active' : '' ?> ">
+                    <a href="/admin/sarpras" class='sidebar-link'>
                         <i class="bi bi-person-fill"></i>
-                        <span>Users</span>
+                        <span>Sarpras</span>
                     </a>
                 </li>
-
-                <!-- <li class="sidebar-item <?= ($uri1 == 'product') ? 'active' : '' ?> ">
-                    <a href="/admin/user" class='sidebar-link'>
-                        <i class="bi bi-user-fill"></i>
-                        <span>User</span>
-                    </a>
-                </li> -->
             </ul>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
