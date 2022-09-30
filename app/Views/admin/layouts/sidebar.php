@@ -12,9 +12,6 @@ $uri3 = $uri[3] ?? '';
                 <div class="logo">
                     <a href="/dashboard"><img src="/asset/logo_disdik_rounded.png" alt="Logo" srcset=""></a>
                 </div>
-                <div class="toggler">
-                    <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
-                </div>
             </div>
         </div>
         <div class="sidebar-menu">
