@@ -20,7 +20,7 @@ class Admin extends BaseController
         ]);
     }
 
-    public function datasiswa($nisn)
+    public function datasiswa()
     {
         return view('halaman/HalamanTabelSiswa');
     }
