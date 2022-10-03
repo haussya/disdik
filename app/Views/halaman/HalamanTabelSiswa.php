@@ -139,129 +139,88 @@
 <body>
     <?= $this->extend('admin/layouts/app') ?>
     <?= $this->section('content') ?>
-    
-    <div class="wrapper">
-        <div class="ddsekolah">
-            <select class="form-select" aria-label="Default select example">
-                <option selected dis>Sekolah</option>
-                <option value="SDN2LUB">SD NEGERI 2 LANDASAN ULIN BARAT</option>
-                <option value="SDN1LUU">SD NEGERI 1 LANDASAN ULIN UTARA</option>
-                <option value="SDN1LUT">SD NEGERI 1 LANDASAN ULIN TENGAH</option>
-                <option value="SDN1LUS">SD NEGERI 1 LANDASAN ULIN SELATAN</option>
-                <option value="SDN1LUB">SD NEGERI 1 LANDASAN ULIN BARAT</option>
-                <option value="SDN3LUB">SD NEGERI 3 LANDASAN ULIN BARAT</option>
-            </select>
-        </div>
-        
 
-        <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Table without outer spacing</h4>
+
+
+
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Data Siswa</h4>
+            </div>
+
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="ddsekolah d-flex margin-right" style="padding-left: 10px; padding-right: 30px;">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected dis>Sekolah</option>
+                            <option value="SDN2LUB">SD NEGERI 2 LANDASAN ULIN BARAT</option>
+                            <option value="SDN1LUU">SD NEGERI 1 LANDASAN ULIN UTARA</option>
+                            <option value="SDN1LUT">SD NEGERI 1 LANDASAN ULIN TENGAH</option>
+                            <option value="SDN1LUS">SD NEGERI 1 LANDASAN ULIN SELATAN</option>
+                            <option value="SDN1LUB">SD NEGERI 1 LANDASAN ULIN BARAT</option>
+                            <option value="SDN3LUB">SD NEGERI 3 LANDASAN ULIN BARAT</option>
+                        </select>
+
+                        <div class="tombol">
+                            <a href="http://localhost/disdik/public/input" class="btn btn-primary">Tambah Data</a>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            <p class="card-text">Using the most basic table up, here’s how
-                                <code>.table</code>-based tables look in Bootstrap. You can use any example
-                                of below table for your table and it can be use with any type of bootstrap tables.
-                            </p>
-                        </div>
-
-                        <!-- Table with no outer spacing -->
-                        <div class="table-responsive">
-                            <table class="table mb-0 table-lg">
-                                <thead>
-                                    <tr>
-                                        <th>NAME</th>
-                                        <th>RATE</th>
-                                        <th>SKILL</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-bold-500">Michael Right</td>
-                                        <td>$15/hr</td>
-                                        <td class="text-bold-500">UI/UX</td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="text-bold-500">Morgan Vanblum</td>
-                                        <td>$13/hr</td>
-                                        <td class="text-bold-500">Graphic concepts</td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="text-bold-500">Tiffani Blogz</td>
-                                        <td>$15/hr</td>
-                                        <td class="text-bold-500">Animation</td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="text-bold-500">Ashley Boul</td>
-                                        <td>$15/hr</td>
-                                        <td class="text-bold-500">Animation</td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="text-bold-500">Mikkey Mice</td>
-                                        <td>$15/hr</td>
-                                        <td class="text-bold-500">Animation</td>
-
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <!-- Table with no outer spacing -->
+                    <div class="table-responsive">
+                        <table class="table mb-0 table-lg">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">NISN</th>
+                                    <th scope="col">Nama</th>
+                                    <th scope="col">Kelamin</th>
+                                    <th scope="col">Tanggal Lahir</th>
+                                    <th scope="col">Tingkatan</th>
+                                    <th scope="col">Domisili</th>
+                                    <th scope="col">nama Orangtua</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Keterangan</th>
+                                    <th scope="col">Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $no = 1 ?>
+                                <?php foreach ($dataSiswaSD as $sd) : ?>
+                                <tr>
+                                    <td><?= $no ?></td>
+                                    <td><?= $sd['nisn']; ?></td>
+                                    <td><?= $sd['nama']; ?></td>
+                                    <td><?= $sd['kelamin']; ?></td>
+                                    <td><?= $sd['tanggal_lahir']; ?></td>
+                                    <td><?= $sd['tingkat']; ?></td>
+                                    <td><?= $sd['domisili_id']; ?></td>
+                                    <td><?= $sd['nama_ibu']; ?></td>
+                                    <td><?= $sd['status']; ?></td>
+                                    <td><?= $sd['keterangan']; ?></td>
+                                    <td>
+                                        <box-icon name='edit'></box-icon>
+                                    </td>
+                                </tr>
+                                <?php $no++ ?>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>    
                     </div>
                 </div>
             </div>
+        </div>
 
         <div class="content">
 
 
-            <div class="tombol">
-                <a href="http://localhost/disdik/public/input" class="btn btn-primary">Tambah Data</a>
-            </div>
+
 
             <div class="a">
                 <p class="headline">TABEL DATA SISWA</p>
                 <div class="bo">
                     <table class="table table-info">
-                        <thead>
-                            <tr>
-                                <th scope="col">No.</th>
-                                <th scope="col">NISN</th>
-                                <th scope="col">Nama</th>
-                                <th scope="col">Kelamin</th>
-                                <th scope="col">Tanggal Lahir</th>
-                                <th scope="col">Tingkatan</th>
-                                <th scope="col">Domisili</th>
-                                <th scope="col">nama Orangtua</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Keterangan</th>
-                                <th scope="col">Edit</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $no = 1 ?>
-                            <?php foreach ($dataSiswaSD as $sd) : ?>
-                            <tr>
-                                <td><?= $no ?></td>
-                                <td><?= $sd['nisn']; ?></td>
-                                <td><?= $sd['nama']; ?></td>
-                                <td><?= $sd['kelamin']; ?></td>
-                                <td><?= $sd['tanggal_lahir']; ?></td>
-                                <td><?= $sd['tingkat']; ?></td>
-                                <td><?= $sd['domisili_id']; ?></td>
-                                <td><?= $sd['nama_ibu']; ?></td>
-                                <td><?= $sd['status']; ?></td>
-                                <td><?= $sd['keterangan']; ?></td>
-                                <td>
-                                    <box-icon name='edit'></box-icon>
-                                </td>
-                            </tr>
-                            <?php $no++ ?>
-                            <?php endforeach; ?>
-                        </tbody>
+
                     </table>
                 </div>
             </div>
