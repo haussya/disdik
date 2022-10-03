@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Domisili;
+use App\Models\DataSiswaSD;
 
 class Admin extends BaseController
 {
@@ -20,9 +21,12 @@ class Admin extends BaseController
         ]);
     }
 
-    public function datasiswa($nisn)
+    public function datasiswa()
     {
-        return view('halaman/HalamanTabelSiswa');
+        $dataSiswaSD = new DataSiswaSD();
+        $data['dataSiswaSD'] = $dataSiswaSD->hitungDataSiswaSD();
+
+        return view('halaman/HalamanTabelSiswa', $data);
     }
 
     public function beasiswa($nisn)
