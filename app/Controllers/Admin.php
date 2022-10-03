@@ -25,6 +25,7 @@ class Admin extends BaseController
     {
         $dataSiswaSD = new DataSiswaSD();
         $data['dataSiswaSD'] = $dataSiswaSD->hitungDataSiswaSD();
+        $data['title'] =  'Datasiswa';
 
         return view('halaman/HalamanTabelSiswa', $data);
     }
