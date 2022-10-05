@@ -27,7 +27,7 @@ class Admin extends BaseController
         $data['dataSiswaSD'] = $dataSiswaSD->hitungDataSiswaSD();
         $data['title'] =  'Datasiswa';
 
-        return view('halaman/HalamanTabelSiswa', $data);
+        return view('admin/halaman/HalamanTabelSiswa', $data);
     }
 
     public function beasiswa($nisn)

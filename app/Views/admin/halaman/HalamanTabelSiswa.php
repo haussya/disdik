@@ -146,7 +146,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Data Siswa</h4>
+                <h3 class="card-title">Data Siswa</h3>
             </div>
 
             <div class="card-content">
@@ -163,7 +163,7 @@
                         </select>
 
                         <div class="tombol">
-                            <a href="http://localhost/disdik/public/input" class="btn btn-primary">Tambah Data</a>
+                            <a href="http://localhost/disdik/public/input" class="btn btn-primary">Tambah Data</a>  
                         </div>
                     </div>
                     <!-- Table with no outer spacing -->
