@@ -47,6 +47,11 @@ $routes->group('auth', function ($routes) {
     $routes->add('login', 'Auth::login');
 });
 
+$routes->group('user', function ($routes) {
+    $routes->post('process', 'user::process');
+    $routes->add('login', 'user::login');
+});
+
 //admin
 $routes->get('/dashboard', 'Admin::index');
 $routes->get('/datasiswa', 'Admin::datasiswa');
@@ -54,6 +59,14 @@ $routes->get('/beasiswa', 'Admin::beasiswa');
 $routes->get('/doltm', 'Admin::doltm');
 $routes->get('/tabelguru', 'Admin::tabelguru');
 $routes->get('/tabelsarpras', 'Admin::tabelsarpras');
+
+//user
+$routes->get('/dashboard', 'user::index');
+$routes->get('/datasiswa', 'user::datasiswa');
+$routes->get('/beasiswa', 'user::beasiswa');
+$routes->get('/doltm', 'user::doltm');
+$routes->get('/tabelguru', 'user::tabelguru');
+$routes->get('/tabelsarpras', 'user::tabelsarpras');
 
 /*
  * --------------------------------------------------------------------
