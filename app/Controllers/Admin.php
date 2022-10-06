@@ -27,10 +27,10 @@ class Admin extends BaseController
         $data['dataSiswaSD'] = $dataSiswaSD->hitungDataSiswaSD();
         $data['title'] =  'Datasiswa';
 
-        return view('admin/halaman/HalamanTabelSiswa', $data);
+        return view('admin/HalamanTabelSiswa', $data);
     }
 
-    public function beasiswa($nisn)
+    public function beasiswa()
     {
     }
 

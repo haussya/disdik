@@ -161,10 +161,6 @@
                             <option value="SDN1LUB">SD NEGERI 1 LANDASAN ULIN BARAT</option>
                             <option value="SDN3LUB">SD NEGERI 3 LANDASAN ULIN BARAT</option>
                         </select>
-
-                        <div class="tombol">
-                            <a href="http://localhost/disdik/public/input" class="btn btn-primary">Tambah Data</a>  
-                        </div>
                     </div>
                     <!-- Table with no outer spacing -->
                     <div class="table-responsive">
