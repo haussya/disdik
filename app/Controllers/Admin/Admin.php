@@ -7,13 +7,6 @@ use App\Models\DataSiswaSD;
 
 class Admin extends BaseController
 {
-    protected $Domisili;
-
-    public function __construct()
-    {
-        $this->Domisili = new Domisili();
-    }
-
     public function index()
     {
         return view('admin/dashboard', [

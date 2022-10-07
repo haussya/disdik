@@ -9,7 +9,10 @@ class Auth extends BaseController
 {
   public function login()
   {
-    return view('halaman/login');
+    return view('halaman/login', [
+      'title' => 'Login',
+      'validation' => \Config\Services::validation()
+    ]);
   }
 
   public function logout()
@@ -22,7 +25,7 @@ class Auth extends BaseController
   public function process()
   {
     $userModel = new UserModel();
-    
+
     $data = $this->request->getVar('username');
     $password = sha1($this->request->getVar('password'));
     $dataUser = $userModel->where('username', $data)->first();
@@ -34,12 +37,17 @@ class Auth extends BaseController
       session()->setFlashdata('pesan', 'Password salah');
       return redirect()->to('/');
     } else {
-      $sessLogin = [
+      session()->set([
+        'user_id' => $dataUser['user_id'],
         'username' => $dataUser['username'],
         'role' => $dataUser['role']
-      ];
-      session()->set($sessLogin);
-      return redirect()->to('/dashboard');
+      ]);
+
+      if ($dataUser['role'] == 'admin') {
+        return redirect()->to('/admin');
+      }
+
+      return redirect()->to('/user');
     }
   }
 }

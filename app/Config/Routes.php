@@ -37,19 +37,15 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 
 $routes->add('/', 'Home::index');
-
-//login
 $routes->add('/process', 'Auth::process');
 $routes->add('/auth/(:any)', 'Auth::$1');
 
-$routes->group('auth', function ($routes) {
-    $routes->post('process', 'Auth::process');
-    $routes->add('login', 'Auth::login');
+$routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($routes) {
+    $routes->get('/', 'Admin::index');
 });
 
-$routes->group('user', function ($routes) {
-    $routes->post('process', 'user::process');
-    $routes->add('login', 'user::login');
+$routes->group('user', ['namespace' => 'App\Controllers\User'], function ($routes) {
+    $routes->get('/', 'User::index');
 });
 
 //admin
