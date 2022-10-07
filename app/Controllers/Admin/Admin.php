@@ -1,43 +1,15 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 
-use App\Models\Domisili;
-use App\Models\DataSiswaSD;
+use App\Controllers\BaseController;
 
 class Admin extends BaseController
 {
     public function index()
     {
-        return view('admin/dashboard', [
-            'title' => 'Dashboard'
-        ]);
-    }
+        $title = 'Dashboard';
 
-    public function datasiswa()
-    {
-        $dataSiswaSD = new DataSiswaSD();
-        $data['dataSiswaSD'] = $dataSiswaSD->hitungDataSiswaSD();
-        $data['title'] =  'Datasiswa';
-
-        return view('admin/HalamanTabelSiswa', $data);
-    }
-
-    public function beasiswa()
-    {
-    }
-
-    public function doltm($nisn)
-    {
-    }
-
-    public function tabelguru()
-    {
-        return view('Halaman/HalamanTabelGuru');
-    }
-
-    public function tabelsarpras()
-    {
-        return view('Halaman/HalamanTabelSarpras');
+        return view('admin/dashboard', compact('title'));
     }
 }

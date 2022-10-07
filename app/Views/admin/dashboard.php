@@ -51,21 +51,21 @@
       </div>
     </div>
   </div>
-  
+
 </div>
 <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Radial Gradient Chart</h4>
-                    </div>
-                    <div class="card-body">
-                        <div id="candle"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h4>Radial Gradient Chart</h4>
+      </div>
+      <div class="card-body">
+        <div id="candle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 
 
 <?= $this->endSection() ?>

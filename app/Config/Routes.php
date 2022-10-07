@@ -42,27 +42,41 @@ $routes->add('/auth/(:any)', 'Auth::$1');
 
 $routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($routes) {
     $routes->get('/', 'Admin::index');
+
+    $routes->group('datasiswaSD', function ($routes) {
+        $routes->get('index', 'DatasiswaSD::index');
+        $routes->get('edit', 'DatasiswaSD::edit');
+        $routes->post('update', 'DatasiswaSD::update');
+        $routes->get('hapus', 'DatasiswaSD::hapus');
+    });
 });
 
 $routes->group('user', ['namespace' => 'App\Controllers\User'], function ($routes) {
     $routes->get('/', 'User::index');
+
+    $routes->group('datasiswaSD', function ($routes) {
+        $routes->get('/', 'DatasiswaSD::index');
+        $routes->get('edit', 'DatasiswaSD::edit');
+        $routes->post('update', 'DatasiswaSD::update');
+        $routes->get('hapus', 'DatasiswaSD::hapus');
+    });
 });
 
 //admin
-$routes->get('/dashboard', 'Admin::index');
-$routes->get('/datasiswa', 'Admin::datasiswa');
-$routes->get('/beasiswa', 'Admin::beasiswa');
-$routes->get('/doltm', 'Admin::doltm');
-$routes->get('/tabelguru', 'Admin::tabelguru');
-$routes->get('/tabelsarpras', 'Admin::tabelsarpras');
+// $routes->get('/dashboard', 'Admin::index');
+// $routes->get('/datasiswa', 'Admin::datasiswa');
+// $routes->get('/beasiswa', 'Admin::beasiswa');
+// $routes->get('/doltm', 'Admin::doltm');
+// $routes->get('/tabelguru', 'Admin::tabelguru');
+// $routes->get('/tabelsarpras', 'Admin::tabelsarpras');
 
-//user
-$routes->get('/dashboard', 'user::index');
-$routes->get('/datasiswa', 'user::datasiswa');
-$routes->get('/beasiswa', 'user::beasiswa');
-$routes->get('/doltm', 'user::doltm');
-$routes->get('/tabelguru', 'user::tabelguru');
-$routes->get('/tabelsarpras', 'user::tabelsarpras');
+// //user
+// $routes->get('/dashboard', 'user::index');
+// $routes->get('/datasiswa', 'user::datasiswa');
+// $routes->get('/beasiswa', 'user::beasiswa');
+// $routes->get('/doltm', 'user::doltm');
+// $routes->get('/tabelguru', 'user::tabelguru');
+// $routes->get('/tabelsarpras', 'user::tabelsarpras');
 
 /*
  * --------------------------------------------------------------------
