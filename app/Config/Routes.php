@@ -43,22 +43,22 @@ $routes->add('/auth/(:any)', 'Auth::$1');
 $routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($routes) {
     $routes->get('/', 'Admin::index');
 
-    $routes->group('datasiswaSD', function ($routes) {
-        $routes->get('index', 'DatasiswaSD::index');
-        $routes->get('edit', 'DatasiswaSD::edit');
-        $routes->post('update', 'DatasiswaSD::update');
-        $routes->get('hapus', 'DatasiswaSD::hapus');
+    $routes->group('datasiswasd', function ($routes) {
+        $routes->get('index', 'Datasiswasd::index');
+        $routes->get('edit', 'Datasiswasd::edit');
+        $routes->post('update', 'Datasiswasd::update');
+        $routes->get('hapus', 'Datasiswasd::hapus');
     });
 });
 
 $routes->group('user', ['namespace' => 'App\Controllers\User'], function ($routes) {
     $routes->get('/', 'User::index');
 
-    $routes->group('datasiswaSD', function ($routes) {
-        $routes->get('/', 'DatasiswaSD::index');
-        $routes->get('edit', 'DatasiswaSD::edit');
-        $routes->post('update', 'DatasiswaSD::update');
-        $routes->get('hapus', 'DatasiswaSD::hapus');
+    $routes->group('datasiswasd', function ($routes) {
+        $routes->get('/', 'Datasiswasd::index');
+        $routes->get('edit', 'Datasiswasd::edit');
+        $routes->post('update', 'Datasiswasd::update');
+        $routes->get('hapus', 'Datasiswasd::hapus');
     });
 });
 
