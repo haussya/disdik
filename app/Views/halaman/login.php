@@ -16,17 +16,17 @@
 </head>
 
 <body>
-  <img class="imgbg" src="<?php echo base_url("/asset/foto_login.png"); ?>">
+  <img class="imgbg" src="<?php echo base_url("/assets/foto_login.png"); ?>">
   <div>
     <div class="logo">
-      <img class="imgdisdik" src="<?php echo base_url("/asset/logo_disdik_rounded.png"); ?>" width="150px">
+      <img class="imgdisdik" src="<?php echo base_url("/assets/logo_disdik_rounded.png"); ?>" width="150px">
       <link rel="stylesheet" href="">
     </div>
   </div>
   <div class="box">
     <div class="box1">
       <div class="org">
-        <img class="imgorg-center" src="<?php echo base_url("/asset/orgx.png"); ?>" width="80px">
+        <img class="imgorg-center" src="<?php echo base_url("/assets/orgx.png"); ?>" width="80px">
         <link rel="stylesheet" href="">
       </div>
 

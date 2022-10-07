@@ -39,8 +39,8 @@ $routes->set404Override();
 $routes->add('/', 'Home::index');
 
 //login
-$routes->add('/process', 'Home::process');
-$routes->add('/auth/(:any)', 'Home::$1');
+$routes->add('/process', 'Auth::process');
+$routes->add('/auth/(:any)', 'Auth::$1');
 
 $routes->group('auth', function ($routes) {
     $routes->post('process', 'Auth::process');
