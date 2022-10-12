@@ -4,15 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class TingkatSD extends Model
+class TingkatSd extends Model
 {
-
-    protected $table = 'tingkat';
+    protected $table = 'tingkat_sd';
     protected $primaryKey = 'tingkat_id';
     protected $allowedFields = ['tingkat'];
 
-    public function getTingkatSD()
-    {
-        return $this->db->table("tingkat")->get()->getResultArray();
-    }
 }

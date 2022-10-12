@@ -10,6 +10,6 @@ class Admin extends BaseController
     {
         $title = 'Dashboard';
 
-        return view('admin/dashboard', compact('title'));
+        return view('admin/index', compact('title'));
     }
 }

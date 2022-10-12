@@ -10,6 +10,6 @@ class User extends BaseController
     {
         $title = 'Dashboard';
 
-        return view('user/dashboard', compact('title'));
+        return view('user/index', compact('title'));
     }
 }

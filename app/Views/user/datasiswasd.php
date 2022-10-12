@@ -1,19 +1,11 @@
-<?= $this->extend('admin/layouts/app') ?>
+<?= $this->extend('user/layouts/app') ?>
 
 <?= $this->section('content') ?>
 <div class="page-heading">
     <div class="page-title">
         <div class="row">
-            <div class="col-12 col-md-6 order-md-1 order-last">
+            <div class="d-flex justify-content-between">
                 <h3>Siswa</h3>
-            </div>
-            <div class="col-12 col-md-6 order-md-2 order-first">
-                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Data Siswa</li>
-                    </ol>
-                </nav>
             </div>
             <?php if (session()->getFlashdata('pesan')) : ?>
                 <div class="alert alert-success" role="alert">
@@ -26,9 +18,9 @@
         <div class="card">
             <div class="card-header d-flex align-items-center justify-content-between">
                 <h4>Data Siswa</h4>
-                <a href="/admin/datasiswasd/tambah">
+                <a href="/user/siswasd/tambah">
                     <button class="btn btn-primary px-3">
-                        Tambah
+                        Add
                     </button>
                 </a>
             </div>
@@ -44,8 +36,6 @@
                             <th>Domisili</th>
                             <th>Nama Ibu</th>
                             <th>Status</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,16 +51,6 @@
                                 <td><?= $row['domisili'] ?></td>
                                 <td><?= $row['nama_ibu'] ?></td>
                                 <td><?= $row['status'] ?></td>
-                                <td>
-                                    <a href="/admin/datasiswasd/edit/<?php echo $row['nisn'] ?>" class="btn btn-info">📝</a>
-                                </td>
-                                <td>
-                                    <form action="/admin/datasiswasd/hapus/<?= $row['nisn']; ?>" method="POST" class="d-inline">
-                                        <?= csrf_field(); ?>
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin');">🗑️</button>
-                                    </form>
-                                </td>
                             </tr>
                         <?php } ?>
                     </tbody>

@@ -30,27 +30,27 @@ $uri3 = $uri[3] ?? '';
                     </a>
                     <ul class="submenu <?= ($uri1 == 'siswa') ? 'active' : '' ?>">
                         <li class="submenu-item <?= ($uri2 == 'datasiswa') ? 'active' : '' ?>">
-                            <a href="/user/datasiswa">Data Siswa</a>
+                            <a href="/user/datasiswasd">Data Siswa</a>
                         </li>
                         <li class="submenu-item <?= ($uri2 == 'beasiswa') ? 'active' : '' ?>">
-                            <a href="/user/beasiswa">Beasiswa</a>
+                            <a href="/user/beasiswasd">Beasiswa</a>
                         </li>
                         <li class="submenu-item <?= ($uri2 == 'doltm') ? 'active' : '' ?>">
-                            <a href="/user/doltm">DO & LTM</a>
+                            <a href="/user/doltmsd">DO & LTM</a>
                         </li>
 
                     </ul>
                 </li>
 
                 <li class="sidebar-item <?= ($uri1 == 'guru') ? 'active' : '' ?> ">
-                    <a href="/user/guru" class='sidebar-link'>
+                    <a href="/user/gurusd" class='sidebar-link'>
                         <i class="bi bi-cart-fill"></i>
                         <span>Guru</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item <?= ($uri1 == 'sarpras') ? 'active' : '' ?> ">
-                    <a href="/user/sarpras" class='sidebar-link'>
+                    <a href="/user/sarprassd" class='sidebar-link'>
                         <i class="bi bi-person-fill"></i>
                         <span>Sarpras</span>
                     </a>

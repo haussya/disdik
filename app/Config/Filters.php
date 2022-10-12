@@ -48,7 +48,7 @@ class Filters extends BaseConfig
             'toolbar',
             'adminfilter' => [
                 'except' => [
-                    '/*', '/dashboard', '/auth/logout',  
+                    '/*', '/dashboard', '/auth/logout',
                 ]
             ],
         ],
