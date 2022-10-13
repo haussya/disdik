@@ -162,6 +162,9 @@
                             <option value="SDN3LUB">SD NEGERI 3 LANDASAN ULIN BARAT</option>
                         </select>
                     </div>
+                    <div class="buttons">
+                    <a href="#" class="btn btn-primary">Primary</a>
+                    </div>
                     <!-- Table with no outer spacing -->
                     <div class="table-responsive">
                         <table class="table mb-0 table-lg">

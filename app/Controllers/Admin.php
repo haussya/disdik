@@ -40,7 +40,11 @@ class Admin extends BaseController
 
     public function tabelguru()
     {
-        return view('Halaman/HalamanTabelGuru');
+        $dataSiswaSD = new DataSiswaSD();
+        $data['dataSiswaSD'] = $dataSiswaSD->hitungDataSiswaSD();
+        $data['title'] = 'Dataguru';
+        return view('admin/HalamanTabelGuru', $data);
+      
     }
 
     public function tabelsarpras()

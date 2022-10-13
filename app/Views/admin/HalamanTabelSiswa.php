@@ -1,142 +1,4 @@
-<!doctype html>
-<html lang="en">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>Data Siswa - Sistem Informasi Data Sekolah Dinas Pendidikan Kota Banjarbaru</title>
-
-    <!-- CSS -->
-
-    <style>
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-        position: relative;
-        min-height: 100vh;
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    nav {
-        display: flex;
-        justify-content: flex-end;
-        height: 50px;
-        width: 100vw;
-        min-width: 100vw;
-        background: #ffffff;
-        box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.25);
-        position: absolute;
-        right: 0;
-    }
-
-    .imgbg {
-        display: flex;
-        justify-content: space-between 20;
-        height: 100vh;
-        width: 100%;
-    }
-
-    .org {
-        padding-top: 12px;
-        padding-right: 12px;
-        display: flex-end;
-
-    }
-
-    .orgx {
-
-        padding-right: 15px;
-        padding-top: 12px;
-        padding-bottom: 25px;
-        border: 1px;
-    }
-
-    p {
-        font-size: 12px;
-        font-weight: bold;
-        padding-top: 7px;
-        padding-right: 20px;
-        color: #5A5B5A;
-    }
-
-    .a {
-        position: fixed;
-        height: 75%;
-        margin-top: 9%;
-        margin-left: 5%;
-        padding-left: 124px;
-
-
-    }
-
-
-    .headline {
-        font-size: 22px;
-        font-weight: bold;
-        padding-top: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 5px;
-    }
-
-    .bo {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .ddsekolah {
-        position: absolute;
-        width: 300px;
-        height: 30px;
-        margin-top: 5%;
-        margin-left: 5%;
-
-        background-color: #ffffff;
-        box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2);
-    }
-
-    .tombol {
-        display: flexbox;
-        flex-direction: column-reverse;
-        position: absolute;
-        height: 30px;
-        margin-top: 5%;
-        margin-left: 45%;
-        /* box-shadow: 0px 12px 6px -3px rgba(0, 0, 0, 0.2); */
-    }
-
-    .wrapper {
-        display: flex;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .content {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 0%;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-    </style>
-
-
-
-    <!-- boxicon -->
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-</head>
-
-<body>
     <?= $this->extend('admin/layouts/app') ?>
     <?= $this->section('content') ?>
 
@@ -161,6 +23,9 @@
                             <option value="SDN1LUB">SD NEGERI 1 LANDASAN ULIN BARAT</option>
                             <option value="SDN3LUB">SD NEGERI 3 LANDASAN ULIN BARAT</option>
                         </select>
+                    </div>
+                    <div class="buttons">
+                    <a href="#" class="btn btn-primary">Primary</a>
                     </div>
                     <!-- Table with no outer spacing -->
                     <div class="table-responsive">
@@ -225,7 +90,6 @@
     <?= $this->endSection() ?>
     <!--  
     <img class="imgbg" src="<?php echo base_url("/asset/foto_dashboard.png"); ?>"> -->
-</body>
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -239,4 +103,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
 
-</html>
