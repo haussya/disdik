@@ -22,7 +22,7 @@
 <body>
     <div id="app">
         <!-- Sidebar -->
-        <?= $this->include('admin/layouts/sidebar') ?>
+        <?= $this->include('user/layouts/sidebar') ?>
         <!-- End Sidebar -->
 
         <!-- Main -->
@@ -38,7 +38,7 @@
             <!-- End Content -->
             
             <!-- Footer -->
-            <?= $this->include('admin/layouts/footer') ?>
+            <?= $this->include('user/layouts/footer') ?>
             <!-- End Footer -->
         </div>
         <!-- End Main -->

@@ -25,7 +25,7 @@ $routes->set404Override();
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
 // Set `$autoRoutesImproved` to true in `app/Config/Feature.php` and set the following to true.
-//$routes->setAutoRoute(false);
+// $routes->setAutoRoute(false);
 
 /*
  * --------------------------------------------------------------------
@@ -35,38 +35,27 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+$routes->get('/', 'Home::index');
+$routes->add('/process', 'Auth::process');
+$routes->add('/auth/(:any)', 'Auth::$1');
 
-$routes->add('/', 'Home::index');
+$routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($routes) {
+    $routes->get('/', 'Admin::index');
 
-//login
-$routes->add('/process', 'Home::process');
-$routes->add('/auth/(:any)', 'Home::$1');
-
-$routes->group('auth', function ($routes) {
-    $routes->post('process', 'Auth::process');
-    $routes->add('login', 'Auth::login');
+    $routes->group('datasiswasd', function ($routes) {
+        $routes->get('/', 'Siswasd::index');
+        $routes->get('tambah', 'Siswasd::tambahdatasiswasd');
+        $routes->get('edit/(:num)', 'Siswasd::editdatasiswasd/$1');
+        $routes->post('simpan', 'Siswasd::simpandatasiswasd');
+        $routes->post('update/(:num)', 'Siswasd::updatedatasiswasd/$1');
+        $routes->delete('hapus/(:num)', 'Siswasd::hapusdatasiswasd/$1');
+    });
 });
 
-$routes->group('user', function ($routes) {
-    $routes->post('process', 'user::process');
-    $routes->add('login', 'user::login');
+$routes->group('user', ['namespace' => 'App\Controllers\User'], function ($routes) {
+    $routes->get('/', 'User::index');
 });
 
-//admin
-$routes->get('/dashboard', 'Admin::index');
-$routes->get('/datasiswa', 'Admin::datasiswa');
-$routes->get('/beasiswa', 'Admin::beasiswa');
-$routes->get('/doltm', 'Admin::doltm');
-$routes->get('/tabelguru', 'Admin::tabelguru');
-$routes->get('/tabelsarpras', 'Admin::tabelsarpras');
-
-//user
-$routes->get('/dashboard', 'user::index');
-$routes->get('/datasiswa', 'user::datasiswa');
-$routes->get('/beasiswa', 'user::beasiswa');
-$routes->get('/doltm', 'user::doltm');
-$routes->get('/tabelguru', 'user::tabelguru');
-$routes->get('/tabelsarpras', 'user::tabelsarpras');
 
 /*
  * --------------------------------------------------------------------
