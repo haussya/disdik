@@ -42,6 +42,12 @@ class Filters extends BaseConfig
                     '/auth', '/auth/*'
                 ]
             ],
+
+            'userfilter' => [
+                'except' => [
+                    '/auth', '/auth/*', '/auth/*'
+                ]
+            ]
         ],
         // private
         'after' => [
@@ -49,6 +55,11 @@ class Filters extends BaseConfig
             'adminfilter' => [
                 'except' => [
                     '/*', '/dashboard', '/auth/logout',
+                ]
+            ],
+            'userfilter' => [
+                'except' => [
+                    '/*', '/dashboard', '/auth/logout', 
                 ]
             ],
         ],
