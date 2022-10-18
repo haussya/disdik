@@ -54,6 +54,7 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($rou
 
 $routes->group('user', ['namespace' => 'App\Controllers\User'], function ($routes) {
     $routes->get('/', 'User::index');
+    $routes->get('/datasiswa', 'User::index');
 });
 
 

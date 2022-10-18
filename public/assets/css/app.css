@@ -362,9 +362,9 @@
   color: #479f76;
 }
 .pricing .card-highlighted .card-footer {
-  background-color: #435ebe;
-}
-.pricing .card-highlighted .card-title {
+    background-color: #435ebe;
+  }
+  .pricing .card-highlighted .card-title {
   color: #fff;
   font-size: 1.8rem;
 }
