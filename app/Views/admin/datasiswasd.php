@@ -26,11 +26,6 @@
         <div class="card">
             <div class="card-header d-flex align-items-center justify-content-between">
                 <h4>Data Siswa</h4>
-                <a href="/admin/datasiswasd/tambah">
-                    <button class="btn btn-primary px-3">
-                        Tambah
-                    </button>
-                </a>
             </div>
             <div class="card-body">
                 <table class="table table-striped" id="table1">

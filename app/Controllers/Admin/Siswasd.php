@@ -22,7 +22,7 @@ class Siswasd extends BaseController
         ]);
     }
 
-    public function tambahdatasiswasd()
+    public function tambah()
     {
         $data = [
             'title' => 'Tambah Data Siswa',
@@ -35,7 +35,7 @@ class Siswasd extends BaseController
         return view('admin/tambahdatasiswasd', $data);
     }
 
-    public function simpandatasiswasd()
+    public function simpan()
     {
         if (!$this->validate([
             'nisn' => [
@@ -83,14 +83,14 @@ class Siswasd extends BaseController
         return redirect()->to('admin/datasiswasd');
     }
 
-    public function hapusdatasiswasd($id)
+    public function hapus($id)
     {
         $this->datasiswasd->delete($id);
         session()->setFlashdata('pesan', 'Data Siswa Berhasil Dihapus.');
         return redirect()->to('admin/datasiswasd');
     }
 
-    public function editdatasiswasd($nisn)
+    public function edit($nisn)
     {
         $jumlahRecord = $this->datasiswasd->where('nisn', $nisn)->countAllResults();
 
@@ -112,7 +112,7 @@ class Siswasd extends BaseController
         }
     }
 
-    public function updatedatasiswasd($nisn)
+    public function update($nisn)
     {
         if (!$this->validate([
             'nisn' => [
