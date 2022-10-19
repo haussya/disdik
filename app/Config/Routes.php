@@ -44,18 +44,20 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($rou
 
     $routes->group('datasiswasd', function ($routes) {
         $routes->get('/', 'Siswasd::index');
-        $routes->get('tambah', 'Siswasd::tambahdatasiswasd');
-        $routes->get('edit/(:num)', 'Siswasd::editdatasiswasd/$1');
-        $routes->post('simpan', 'Siswasd::simpandatasiswasd');
-        $routes->post('update/(:num)', 'Siswasd::updatedatasiswasd/$1');
-        $routes->delete('hapus/(:num)', 'Siswasd::hapusdatasiswasd/$1');
+        $routes->get('edit/(:num)', 'Siswasd::edit/$1');
+        $routes->post('update/(:num)', 'Siswasd::update/$1');
+        $routes->delete('hapus/(:num)', 'Siswasd::hapus/$1');
     });
 });
 
 $routes->group('user', ['namespace' => 'App\Controllers\User'], function ($routes) {
     $routes->get('/', 'User::index');
-    $routes->get('/datasiswa', 'User::index');
-    $routes->get('/datasiswasd', 'User::simpan');
+
+    $routes->group('datasiswasd', function ($routes) {
+        $routes->get('/', 'Siswasd::index');
+        $routes->get('tambah', 'Siswasd::tambah');
+        $routes->post('simpan', 'Siswasd::simpan');
+    });
 });
 
 
@@ -74,4 +76,4 @@ $routes->group('user', ['namespace' => 'App\Controllers\User'], function ($route
  */
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
-}   
+}
