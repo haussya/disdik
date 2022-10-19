@@ -45,4 +45,10 @@ class DataSiswaSd extends Model
     {
         return $this->where(['nisn' => $nisn])->first();
     }
+    
+    public function getSD()
+    {
+        return $this->db->table('data_sekolah_sd')
+        ->get()->getResultArray();
+    }
 }

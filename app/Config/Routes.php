@@ -55,6 +55,7 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($rou
 $routes->group('user', ['namespace' => 'App\Controllers\User'], function ($routes) {
     $routes->get('/', 'User::index');
     $routes->get('/datasiswa', 'User::index');
+    $routes->get('/datasiswasd', 'User::simpan');
 });
 
 
@@ -73,4 +74,4 @@ $routes->group('user', ['namespace' => 'App\Controllers\User'], function ($route
  */
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
-}
+}   

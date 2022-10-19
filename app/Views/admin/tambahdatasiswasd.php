@@ -116,6 +116,19 @@
                                                 </select>
                                             </div>
                                         </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label for="status">Status</label>
+                                                <select id="status" class="form-control" name="status" required>
+                                                    <option selected disabled value="">Pilih Sekolah ...</option>
+                                                    <?php
+                                                    foreach ($sekolah as $row) {
+                                                    ?>
+                                                        <option value="<?= $row['npsn'] ?>"> <?= $row['sekolah'] ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="col-12 d-flex justify-content-end">
                                             <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                                             <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
