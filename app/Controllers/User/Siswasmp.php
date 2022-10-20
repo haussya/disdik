@@ -27,11 +27,10 @@ class Siswasmp extends BaseController
         $data = [
             'title' => 'Tambah Data Siswa',
             'validation' => \Config\Services::validation(),
-            'kelamin' => $this->datasiswasd->getKelamin(),
-            'tingkat' => $this->datasiswasd->getTingkat(),
-            'domisili' => $this->datasiswasd->getDomisili(),
-            'status' => $this->datasiswasd->getStatus(),
-            'sekolah' => $this->datasiswasd->getSD(),
+            'kelamin' => $this->datasiswasmp->getKelamin(),
+            'tingkat' => $this->datasiswasmp->getTingkat(),
+            'domisili' => $this->datasiswasmp->getDomisili(),
+            'status' => $this->datasiswasmp->getStatus(),
         ];
         return view('user/tambahdatasiswasmp', $data);
     }

@@ -31,7 +31,6 @@ class Siswasd extends BaseController
             'tingkat' => $this->datasiswasd->getTingkat(),
             'domisili' => $this->datasiswasd->getDomisili(),
             'status' => $this->datasiswasd->getStatus(),
-            'sekolah' => $this->datasiswasd->getSD(),
         ];
         return view('user/tambahdatasiswasd', $data);
     }
