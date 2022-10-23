@@ -103,7 +103,7 @@ class Beasiswasd extends BaseController
 
             $dataEdit = [
                 'dataEdit' => $this->beasiswasd->getOne($nisn),
-                'title' => "Edit Anime",
+                'title' => "Edit Data Beasiswa",
                 'validation' => \Config\Services::validation(),
                 'kelamin' => $this->beasiswasd->getKelamin(),
                 'tingkat' => $this->beasiswasd->getTingkat(),

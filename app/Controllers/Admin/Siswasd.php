@@ -98,7 +98,7 @@ class Siswasd extends BaseController
 
             $dataEdit = [
                 'dataEdit' => $this->datasiswasd->getOne($nisn),
-                'title' => "Edit Anime",
+                'title' => "Edit Data Siswa",
                 'validation' => \Config\Services::validation(),
                 'kelamin' => $this->datasiswasd->getKelamin(),
                 'tingkat' => $this->datasiswasd->getTingkat(),

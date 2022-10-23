@@ -44,8 +44,6 @@
                             <th>Domisili</th>
                             <th>Nama Ibu</th>
                             <th>Keterangan Beasiswa</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,16 +59,6 @@
                                 <td><?= $row['domisili'] ?></td>
                                 <td><?= $row['nama_ibu'] ?></td>
                                 <td><?= $row['keterangan'] ?></td>
-                                <td>
-                                    <a href="/user/beasiswasd/edit/<?php echo $row['nisn'] ?>" class="btn btn-info">📝</a>
-                                </td>
-                                <td>
-                                    <form action="/user/beasiswasd/hapus/<?= $row['nisn']; ?>" method="POST" class="d-inline">
-                                        <?= csrf_field(); ?>
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin');">🗑️</button>
-                                    </form>
-                                </td>
                             </tr>
                         <?php } ?>
                     </tbody>
