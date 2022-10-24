@@ -4,21 +4,26 @@ namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
 use App\Models\DataSiswaSd;
+use App\Models\Keterangan;
+use App\Models\DataSekolah;
+use App\Models\DataSiswa;
 
-class Siswasd extends BaseController
+class Siswa extends BaseController
 {
-    protected $datasiswasd;
+    protected $datasiswa;
+    protected $keterangan;
 
     public function __construct()
     {
-        $this->datasiswasd = new DataSiswaSd();
+        $this->datasiswa = new DataSiswa();
+        $this->keterangan = new Keterangan();
     }
 
     public function index()
     {
         return view('user/datasiswasd', [
             'title'        => 'Data Siswa',
-            'datasiswasd' => $this->datasiswasd->getSiswaSD()
+            'datasiswa' => $this->datasiswa->getSiswa()
         ]);
     }
 
@@ -27,10 +32,8 @@ class Siswasd extends BaseController
         $data = [
             'title' => 'Tambah Data Siswa',
             'validation' => \Config\Services::validation(),
-            'kelamin' => $this->datasiswasd->getKelamin(),
-            'tingkat' => $this->datasiswasd->getTingkat(),
-            'domisili' => $this->datasiswasd->getDomisili(),
-            'status' => $this->datasiswasd->getStatus(),
+            'domisili' => $this->datasiswa->getDomisili(),
+            'status' => $this->datasiswa->getStatus(),
         ];
         return view('user/tambahdatasiswasd', $data);
     }
@@ -63,24 +66,44 @@ class Siswasd extends BaseController
                 'errors' => [
                     'required' => 'Nama Ibu Kandung Wajib Diisi'
                 ]
+            ],
+            'tingkat' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'tingkat wajib diisi'
+                ]
             ]
         ])) {
             return redirect()->back()->withInput();
         }
 
+        $sekolah = new DataSekolah();
         $dataSimpan = [
             'nisn' => $this->request->getVar('nisn'),
             'nama' => $this->request->getVar('nama'),
-            'kelamin_id' => $this->request->getVar('kelamin'),
+            'kelamin' => $this->request->getVar('kelamin'),
             'tanggal_lahir' => $this->request->getVar('tanggal_lahir'),
-            'tingkat_id' => $this->request->getVar('tingkat'),
+            'tingkat' => $this->request->getVar('tingkat'),
             'domisili_id' => $this->request->getVar('domisili'),
             'nama_ibu' => $this->request->getVar('nama_ibu'),
-            'status_id' => $this->request->getVar('status')
+            'status_id' => $this->request->getVar('status'),
+            'id_sekolah'=> $sekolah->getByUser(session('user_id'))['id_sekolah']
         ];
-        $this->datasiswasd->insert($dataSimpan);
+   
+        $id = $this->datasiswa->insert($dataSimpan,true);
+       
+        if($this->request->getVar('isDO')){
+            $dataDO = [
+                'faktor' => $this->request->getVar('faktor'),
+                'alasan_tidak_melanjutkan' =>$this->request->getVar('alasan_tidak_melanjutkan'),
+                'rencana_melanjutkan'=>$this->request->getVar('rencana_melanjutkan'),
+                'id_siswa'=>$id 
+            ];
+            $this->keterangan->insert($dataDO);
+        }
+        
         session()->setFlashdata('pesan', 'Data Siswa Berhasil Ditambah.');
-        return redirect()->to('user/datasiswasd');
+        return redirect()->to('user/datasiswa');
     }
 
     public function hapus($id)
@@ -144,7 +167,7 @@ class Siswasd extends BaseController
         ])) {
             return redirect()->back()->withInput();
         }
-        $datasiswasd = new DataSiswaSd();
+        $datasiswasd = new DataSiswa();
         $datasiswasd->update($nisn, [
             'nisn' => $this->request->getVar('nisn'),
             'nama' => $this->request->getVar('nama'),

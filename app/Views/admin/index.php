@@ -177,55 +177,48 @@
                     <div class="card-header">
                         <h4>Chart Jumlah Siswa</h4>
                     </div>
-                    <div class="card-body">
+                    <!-- <div class="card-body">
                         <div id="chart-profile-visit"></div>
-                    </div>
+                    </div> -->
+                    <canvas id="datamurid" width="400" height="100" aria-label="Hello ARIA World" role="img"></canvas>
                 </div>
             </div>
         </div>
 
     </section>
 </div>
-
 <script>
-        var datasiswa = document.getElementById('datasiswa').getContext('2d');
+var datasiswa = document.getElementById("datamurid").getContext('2d');
+var suratDashboard = new Chart(suratdashboard, {
+        type: 'pie',
+        data: {
+            labels: [
+                'Siswa Lulus Melanjutkan',
+                'Siswa Lulus Tidak Melanjutkan',
+                'Siswa DO'
+                
+            ],
+            datasets: [{
+                label: 'Surat',
+                data: [<?php echo $jumlahSuratMasuk ?>, <?php echo $jumlahSuratKeluar ?>,
+                    <?php echo $jumlahSuratTugas ?>
+                ],
+                backgroundColor: [
+                    '<?php echo $suratMasukWrn ?>',
+                    '<?php echo $suratKeluarWrn ?>',
+                    '<?php echo $suratTugasWrn ?>'
+                ],
+                hoverOffset: 4
+            }]
+        }
+    }
+
+);
+</script>
 
 
-        var arsipDokumen = new Chart(datasiswa, {
-            type: 'bar',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
+
+
 
 <?= $this->endSection() ?>
 

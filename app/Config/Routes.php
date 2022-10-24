@@ -116,10 +116,10 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($rou
 $routes->group('user', ['namespace' => 'App\Controllers\User'], function ($routes) {
     $routes->get('/', 'User::index');
 
-    $routes->group('datasiswasd', function ($routes) {
-        $routes->get('/', 'Siswasd::index');
-        $routes->get('tambah', 'Siswasd::tambah');
-        $routes->post('simpan', 'Siswasd::simpan');
+    $routes->group('datasiswa', function ($routes) {
+        $routes->get('/', 'Siswa::index');
+        $routes->get('tambah', 'Siswa::tambah');
+        $routes->post('simpan', 'Siswa::simpan');
     });
 
     $routes->group('datasiswasmp', function ($routes) {

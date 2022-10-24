@@ -26,7 +26,7 @@
         <div class="card">
             <div class="card-header d-flex align-items-center justify-content-between">
                 <h4>Data Siswa</h4>
-                <a href="/user/datasiswasd/tambah">
+                <a href="/user/datasiswa/tambah">
                     <button class="btn btn-primary px-3">
                         Tambah
                     </button>
@@ -48,7 +48,7 @@
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($datasiswasd as $row) {
+                        foreach ($datasiswa as $row) {
                         ?>
                             <tr>
                                 <td><?= $row['nisn'] ?> </td>
