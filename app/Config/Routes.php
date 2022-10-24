@@ -175,6 +175,12 @@ $routes->group('user', ['namespace' => 'App\Controllers\User'], function ($route
         $routes->get('tambah', 'Sarprassmp::tambah');
         $routes->post('simpan', 'Sarprassmp::simpan');
     });
+
+    $routes->group('datauser', function ($routes) {
+        $routes->get('/', 'DataUser::index');
+        $routes->get('tambah', 'DataUser::tambah');
+        $routes->post('simpan', 'DataUser::simpan');
+    });
 });
 
 
