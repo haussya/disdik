@@ -3,7 +3,6 @@
 namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
-use App\Models\DataSiswaSd;
 use App\Models\Keterangan;
 use App\Models\DataSekolah;
 use App\Models\DataSiswa;
@@ -21,7 +20,7 @@ class Siswa extends BaseController
 
     public function index()
     {
-        return view('user/datasiswasd', [
+        return view('user/datasiswa', [
             'title'        => 'Data Siswa',
             'datasiswa' => $this->datasiswa->getSiswa()
         ]);
@@ -35,7 +34,7 @@ class Siswa extends BaseController
             'domisili' => $this->datasiswa->getDomisili(),
             'status' => $this->datasiswa->getStatus(),
         ];
-        return view('user/tambahdatasiswasd', $data);
+        return view('user/tambahdatasiswa', $data);
     }
 
     public function simpan()

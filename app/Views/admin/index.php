@@ -187,34 +187,6 @@
 
     </section>
 </div>
-<script>
-var datasiswa = document.getElementById("datamurid").getContext('2d');
-var suratDashboard = new Chart(suratdashboard, {
-        type: 'pie',
-        data: {
-            labels: [
-                'Siswa Lulus Melanjutkan',
-                'Siswa Lulus Tidak Melanjutkan',
-                'Siswa DO'
-                
-            ],
-            datasets: [{
-                label: 'Surat',
-                data: [<?php echo $jumlahSuratMasuk ?>, <?php echo $jumlahSuratKeluar ?>,
-                    <?php echo $jumlahSuratTugas ?>
-                ],
-                backgroundColor: [
-                    '<?php echo $suratMasukWrn ?>',
-                    '<?php echo $suratKeluarWrn ?>',
-                    '<?php echo $suratTugasWrn ?>'
-                ],
-                hoverOffset: 4
-            }]
-        }
-    }
-
-);
-</script>
 
 
 
