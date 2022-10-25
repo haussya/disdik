@@ -45,7 +45,7 @@
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($datasiswasd as $row) {
+                        foreach ($datasiswa as $row) {
                         ?>
                             <tr>
                                 <td><?= $row['nisn'] ?> </td>

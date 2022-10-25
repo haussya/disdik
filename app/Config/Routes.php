@@ -42,11 +42,11 @@ $routes->add('/auth/(:any)', 'Auth::$1');
 $routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($routes) {
     $routes->get('/', 'Admin::index');
 
-    $routes->group('datasiswasd', function ($routes) {
-        $routes->get('/', 'Siswasd::index');
-        $routes->get('edit/(:num)', 'Siswasd::edit/$1');
-        $routes->post('update/(:num)', 'Siswasd::update/$1');
-        $routes->delete('hapus/(:num)', 'Siswasd::hapus/$1');
+    $routes->group('datasiswa', function ($routes) {
+        $routes->get('/', 'Siswa::index');
+        $routes->get('edit/(:num)', 'Siswa::edit/$1');
+        $routes->post('update/(:num)', 'Siswa::update/$1');
+        $routes->delete('hapus/(:num)', 'Siswa::hapus/$1');
     });
 
     $routes->group('datasiswasmp', function ($routes) {

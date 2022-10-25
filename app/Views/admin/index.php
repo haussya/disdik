@@ -16,7 +16,7 @@
                             </div>
                             <div class="text">
                                 <p class="kartu">Data Siswa</p>
-                                <a class="link" href="admin/datasiswasd">Lihat Lebih Lanjut</a>
+                                <a class="link" href="admin/datasiswa">Lihat Lebih Lanjut</a>
                             </div>
                         </div>
                     </div>
