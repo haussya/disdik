@@ -111,6 +111,15 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($rou
         $routes->post('update/(:num)', 'Sarprassmp::update/$1');
         $routes->delete('hapus/(:num)', 'Sarprassmp::hapus/$1');
     });
+
+    $routes->group('datauser', function ($routes) {
+        $routes->get('/', 'Datauser::index');
+        $routes->get('tambah', 'Datauser::tambah');
+        $routes->post('simpan', 'Datauser::simpan');
+        $routes->get('edit/(:num)', 'Datauser::edit/$1');
+        $routes->post('update/(:num)', 'Datauser::update/$1');
+        $routes->delete('hapus/(:num)', 'Datauser::hapus/$1');
+    });
 });
 
 $routes->group('user', ['namespace' => 'App\Controllers\User'], function ($routes) {

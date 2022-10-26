@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Models\DataSekolah;
 use App\Models\UserModel;
 
 class DataUser extends BaseController
@@ -12,76 +13,81 @@ class DataUser extends BaseController
     public function __construct()
     {
         $this->dataUser = new UserModel();
+        $this->dataSekolah = new DataSekolah();
     }
 
     public function index()
     {
         return view('admin/dataUser', [
             'title'        => 'Data User',
-            'datauser' => $this->dataUser->getDataUser()
+            'datauser' => $this->dataUser->getDataUser(),
+            'datasekolah' => $this->dataSekolah->getDataSekolah()
         ]);
     }
 
-    // public function tambah()
-    // {
-    //     $data = [
-    //         'title' => 'Tambah Data Siswa',
-    //         'validation' => \Config\Services::validation(),
-    //         'kelamin' => $this->datasiswasd->getKelamin(),
-    //         'tingkat' => $this->datasiswasd->getTingkat(),
-    //         'domisili' => $this->datasiswasd->getDomisili(),
-    //         'status' => $this->datasiswasd->getStatus(),
-    //     ];
-    //     return view('admin/tambahdatasiswasd', $data);
-    // }
 
-    // public function simpan()
-    // {
-    //     if (!$this->validate([
-    //         'nisn' => [
-    //             'rules' => 'required|exact_length[10]',
-    //             'errors' => [
-    //                 'required' => 'NISN Wajib Diisi',
-    //                 'exact_length' => 'NISN Tidak Valid'
-    //             ]
-    //         ],
-    //         'nama' => [
-    //             'rules' => 'required',
-    //             'errors' => [
-    //                 'required' => 'Nama Wajib Diisi'
-    //             ]
-    //         ],
-    //         'tanggal_lahir' => [
-    //             'rules' => 'required',
-    //             'errors' => [
-    //                 'required' => 'Tanggal Lahir Wajib Diisi'
-    //             ]
+    public function tambah()
+    {
+        $data = [
+            'title' => 'Tambah User Sekolah',
+            'validation' => \Config\Services::validation(),
+            // 'sekolah' => $this->dataUser->getKelamin(),
+            // 'tingkat' => $this->datasiswasd->getTingkat(),
+        ];
+        return view('admin/tambahuser', $data);
+    }
 
-    //         ],
-    //         'nama_ibu' => [
-    //             'rules' => 'required',
-    //             'errors' => [
-    //                 'required' => 'Nama Ibu Kandung Wajib Diisi'
-    //             ]
-    //         ]
-    //     ])) {
-    //         return redirect()->back()->withInput();
-    //     }
+    public function simpan()
+    {
+        if (!$this->validate([
+            'username' => [
+                'errors' => [
+                    'required' => 'username Wajib Diisi',
+                    'exact_length' => 'username Tidak Valid'
+                ]
+            ],
+            'password' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'password Wajib Diisi'
+                ]
+            ],
+            'nama_sekolah' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Nama Sekolah Lahir Wajib Diisi'
+                ]
 
-    //     $dataSimpan = [
-    //         'nisn' => $this->request->getVar('nisn'),
-    //         'nama' => $this->request->getVar('nama'),
-    //         'kelamin_id' => $this->request->getVar('kelamin'),
-    //         'tanggal_lahir' => $this->request->getVar('tanggal_lahir'),
-    //         'tingkat_id' => $this->request->getVar('tingkat'),
-    //         'domisili_id' => $this->request->getVar('domisili'),
-    //         'nama_ibu' => $this->request->getVar('nama_ibu'),
-    //         'status_id' => $this->request->getVar('status')
-    //     ];
-    //     $this->datasiswasd->insert($dataSimpan);
-    //     session()->setFlashdata('pesan', 'Data Siswa Berhasil Ditambah.');
-    //     return redirect()->to('admin/datasiswasd');
-    // }
+            ],
+            'jenjang' => [
+
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Jenjang Kandung Wajib Diisi'
+                ]
+            ]
+        ])) {
+            return redirect()->back()->withInput();
+        }
+
+        $dataSimpan = [
+            'username' => $this->request->getVar('username'),
+            'password' => $this->request->getVar('password'),
+        
+        ];
+        $id = $this->dataUser->insert($dataSimpan,true);
+       
+        if($this->request->getVar('isDO')){
+            $dataSekolah = [
+                'nama_sekolah' => $this->request->getVar('nama_sekolah'),
+                'jenjang' => $this->request->getVar('jenjang'),
+                'id_user'=>$id 
+            ];
+            $this->datasekolah->insert($dataSekolah);
+        }
+        session()->setFlashdata('pesan', 'Data Siswa Berhasil Ditambah.');
+        return redirect()->to('admin/datauser');
+    }
 
     // public function hapus($id)
     // {

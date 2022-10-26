@@ -13,4 +13,5 @@ class DataSekolah extends Model
     function getByUser($id){
         return $this->where('id_user',$id)->first();
     }
+    
 }

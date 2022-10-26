@@ -5,13 +5,13 @@
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Siswa</h3>
+                <h3>User</h3>
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Data Siswa</li>
+                        <li class="breadcrumb-item active" aria-current="page">Data User</li>
                     </ol>
                 </nav>
             </div>
@@ -25,42 +25,34 @@
     <section class="section">
         <div class="card">
             <div class="card-header d-flex align-items-center justify-content-between">
-                <h4>Data Siswa</h4>
+                <h4>Data User</h4>
+                <a href="/admin/datauser/tambah">
+                    <button class="btn btn-primary px-3">
+                        Tambah
+                    </button>
             </div>
             <div class="card-body">
                 <table class="table table-striped" id="table1">
                     <thead>
                         <tr>
-                            <th>NISN</th>
-                            <th>Nama</th>
-                            <th>Kelamin</th>
-                            <th>Tanggal Lahir</th>
-                            <th>Tingkat</th>
-                            <th>Domisili</th>
-                            <th>Nama Ibu</th>
-                            <th>Status</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Sekolah</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($datasiswasd as $row) {
+                        foreach ($datauser as $row) {
                         ?>
                             <tr>
-                                <td><?= $row['nisn'] ?> </td>
-                                <td><?= $row['nama'] ?></td>
-                                <td><?= $row['kelamin'] ?></td>
-                                <td><?= $row['tanggal_lahir'] ?></td>
-                                <td><?= $row['tingkat'] ?></td>
-                                <td><?= $row['domisili'] ?></td>
-                                <td><?= $row['nama_ibu'] ?></td>
-                                <td><?= $row['status'] ?></td>
+                                <td><?= $row['username'] ?> </td>
+                                <td><?= $row['password'] ?></td>
+                                <td><?= $row['nama_sekolah'] ?></td>
                                 <td>
-                                    <a href="/admin/datasiswasd/edit/<?php echo $row['nisn'] ?>" class="btn btn-info">📝</a>
+                                    <a href="/admin/datasiswasd/edit/<?php echo $row['user_id'] ?>" class="btn btn-info">📝</a>
                                 </td>
                                 <td>
-                                    <form action="/admin/datasiswasd/hapus/<?= $row['nisn']; ?>" method="POST" class="d-inline">
+                                    <form action="/admin/datasiswasd/hapus/<?= $row['user_id']; ?>" method="POST" class="d-inline">
                                         <?= csrf_field(); ?>
                                         <input type="hidden" name="_method" value="DELETE">
                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin');">🗑️</button>

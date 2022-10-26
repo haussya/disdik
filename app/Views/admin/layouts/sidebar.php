@@ -23,7 +23,7 @@ $uri3 = $uri[3] ?? '';
                     </a>
                 </li>
                 <li class="sidebar-item <?= ($uri1 == 'user') ? 'active' : '' ?> ">
-                    <a href="/admin/user" class='sidebar-link'>
+                    <a href="/admin/datauser" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>User</span>
                     </a>
