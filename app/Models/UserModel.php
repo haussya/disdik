@@ -13,7 +13,7 @@ class UserModel extends Model
     public function getDataUser()
     {
         return $this->db->table('user')
-            ->join('data_sekolah', 'data_sekolah.id_user=user.user_id')
+            ->join('data_sekolah', 'data_sekolah.user_id=user.user_id')
             ->get()->getResultArray();
     }
 

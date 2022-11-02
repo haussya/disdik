@@ -49,10 +49,10 @@
                                 <td><?= $row['password'] ?></td>
                                 <td><?= $row['nama_sekolah'] ?></td>
                                 <td>
-                                    <a href="/admin/datasiswasd/edit/<?php echo $row['user_id'] ?>" class="btn btn-info">📝</a>
+                                    <a href="/admin/datauser/edit/<?php echo $row['user_id'] ?>" class="btn btn-info">📝</a>
                                 </td>
                                 <td>
-                                    <form action="/admin/datasiswasd/hapus/<?= $row['user_id']; ?>" method="POST" class="d-inline">
+                                    <form action="/admin/datauser/hapus/<?= $row['user_id']; ?>" method="POST" class="d-inline">
                                         <?= csrf_field(); ?>
                                         <input type="hidden" name="_method" value="DELETE">
                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin');">🗑️</button>

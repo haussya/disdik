@@ -57,10 +57,10 @@
                                 <td><?= $row['nama_ibu'] ?></td>
                                 <td><?= $row['status'] ?></td>
                                 <td>
-                                    <a href="/admin/datasiswasd/edit/<?php echo $row['nisn'] ?>" class="btn btn-info">📝</a>
+                                    <a href="/admin/datasiswa/edit/<?php echo $row['nisn'] ?>" class="btn btn-info">📝</a>
                                 </td>
                                 <td>
-                                    <form action="/admin/datasiswasd/hapus/<?= $row['nisn']; ?>" method="POST" class="d-inline">
+                                    <form action="/admin/datasiswa/hapus/<?= $row['nisn']; ?>" method="POST" class="d-inline">
                                         <?= csrf_field(); ?>
                                         <input type="hidden" name="_method" value="DELETE">
                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin');">🗑️</button>

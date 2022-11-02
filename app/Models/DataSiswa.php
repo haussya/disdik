@@ -35,5 +35,8 @@ class DataSiswa extends Model
     {
         return $this->where(['nisn' => $nisn])->first();
     }
-    
+
+    public function hitungDO(){
+        return $this->select('status_id')->countAll()->table('data_siswa')->groupBy('status_id');
+    }
 }

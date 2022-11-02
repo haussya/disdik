@@ -75,6 +75,17 @@
                                                 </select>
                                             </div>
                                         </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label for="role">Role</label>
+                                                <select id="role" class="form-control"
+                                                    name="role" required>
+                                                    <option value="">Pilih ...</option>
+                                                    <option value="admin">admin</option>
+                                                    <option value="user">user</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

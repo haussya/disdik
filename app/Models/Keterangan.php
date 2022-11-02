@@ -11,4 +11,7 @@ class Keterangan extends Model
     protected $primaryKey = 'id_keterangan';
     protected $allowedFields = ['faktor', 'alasan_tidak_melanjutkan', 'rencana_melanjutkan', 'id_siswa'];
 
+ 
+    
+
 }
