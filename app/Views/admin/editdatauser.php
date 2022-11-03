@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <form method="POST" action="<?= base_url('/admin/DataUser/update') . '/' . $dataEdit['user_id'] ?>">
+    <form method="POST" action="<?= base_url('/admin/datauser/update/'.$dataEdit['user_id'] )?>">
         <?= csrf_field(); ?>
         <section id="multiple-column-form">
             <div class="row match-height">
@@ -26,7 +26,7 @@
                     <div class="card">
                         <div class="card-content">
                             <div class="card-body">
-                                <form class="form">
+                            
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
@@ -42,13 +42,17 @@
                                                     class="form-control" placeholder="password" name="password">
                                             </div>
                                         </div>
-                                </form>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <div class="col-12 d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+            <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+        </div>
     </form>
 </div>
 <?= $this->endSection() ?>

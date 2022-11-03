@@ -8,10 +8,10 @@ class DataSekolah extends Model
 {
     protected $table = 'data_sekolah';
     protected $primaryKey = 'id_sekolah';
-    protected $allowedFields = ['nama_sekolah','jenjang','npsn','id_user'];
+    protected $allowedFields = ['nama_sekolah','jenjang','npsn','user_id'];
 
     function getByUser($id){
-        return $this->where('id_user',$id)->first();
+        return $this->where('user_id',$id)->first();
     }
     
     public function getDataSekolah()

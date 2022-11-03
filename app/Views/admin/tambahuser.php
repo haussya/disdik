@@ -66,6 +66,18 @@
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
+                                                <label for="npsn">npsn</label>
+                                                <input type="text" id="npsn"
+                                                    class="form-control <?= ($validation->hasError('npsn')) ? 'is-invalid' : ''; ?>"
+                                                    placeholder="npsn" name="npsn"
+                                                    value="<?= old('npsn'); ?>">
+                                                <div class="invalid-feedback">
+                                                    <?= $validation->getError('npsn'); ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
                                                 <label for="jenjang">Jenjang</label>
                                                 <select id="jenjang" class="form-control"
                                                     name="jenjang" required>

@@ -16,5 +16,10 @@ class UserModel extends Model
             ->join('data_sekolah', 'data_sekolah.user_id=user.user_id')
             ->get()->getResultArray();
     }
+    public function getOne($user_id)
+    {
+        return $this->where(['user_id' => $user_id])->first();
+    }
+   
 
 }

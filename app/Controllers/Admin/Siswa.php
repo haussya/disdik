@@ -110,7 +110,7 @@ class Siswa extends BaseController
             $this->keterangan->insert($dataDO);
         }
 
-        session()->setFlashdata('pesan', 'Data Siswa Berhasil Ditambah.');
+        session()->setFlashdata('pesan', 'Data Siswa Berhasil Diupdate.');
         return redirect()->to('admin/datasiswa');
     }
 }

@@ -37,6 +37,21 @@ class DataSiswa extends Model
     }
 
     public function hitungDO(){
-        return $this->select('status_id')->countAll()->table('data_siswa')->groupBy('status_id');
+
+        return $this->select('status_id')->where('status_id','0')->countAllResults();
+    }
+    
+    public function hitungLulus(){
+
+        return $this->select('status_id')->where('status_id','1')->countAllResults();
+    }
+    
+    public function hitungLTM(){
+
+        return $this->select('status_id')->where('status_id','2')->countAllResults();
+    }
+    public function hitungAktif(){
+
+        return $this->select('status_id')->where('status_id','3')->countAllResults();
     }
 }
