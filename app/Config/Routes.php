@@ -33,13 +33,13 @@ $routes->set404Override();
  * --------------------------------------------------------------------
  */
 
-// We get a performance increase by specifying the default
-// route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->add('/process', 'Auth::process');
-$routes->add('/auth/(:any)', 'Auth::$1');
 
-$routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($routes) {
+$routes->get('/login', 'Auth::login');
+$routes->post('/login', 'Auth::signin');
+$routes->add('/logout', 'Auth::logout');
+
+$routes->group('admin', ['namespace' => 'App\Controllers\Admin', 'filter' => 'admin'], function ($routes) {
     $routes->get('/', 'Admin::index');
 
     $routes->group('datasiswa', function ($routes) {
@@ -122,7 +122,7 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($rou
     });
 });
 
-$routes->group('user', ['namespace' => 'App\Controllers\User'], function ($routes) {
+$routes->group('user', ['namespace' => 'App\Controllers\User', 'filter' => 'user'], function ($routes) {
     $routes->get('/', 'User::index');
 
     $routes->group('datasiswa', function ($routes) {

@@ -41,9 +41,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-                        foreach ($datauser as $row) {
-                        ?>
+                        <?php foreach ($datauser as $row) : ?>
                             <tr>
                                 <td><?= $row['username'] ?> </td>
                                 <td><?= $row['password'] ?></td>
@@ -59,7 +57,7 @@
                                     </form>
                                 </td>
                             </tr>
-                        <?php } ?>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

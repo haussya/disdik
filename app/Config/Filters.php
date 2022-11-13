@@ -23,8 +23,9 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
-        'adminfilter' => \App\Filters\AdminFilter::class,
-        'userfilter' => \App\Filters\UserFilter::class
+        'admin' => \App\Filters\AdminFilter::class,
+        'user' => \App\Filters\UserFilter::class,
+        'auth' => \App\Filters\AuthFilter::class,
     ];
 
     /**
@@ -37,29 +38,18 @@ class Filters extends BaseConfig
         // public
         'before' => [
             'csrf',
-            'adminfilter' => [
+            'auth' => [
                 'except' => [
-                    '/auth', '/auth/*'
+                    '/login', '/logout'
                 ]
             ],
-
-            'userfilter' => [
-                'except' => [
-                    '/auth', '/auth/*', '/auth/*'
-                ]
-            ]
         ],
         // private
         'after' => [
-            'toolbar',
-            'adminfilter' => [
+            // 'toolbar',
+            'auth' => [
                 'except' => [
-                    '/*', '/dashboard', '/auth/logout',
-                ]
-            ],
-            'userfilter' => [
-                'except' => [
-                    '/*', '/dashboard', '/auth/logout', 
+                    '/admin', '/admin/*', '/user', '/user/*', '/logout',
                 ]
             ],
         ],

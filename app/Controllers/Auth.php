@@ -22,32 +22,30 @@ class Auth extends BaseController
         return redirect()->to('/login');
     }
 
-    public function process()
+    public function signin()
     {
         $userModel = new UserModel();
 
-        $data = $this->request->getVar('username');
-        $password = sha1($this->request->getVar('password'));
-        $dataUser = $userModel->where('username', $data)->first();
-        if (!$dataUser) {
+        $username = $this->request->getPost('username');
+        $password = sha1($this->request->getPost('password'));
+
+        $user = $userModel->where('username', $username)->first();
+        if (!$user) {
             session()->setFlashdata('pesan', 'Username tidak ditemukan');
-            return redirect()->to('/');
+            return redirect()->to('/login');
         }
-        if ($password !== $dataUser['password']) {
+
+        if ($password !== $user['password']) {
             session()->setFlashdata('pesan', 'Password salah');
-            return redirect()->to('/');
-        } else {
-            session()->set([
-                'user_id' => $dataUser['user_id'],
-                'username' => $dataUser['username'],
-                'role' => $dataUser['role']
-            ]);
-
-            if ($dataUser['role'] == 'admin') {
-                return redirect()->to('/admin');
-            }
-
-            return redirect()->to('/user');
+            return redirect()->to('/login');
         }
+
+        session()->set([
+            'user_id' => $user['user_id'],
+            'username' => $user['username'],
+            'role' => $user['role']
+        ]);
+
+        return redirect()->to('/');
     }
 }
