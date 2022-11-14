@@ -84,13 +84,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
+            <div class="col-9">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Chart Status Siswa</h4>
+                    <h4>Chart Status Siswa</h4>
                     </div>
-                    <div class="container" style="width: 50%; height: 50%;">
-                    <canvas id="myChart" width="400" height="400"></canvas>
+                    <div class="container" style="width: 40%; height: 30%;">
+                    <canvas id="myChart" width="200" height="200"></canvas>
                     </div>
                 </div>
             </div>
