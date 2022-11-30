@@ -22,14 +22,20 @@ $uri3 = $uri[3] ?? '';
                         <span>Dashboard</span>
                     </a>
                 </li>
+
                 <li class="sidebar-item <?= ($uri1 == 'user') ? 'active' : '' ?> ">
-                    <a href="/admin/datauser" class='sidebar-link'>
+                    <a href="/admin/user" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>User</span>
                     </a>
                 </li>
 
-                <li class="sidebar-title">Sekolah SD</li>
+                <li class="sidebar-item <?= ($uri1 == 'sekolah') ? 'active' : '' ?> ">
+                    <a href="/admin/sekolah" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Sekolah</span>
+                    </a>
+                </li>
 
                 <li class="sidebar-item <?= ($uri1 == 'siswa') ? 'active' : '' ?> has-sub">
                     <a href="#" class='sidebar-link'>
@@ -37,65 +43,29 @@ $uri3 = $uri[3] ?? '';
                         <span>Siswa</span>
                     </a>
                     <ul class="submenu <?= ($uri1 == 'siswa') ? 'active' : '' ?>">
-                        <li class="submenu-item <?= ($uri2 == 'datasiswa') ? 'active' : '' ?>">
-                            <a href="/admin/datasiswasd">Data Siswa</a>
+                        <li class="submenu-item <?= ($uri1 == 'siswa' && $uri2 == '') ? 'active' : '' ?>">
+                            <a href="/admin/siswa">Data Siswa</a>
                         </li>
                         <li class="submenu-item <?= ($uri2 == 'beasiswa') ? 'active' : '' ?>">
-                            <a href="/admin/beasiswasd">Beasiswa</a>
+                            <a href="/admin/siswa/beasiswa">Penerima Beasiswa</a>
                         </li>
-                        <li class="submenu-item <?= ($uri2 == 'doltm') ? 'active' : '' ?>">
-                            <a href="/admin/doltmsd">DO & LTM</a>
+                        <li class="submenu-item <?= ($uri2 == 'do-ltm') ? 'active' : '' ?>">
+                            <a href="/admin/siswa/do-ltm">DO & LTM</a>
                         </li>
-
                     </ul>
                 </li>
 
-                <li class="sidebar-item <?= ($uri1 == 'guru') ? 'active' : '' ?> ">
-                    <a href="/admin/gurusd" class='sidebar-link'>
-                        <i class="bi bi-cart-fill"></i>
-                        <span>Guru</span>
-                    </a>
-                </li>
-
                 <li class="sidebar-item <?= ($uri1 == 'sarpras') ? 'active' : '' ?> ">
-                    <a href="/admin/sarprassd" class='sidebar-link'>
-                        <i class="bi bi-person-fill"></i>
-                        <span>Sarpras</span>
+                    <a href="/admin/sarpras" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Sarana Prasarana</span>
                     </a>
                 </li>
 
-                <li class="sidebar-title">Sekolah SMP</li>
-
-                <li class="sidebar-item <?= ($uri1 == 'siswa') ? 'active' : '' ?> has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi bi-stack"></i>
-                        <span>Siswa</span>
-                    </a>
-                    <ul class="submenu <?= ($uri1 == 'siswa') ? 'active' : '' ?>">
-                        <li class="submenu-item <?= ($uri2 == 'datasiswa') ? 'active' : '' ?>">
-                            <a href="/admin/datasiswasmp">Data Siswa</a>
-                        </li>
-                        <li class="submenu-item <?= ($uri2 == 'beasiswa') ? 'active' : '' ?>">
-                            <a href="/admin/beasiswasmp">Beasiswa</a>
-                        </li>
-                        <li class="submenu-item <?= ($uri2 == 'doltm') ? 'active' : '' ?>">
-                            <a href="/admin/doltmsmp">DO & LTM</a>
-                        </li>
-
-                    </ul>
-                </li>
-
-                <li class="sidebar-item <?= ($uri1 == 'guru') ? 'active' : '' ?> ">
-                    <a href="/admin/gurusmp" class='sidebar-link'>
-                        <i class="bi bi-cart-fill"></i>
-                        <span>Guru</span>
-                    </a>
-                </li>
-
-                <li class="sidebar-item <?= ($uri1 == 'sarpras') ? 'active' : '' ?> ">
-                    <a href="/admin/sarprassmp" class='sidebar-link'>
-                        <i class="bi bi-person-fill"></i>
-                        <span>Sarpras</span>
+                <li class="sidebar-item">
+                    <a href="/logout" class='sidebar-link text-danger'>
+                        <i class="bi bi-box-arrow-left text-danger"></i>
+                        <span>Logout</span>
                     </a>
                 </li>
 

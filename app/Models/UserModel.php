@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class UserModel extends Model
 {
     protected $table = 'user';
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'id_user';
     protected $allowedFields = ['username', 'password', 'role'];
 
     public function getDataUser()
@@ -16,10 +16,4 @@ class UserModel extends Model
             ->join('data_sekolah', 'data_sekolah.user_id=user.user_id')
             ->get()->getResultArray();
     }
-    public function getOne($user_id)
-    {
-        return $this->where(['user_id' => $user_id])->first();
-    }
-   
-
 }

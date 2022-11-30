@@ -28,31 +28,24 @@ $uri3 = $uri[3] ?? '';
                         <i class="bi bi-stack"></i>
                         <span>Siswa</span>
                     </a>
+
                     <ul class="submenu <?= ($uri1 == 'siswa') ? 'active' : '' ?>">
-                        <li class="submenu-item <?= ($uri2 == 'datasiswa') ? 'active' : '' ?>">
-                            <a href="/user/datasiswasd">Data Siswa</a>
+                        <li class="submenu-item <?= ($uri2 == '' && $uri1 == 'siswa') ? 'active' : '' ?>">
+                            <a href="/user/siswa">Data Siswa</a>
                         </li>
                         <li class="submenu-item <?= ($uri2 == 'beasiswa') ? 'active' : '' ?>">
-                            <a href="/user/beasiswasd">Beasiswa</a>
+                            <a href="/user/siswa/beasiswa">Beasiswa</a>
                         </li>
-                        <li class="submenu-item <?= ($uri2 == 'doltm') ? 'active' : '' ?>">
-                            <a href="/user/doltmsd">DO & LTM</a>
+                        <li class="submenu-item <?= ($uri2 == 'do-ltm') ? 'active' : '' ?>">
+                            <a href="/user/siswa/do-ltm">DO & LTM</a>
                         </li>
-
                     </ul>
                 </li>
 
-                <li class="sidebar-item <?= ($uri1 == 'guru') ? 'active' : '' ?> ">
-                    <a href="/user/gurusd" class='sidebar-link'>
-                        <i class="bi bi-cart-fill"></i>
-                        <span>Guru</span>
-                    </a>
-                </li>
-
-                <li class="sidebar-item <?= ($uri1 == 'sarpras') ? 'active' : '' ?> ">
-                    <a href="/user/sarprassd" class='sidebar-link'>
-                        <i class="bi bi-person-fill"></i>
-                        <span>Sarpras</span>
+                <li class="sidebar-item <?= ($uri1 == 'sarpras') ? 'active' : '' ?>">
+                    <a href="/logout" class='sidebar-link text-danger'>
+                        <i class="bi bi-box-arrow-left text-danger"></i>
+                        <span>Logout</span>
                     </a>
                 </li>
             </ul>

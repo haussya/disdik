@@ -3,114 +3,221 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
-use App\Models\DataSekolah;
-use App\Models\Keterangan;
-use App\Models\DataSiswa;
+use App\Models\BeasiswaModel;
+use App\Models\DomisiliModel;
+use App\Models\FaktorModel;
+use App\Models\KeteranganModel;
+use App\Models\SekolahModel;
+use App\Models\SiswaModel;
+use App\Models\StatusModel;
 
 class Siswa extends BaseController
 {
-    protected $datasiswa;
-    protected $keterangan;
+  protected $siswa, $sekolah, $keterangan, $status, $beasiswa, $faktor, $domisili;
 
-    public function __construct()
-    {
-        $this->datasiswa = new DataSiswa();
-        $this->keterangan = new Keterangan();
+  public function __construct()
+  {
+    $this->siswa = new SiswaModel();
+    $this->sekolah = new SekolahModel();
+    $this->keterangan = new KeteranganModel();
+    $this->status = new StatusModel();
+    $this->beasiswa = new BeasiswaModel();
+    $this->faktor = new FaktorModel();
+    $this->domisili = new DomisiliModel();
+  }
+
+  public function index()
+  {
+    return view('admin/siswa_index', [
+      'title' => 'Data Siswa',
+      'siswa' => $this->siswa->getSiswa()
+    ]);
+  }
+
+  public function ltm()
+  {
+    return view('admin/siswa_doltm', [
+      'title' => 'Data Siswa LTM',
+      'siswa' => $this->siswa->getSiswaLTM(),
+      'faktor' => $this->faktor->findAll(),
+    ]);
+  }
+
+  public function beasiswa()
+  {
+    return view('admin/siswa_beasiswa', [
+      'title' => 'Data Siswa LTM',
+      'siswa' => $this->siswa->getSiswaBeasiswa(),
+    ]);
+  }
+
+  public function create()
+  {
+    return view('admin/siswa_tambah', [
+      'title' => 'Tambah Siswa',
+      'sekolah' => $this->sekolah->findAll(),
+      'status' => $this->status->findAll(),
+      'faktor' => $this->faktor->findAll(),
+      'domisili' => $this->domisili->findAll(),
+      'validation' => \Config\Services::validation(),
+    ]);
+  }
+
+  public function edit($id)
+  {
+    $siswa = $this->siswa->getSiswa($id);
+
+    if (!$siswa) {
+      session()->setFlashdata('error', 'Siswa tidak ditemukan');
+      return redirect()->to('admin/siswa');
     }
 
-    public function index()
-    {
-        return view('admin/datasiswa', [
-            'title'        => 'Data Siswa',
-            'datasiswa' => $this->datasiswa->getSiswa()
-        ]);
-    }
-    public function edit($id_siswa)
-    {
-        $jumlahRecord = $this->datasiswa->where('id_siswa', $id_siswa)->countAllResults();
+    return view('admin/siswa_edit', [
+      'title' => 'Tambah Siswa',
+      'siswa' => $siswa,
+      'keterangan' => $this->keterangan->getBySiswa($id),
+      'beasiswa' => $this->beasiswa->getBySiswa($id),
+      'sekolah' => $this->sekolah->findAll(),
+      'status' => $this->status->findAll(),
+      'faktor' => $this->faktor->findAll(),
+      'domisili' => $this->domisili->findAll(),
+      'validation' => \Config\Services::validation(),
+    ]);
+  }
 
-        if ($jumlahRecord == 1) {
-            $dataEdit = [
-                'dataEdit' => $this->datasiswa->getOne($id_siswa),
-                'title' => "Edit Data Siswa",
-                'validation' => \Config\Services::validation(),
-                'kelamin' => $this->datasiswa->getKelamin(),
-                'tingkat' => $this->datasiswa->getTingkat(),
-                'domisili' => $this->datasiswa->getDomisili(),
-                'status' => $this->datasiswa->getStatus(),
-            ];
-            return view('user/editdatasiswa', $dataEdit);
-        } else {
-            session()->setFlashdata('pesan', 'Data Siswa Tidak Ada di Database');
-            return redirect()->to('admin/datasiswa');
-        }
+  public function save()
+  {
+    if (!$this->validate('siswa')) {
+      return redirect()->back()->withInput();
     }
 
-    public function update($id_siswa)
-    {
-        if (!$this->validate([
-            'nisn' => [
-                'rules' => 'required|exact_length[10]',
-                'errors' => [
-                    'required' => 'NISN Wajib Diisi',
-                    'exact_length' => 'NISN Tidak Valid'
-                ]
-            ],
-            'nama' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Nama Wajib Diisi'
-                ]
-            ],
-            'tanggal_lahir' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Tanggal Lahir Wajib Diisi'
-                ]
+    $siswa = [
+      'nama' => $this->request->getPost('nama'),
+      'nisn' => $this->request->getPost('nisn'),
+      'jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+      'tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
+      'tingkat' => $this->request->getPost('tingkat'),
+      'alamat' => $this->request->getPost('alamat'),
+      'nama_ibu' => $this->request->getPost('nama_ibu'),
+      'id_domisili' => $this->request->getPost('domisili'),
+      'id_status' => $this->request->getPost('status'),
+      'id_sekolah' => $this->request->getPost('sekolah')
+    ];
 
-            ],
-            'nama_ibu' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Nama Ibu Kandung Wajib Diisi'
-                ]
-            ],
-            'tingkat' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'tingkat waj  ib diisi'
-                ]
-            ]
-        ])) {
-            return redirect()->back()->withInput();
-        }
-        $datasiswa= new DataSiswa();
-        $sekolah = new DataSekolah();
-        $datasiswa->update('id_siswa',[
-            'nisn' => $this->request->getVar('nisn'),
-            'nama' => $this->request->getVar('nama'),
-            'kelamin' => $this->request->getVar('kelamin'),
-            'tanggal_lahir' => $this->request->getVar('tanggal_lahir'),
-            'tingkat' => $this->request->getVar('tingkat'),
-            'domisili_id' => $this->request->getVar('domisili'),
-            'nama_ibu' => $this->request->getVar('nama_ibu'),
-            'status_id' => $this->request->getVar('status'),
-            'id_sekolah'=> $sekolah->getByUser(session('user_id'))['id_sekolah']
-        ]);
+    if ($siswa['id_status'] != 1 && $siswa['id_status'] != 2) {
+      if (!$this->validate('siswa_status')) {
+        return redirect()->back()->withInput();
+      }
 
-        $id = $this->datasiswa->insert($datasiswa, true);
-
-        if ($this->request->getVar('isDO')) {
-            $dataDO = [
-                'faktor' => $this->request->getVar('faktor'),
-                'alasan_tidak_melanjutkan' =>$this->request->getVar('alasan_tidak_melanjutkan'),
-                'rencana_melanjutkan'=>$this->request->getVar('rencana_melanjutkan'),
-                'id_siswa'=>$id
-            ];
-            $this->keterangan->insert($dataDO);
-        }
-
-        session()->setFlashdata('pesan', 'Data Siswa Berhasil Diupdate.');
-        return redirect()->to('admin/datasiswa');
+      $keterangan = [
+        'alasan_tidak_melanjutkan' => $this->request->getPost('alasan_tidak_melanjutkan'),
+        'rencana_melanjutkan' => $this->request->getPost('rencana_melanjutkan'),
+        'id_faktor' => $this->request->getPost('faktor'),
+      ];
     }
+
+    if ($this->request->getPost('beasiswa') == 'ya') {
+      if (!$this->validate('siswa_status')) {
+        return redirect()->back()->withInput();
+      }
+
+      $beasiswa = [
+        'nama_beasiswa' => $this->request->getPost('nama_beasiswa'),
+        'besaran' => $this->request->getPost('besaran'),
+      ];
+    }
+
+    $id = $this->siswa->insert($siswa, true);
+
+    if ($siswa['id_status'] != 1 && $siswa['id_status'] != 2) {
+      $keterangan['id_siswa'] = $id;
+      $this->keterangan->insert($keterangan);
+    }
+
+    if ($this->request->getPost('beasiswa') == 'ya') {
+      $beasiswa['id_siswa'] = $id;
+      $this->beasiswa->insert($beasiswa);
+    }
+
+    session()->setFlashdata('pesan', 'Siswa berhasil ditambahkan');
+    return redirect()->to('admin/siswa');
+  }
+
+  public function update($id)
+  {
+    $siswa = $this->siswa->find($id);
+
+    if (!$siswa) {
+      session()->setFlashdata('error', 'Siswa tidak ditemukan');
+      return redirect()->to('admin/siswa');
+    }
+
+    if (!$this->validate('siswa')) {
+      return redirect()->back()->withInput();
+    }
+
+    $siswa['nama'] = $this->request->getPost('nama');
+    $siswa['nisn'] = $this->request->getPost('nisn');
+    $siswa['jenis_kelamin'] = $this->request->getPost('jenis_kelamin');
+    $siswa['tanggal_lahir'] = $this->request->getPost('tanggal_lahir');
+    $siswa['tingkat'] = $this->request->getPost('tingkat');
+    $siswa['alamat'] = $this->request->getPost('alamat');
+    $siswa['nama_ibu'] = $this->request->getPost('nama_ibu');
+    $siswa['id_domisili'] = $this->request->getPost('domisili');
+    $siswa['id_status'] = $this->request->getPost('status');
+    $siswa['id_sekolah'] = $this->request->getPost('sekolah');
+
+    $this->siswa->update($id, $siswa);
+    $this->keterangan->where('id_siswa', $id)->delete();
+    $this->beasiswa->where('id_siswa', $id)->delete();
+
+    if ($siswa['id_status'] != 1) {
+      if (!$this->validate('siswa_status')) {
+        return redirect()->back()->withInput();
+      }
+
+      $keterangan = [
+        'id_siswa' => $id,
+        'alasan_tidak_melanjutkan' => $this->request->getPost('alasan_tidak_melanjutkan'),
+        'rencana_melanjutkan' => $this->request->getPost('rencana_melanjutkan'),
+        'id_faktor' => $this->request->getPost('faktor'),
+      ];
+
+      $this->keterangan->insert($keterangan);
+    }
+
+    if ($this->request->getPost('beasiswa') == 'ya') {
+      if (!$this->validate('siswa_beasiswa')) {
+        return redirect()->back()->withInput();
+      }
+
+      $beasiswa = [
+        'id_siswa' => $id,
+        'nama_beasiswa' => $this->request->getPost('nama_beasiswa'),
+        'besaran' => $this->request->getPost('besaran'),
+      ];
+
+      $this->beasiswa->insert($beasiswa);
+    }
+
+    session()->setFlashdata('pesan', 'Siswa berhasil diubah');
+    return redirect()->to('admin/siswa');
+  }
+
+  public function delete($id)
+  {
+    $siswa = $this->siswa->find($id);
+
+    if (!$siswa) {
+      session()->setFlashdata('error', 'Siswa tidak ditemukan');
+      return redirect()->to('admin/siswa');
+    }
+
+    $this->keterangan->where('id_siswa', $id)->delete();
+    $this->beasiswa->where('id_siswa', $id)->delete();
+    $this->siswa->delete($id);
+
+    session()->setFlashdata('pesan', 'Suswa berhasil dihapus');
+    return redirect()->to('admin/siswa');
+  }
 }

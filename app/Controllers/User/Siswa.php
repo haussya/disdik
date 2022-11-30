@@ -3,26 +3,29 @@
 namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
+use App\Models\BeasiswaModel;
 use App\Models\Keterangan;
 use App\Models\DataSekolah;
 use App\Models\DataSiswa;
 
 class Siswa extends BaseController
 {
-    protected $datasiswa;
+    protected $siswa;
     protected $keterangan;
+    protected $beasiswa;
 
     public function __construct()
     {
-        $this->datasiswa = new DataSiswa();
+        $this->siswa = new DataSiswa();
         $this->keterangan = new Keterangan();
+        $this->beasiswa = new BeasiswaModel();
     }
 
     public function index()
     {
-        return view('user/datasiswa', [
+        return view('user/siswa', [
             'title'        => 'Data Siswa',
-            'datasiswa' => $this->datasiswa->getSiswa()
+            'siswa' => $this->siswa->getSiswa()
         ]);
     }
 
@@ -31,10 +34,10 @@ class Siswa extends BaseController
         $data = [
             'title' => 'Tambah Data Siswa',
             'validation' => \Config\Services::validation(),
-            'domisili' => $this->datasiswa->getDomisili(),
-            'status' => $this->datasiswa->getStatus(),
+            'domisili' => $this->siswa->getDomisili(),
+            'status' => $this->siswa->getStatus(),
         ];
-        return view('user/tambahdatasiswa', $data);
+        return view('user/siswa_tambah', $data);
     }
 
     public function simpan()
@@ -77,65 +80,79 @@ class Siswa extends BaseController
         }
 
         $sekolah = new DataSekolah();
-        $dataSimpan = [
-            'nisn' => $this->request->getVar('nisn'),
-            'nama' => $this->request->getVar('nama'),
-            'kelamin' => $this->request->getVar('kelamin'),
-            'tanggal_lahir' => $this->request->getVar('tanggal_lahir'),
-            'tingkat' => $this->request->getVar('tingkat'),
-            'domisili_id' => $this->request->getVar('domisili'),
-            'nama_ibu' => $this->request->getVar('nama_ibu'),
-            'status_id' => $this->request->getVar('status'),
-            'id_sekolah'=> $sekolah->getByUser(session('user_id'))['id_sekolah']
+        $data = [
+            'nisn' => $this->request->getPost('nisn'),
+            'nama' => $this->request->getPost('nama'),
+            'kelamin' => $this->request->getPost('kelamin'),
+            'tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
+            'tingkat' => $this->request->getPost('tingkat'),
+            'domisili_id' => $this->request->getPost('domisili'),
+            'nama_ibu' => $this->request->getPost('nama_ibu'),
+            'status_id' => $this->request->getPost('status'),
+            'id_sekolah' => $sekolah->getByUser(session('user_id'))['id_sekolah']
         ];
-   
-        $id = $this->datasiswa->insert($dataSimpan,true);
-       
-        if($this->request->getVar('isDO')){
+
+        $id = $this->siswa->insert($data, true);
+
+        if ($this->request->getPost('isDO')) {
             $dataDO = [
-                'faktor' => $this->request->getVar('faktor'),
-                'alasan_tidak_melanjutkan' =>$this->request->getVar('alasan_tidak_melanjutkan'),
-                'rencana_melanjutkan'=>$this->request->getVar('rencana_melanjutkan'),
-                'id_siswa'=>$id 
+                'faktor' => $this->request->getPost('faktor'),
+                'alasan_tidak_melanjutkan' => $this->request->getPost('alasan_tidak_melanjutkan'),
+                'rencana_melanjutkan' => $this->request->getPost('rencana_melanjutkan'),
+                'id_siswa' => $id,
             ];
             $this->keterangan->insert($dataDO);
         }
-        
+
+        if ($this->request->getPost('isBeasiswa')) {
+            $dataBeasiswa = [
+                'nama_beasiswa' => $this->request->getPost('nama_beasiswa'),
+                'besaran' => $this->request->getPost('besaran'),
+                'id_siswa' => $id,
+            ];
+            $this->beasiswa->insert($dataBeasiswa);
+        }
+
         session()->setFlashdata('pesan', 'Data Siswa Berhasil Ditambah.');
-        return redirect()->to('user/datasiswa');
+        return redirect()->to('user/siswa');
     }
 
     public function hapus($id)
     {
-        $this->datasiswasd->delete($id);
+        $this->siswa->delete($id);
+
+        $this->keterangan->where('id_siswa', $id)->delete();
+        $this->beasiswa->where('id_siswa', $id)->delete();
+
         session()->setFlashdata('pesan', 'Data Siswa Berhasil Dihapus.');
-        return redirect()->to('user/datasiswasd');
+        return redirect()->to('user/siswa');
     }
 
-    public function edit($nisn)
+    public function edit($id)
     {
-        $jumlahRecord = $this->datasiswasd->where('nisn', $nisn)->countAllResults();
+        $siswa = $this->siswa->first();
 
-        if ($jumlahRecord == 1) {
-
-            $dataEdit = [
-                'dataEdit' => $this->datasiswasd->getOne($nisn),
-                'title' => "Edit Data Siswa",
-                'validation' => \Config\Services::validation(),
-                'kelamin' => $this->datasiswasd->getKelamin(),
-                'tingkat' => $this->datasiswasd->getTingkat(),
-                'domisili' => $this->datasiswasd->getDomisili(),
-                'status' => $this->datasiswasd->getStatus(),
-            ];
-            return view('user/editdatasiswasd', $dataEdit);
-        } else {
+        if ($siswa) {
             session()->setFlashdata('pesan', 'Data Siswa Tidak Ada di Database');
-            return redirect()->to('user/datasiswasd');
+            return redirect()->to('user/siswa');
         }
+
+        $data = [
+            'title' => "Edit Data Siswa",
+            'siswa' => $this->siswa->getOne($id),
+            'kelamin' => $this->siswa->getKelamin(),
+            'tingkat' => $this->siswa->getTingkat(),
+            'domisili' => $this->siswa->getDomisili(),
+            'status' => $this->siswa->getStatus(),
+            'validation' => \Config\Services::validation(),
+        ];
+
+        return view('user/editdatasiswasd', $data);
     }
 
-    public function update($nisn)
+    public function update($id)
     {
+        // TODO ulah validasi
         if (!$this->validate([
             'nisn' => [
                 'rules' => 'required|exact_length[10]',
@@ -166,19 +183,36 @@ class Siswa extends BaseController
         ])) {
             return redirect()->back()->withInput();
         }
-        $datasiswasd = new DataSiswa();
-        $datasiswasd->update($nisn, [
-            'nisn' => $this->request->getVar('nisn'),
-            'nama' => $this->request->getVar('nama'),
-            'kelamin_id' => $this->request->getVar('kelamin'),
-            'tanggal_lahir' => $this->request->getVar('tanggal_lahir'),
-            'tingkat_id' => $this->request->getVar('tingkat'),
-            'domisili_id' => $this->request->getVar('domisili'),
-            'nama_ibu' => $this->request->getVar('nama_ibu'),
-            'status_id' => $this->request->getVar('status')
+
+        $this->siswa->update($id, [
+            'nisn' => $this->request->getPost('nisn'),
+            'nama' => $this->request->getPost('nama'),
+            'kelamin' => $this->request->getPost('kelamin'),
+            'tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
+            'tingkat' => $this->request->getPost('tingkat'),
+            'domisili_id' => $this->request->getPost('domisili'),
+            'nama_ibu' => $this->request->getPost('nama_ibu'),
+            'status_id' => $this->request->getPost('status'),
         ]);
 
+        if ($this->request->getPost('isDO')) {
+            $dataDO = [
+                'faktor' => $this->request->getPost('faktor'),
+                'alasan_tidak_melanjutkan' => $this->request->getPost('alasan_tidak_melanjutkan'),
+                'rencana_melanjutkan' => $this->request->getPost('rencana_melanjutkan'),
+            ];
+            $this->keterangan->where('id_siswa', $id)->update($dataDO);
+        }
+
+        if ($this->request->getPost('isBeasiswa')) {
+            $dataBeasiswa = [
+                'nama_beasiswa' => $this->request->getPost('nama_beasiswa'),
+                'besaran' => $this->request->getPost('besaran'),
+            ];
+            $this->beasiswa->where('id_siswa', $id)->update($dataBeasiswa);
+        }
+
         session()->setFlashdata('pesan', 'Data Siswa Berhasil Diupdate.');
-        return redirect()->to('user/datasiswasd');
+        return redirect()->to('user/siswa');
     }
 }
