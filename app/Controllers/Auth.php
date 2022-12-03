@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\SekolahModel;
 use App\Models\UserModel;
 
 class Auth extends BaseController
@@ -27,8 +28,8 @@ class Auth extends BaseController
 
     $username = $this->request->getPost('username');
     $password = sha1($this->request->getPost('password'));
-
     $user = $userModel->where('username', $username)->first();
+
     if (!$user) {
       session()->setFlashdata('pesan', 'Username tidak ditemukan');
       return redirect()->to('/login');
@@ -39,11 +40,20 @@ class Auth extends BaseController
       return redirect()->to('/login');
     }
 
-    session()->set([
+    $session = [
       'id_user' => $user['id_user'],
       'username' => $user['username'],
       'role' => $user['role']
-    ]);
+    ];
+
+    if ($user['role'] == 'user') {
+      $sekolah = new SekolahModel();
+      
+
+      $session['id_sekolah'] = $sekolah->where('id_user', $user['id_user'])->first()['id_sekolah'];
+    }
+
+    session()->set($session);
 
     return redirect()->to('/');
   }

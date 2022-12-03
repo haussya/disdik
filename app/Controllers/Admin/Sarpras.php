@@ -5,14 +5,16 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\FaktorModel;
 use App\Models\SarprasModel;
+use App\Models\SarprasSekolahModel;
 
 class Sarpras extends BaseController
 {
-  protected $sarpras;
+  protected $sarpras, $sarpras_sekolah;
 
   public function __construct()
   {
     $this->sarpras = new SarprasModel();
+    $this->sarpras_sekolah = new SarprasSekolahModel();
   }
 
   public function index()

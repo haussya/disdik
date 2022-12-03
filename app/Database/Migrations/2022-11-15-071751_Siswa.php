@@ -59,9 +59,9 @@ class Siswa extends Migration
             ],
         ]);
 
-        $this->forge->addForeignKey('id_domisili', 'domisili', 'id_domisili');
-        $this->forge->addForeignKey('id_status', 'status', 'id_status');
-        $this->forge->addForeignKey('id_sekolah', 'sekolah', 'id_sekolah');
+        $this->forge->addForeignKey('id_domisili', 'domisili', 'id_domisili', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('id_status', 'status', 'id_status', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('id_sekolah', 'sekolah', 'id_sekolah', 'CASCADE', 'CASCADE');
 
         $this->forge->addKey('id_siswa', true);
         $this->forge->createTable('siswa');

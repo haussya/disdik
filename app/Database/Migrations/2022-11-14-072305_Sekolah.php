@@ -38,7 +38,7 @@ class Sekolah extends Migration
             ],
         ]);
 
-        $this->forge->addForeignKey('id_user', 'user', 'id_user');
+        $this->forge->addForeignKey('id_user', 'user', 'id_user', 'CASCADE', 'CASCADE');
 
         $this->forge->addKey('id_sekolah', true);
         $this->forge->createTable('sekolah');

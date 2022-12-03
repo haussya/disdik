@@ -35,8 +35,8 @@ class Keterangan extends Migration
             ],
         ]);
 
-        $this->forge->addForeignKey('id_faktor', 'faktor', 'id_faktor');
-        $this->forge->addForeignKey('id_siswa', 'siswa', 'id_siswa');
+        $this->forge->addForeignKey('id_faktor', 'faktor', 'id_faktor', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('id_siswa', 'siswa', 'id_siswa', 'CASCADE', 'CASCADE');
 
         $this->forge->addKey('id_keterangan', true);
         $this->forge->createTable('keterangan');

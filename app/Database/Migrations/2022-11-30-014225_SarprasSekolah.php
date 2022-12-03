@@ -30,6 +30,9 @@ class SarprasSekolah extends Migration
                 'constraint'     => 10,
             ],
         ]);
+        
+        $this->forge->addForeignKey('id_sarpras', 'sarpras', 'id_sarpras', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('id_sekolah', 'sekolah', 'id_sekolah', 'CASCADE', 'CASCADE');
 
         $this->forge->addKey('id', true);
         $this->forge->createTable('sarpras_sekolah');

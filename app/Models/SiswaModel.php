@@ -28,9 +28,9 @@ class SiswaModel extends Model
             ->first();
     }
 
-    public function getSiswaLTM()
+    public function getSiswaLTM($id_sekolah = null)
     {
-        return $this
+        $builder = $this
             ->where('rencana_melanjutkan', 'tidak')
             ->orWhere('siswa.id_status', 3)
             ->orWhere('siswa.id_status', 4)
@@ -38,16 +38,23 @@ class SiswaModel extends Model
             ->join('domisili', 'domisili.id_domisili=siswa.id_domisili')
             ->join('status', 'status.id_status=siswa.id_status')
             ->join('sekolah', 'sekolah.id_sekolah=siswa.id_sekolah')
-            ->find();
+            ->join('faktor', 'faktor.id_faktor=keterangan.id_faktor');
+
+        if ($id_sekolah != null) $builder->where('siswa.id_sekolah', $id_sekolah);
+
+        return $builder->find();
     }
 
-    public function getSiswaBeasiswa()
+    public function getSiswaBeasiswa($id_sekolah = null)
     {
-        return $this
+        $builder = $this
             ->join('beasiswa', 'beasiswa.id_siswa=siswa.id_siswa', 'right')
             ->join('domisili', 'domisili.id_domisili=siswa.id_domisili')
             ->join('status', 'status.id_status=siswa.id_status')
-            ->join('sekolah', 'sekolah.id_sekolah=siswa.id_sekolah')
-            ->find();
+            ->join('sekolah', 'sekolah.id_sekolah=siswa.id_sekolah');
+
+        if ($id_sekolah != null) $builder->where('siswa.id_sekolah', $id_sekolah);
+
+        return $builder->find();
     }
 }

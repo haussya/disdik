@@ -23,6 +23,13 @@ $uri3 = $uri[3] ?? '';
                     </a>
                 </li>
 
+                <li class="sidebar-item <?= ($uri1 == 'sarpras') ? 'active' : '' ?> ">
+                    <a href="/user/sarpras" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Sarana Prasarana</span>
+                    </a>
+                </li>
+
                 <li class="sidebar-item <?= ($uri1 == 'siswa') ? 'active' : '' ?> has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-stack"></i>
@@ -42,7 +49,7 @@ $uri3 = $uri[3] ?? '';
                     </ul>
                 </li>
 
-                <li class="sidebar-item <?= ($uri1 == 'sarpras') ? 'active' : '' ?>">
+                <li class="sidebar-item">
                     <a href="/logout" class='sidebar-link text-danger'>
                         <i class="bi bi-box-arrow-left text-danger"></i>
                         <span>Logout</span>

@@ -1,4 +1,4 @@
-<?= $this->extend('admin/layouts/app') ?>
+<?= $this->extend('user/layouts/app') ?>
 
 <?= $this->section('content') ?>
 <div class="page-heading">
@@ -10,7 +10,7 @@
       <div class="col-12 col-md-6 order-md-2 order-1">
         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/user">Dashboard</a></li>
             <li class="breadcrumb-item active" aria-current="page">Siswa DO & LTM</li>
           </ol>
         </nav>
@@ -29,40 +29,6 @@
       <?php endif; ?>
     </div>
   </div>
-
-  <section class="section">
-    <div class="card">
-      <div class="card-header d-flex align-items-center justify-content-between">
-        <h4>Faktor DO & LTM</h4>
-        <button class="btn btn-primary px-3" data-bs-toggle="modal" data-bs-target="#modal-create">
-          Tambah
-        </button>
-      </div>
-
-      <div class="card-body">
-        <table class="table table-striped" id="table_faktor">
-          <thead>
-            <tr>
-              <td>ID</td>
-              <th>Nama Faktor</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php foreach ($faktor as $row) : ?>
-              <tr>
-                <td><?= $row['id_faktor'] ?></td>
-                <td><?= $row['nama_faktor'] ?></td>
-                <td>
-                  <a href="/admin/faktor/<?= $row['id_faktor'] ?>/delete" class="btn btn-sm btn-danger">Hapus</a>
-                </td>
-              </tr>
-            <?php endforeach; ?>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
 
   <section class="section">
     <div class="card">
@@ -93,8 +59,8 @@
                 <td><?= $row['nama_status'] ?></td>
                 <td><?= $row['nama_faktor'] ?></td>
                 <td>
-                  <a href="/admin/siswa/<?= $row['id_siswa'] ?>" class="btn btn-sm btn-warning">Edit</a>
-                  <a href="/admin/siswa/<?= $row['id_siswa'] ?>/delete" class="btn btn-sm btn-danger">Hapus</a>
+                  <a href="/user/siswa/<?= $row['id_siswa'] ?>" class="btn btn-sm btn-warning">Edit</a>
+                  <a href="/user/siswa/<?= $row['id_siswa'] ?>/delete" class="btn btn-sm btn-danger">Hapus</a>
                 </td>
               </tr>
             <?php endforeach; ?>
@@ -107,7 +73,7 @@
 
 <div class="modal fade text-left" id="modal-create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <form class="modal-content" action="/admin/faktor" method="POST">
+    <form class="modal-content" action="/user/faktor" method="POST">
       <?= csrf_field(); ?>
       <div class="modal-header">
         <h5 class="modal-title" id="myModalLabel1">Tambah Faktor</h5>
@@ -143,10 +109,6 @@
 <?= $this->section('javascript') ?>
 <script src="/assets/vendors/simple-datatables/simple-datatables.js"></script>
 <script>
-  // Simple Datatable
-  let table_faktor = document.querySelector('#table_faktor');
-  let dataTable = new simpleDatatables.DataTable(table_faktor);
-
   let table_siswa = document.querySelector('#table_siswa');
   let dataTables = new simpleDatatables.DataTable(table_siswa);
 </script>
