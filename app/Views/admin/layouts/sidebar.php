@@ -9,7 +9,7 @@ $uri3 = $uri[3] ?? '';
     <div class="sidebar-wrapper active">
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
-                <div class="logo">
+                <div class="logo" width="150px">
                     <a href="#"><img src="/assets/logo_disdik_rounded.png" alt="Logo" srcset=""></a>
                 </div>
             </div>
