@@ -33,10 +33,10 @@
             <form method="POST" action="<?= base_url('/login') ?>">
                 <?= csrf_field() ?>
                 <div class="mb-3">
-                    <input type="username" class="form-control" id="exampleInputUsername" name="username" placeholder="Username">
+                    <input type="username" class="form-control <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>" id="exampleInputUsername" name="username" placeholder="Username" value="<?= old('username'); ?>">
                 </div>
                 <div class="mb-3">
-                    <input type="password" class="form-control" id="exampleInputPassword" name="password" placeholder="Password">
+                    <input type="password" class="form-control <?= ($validation->hasError('password')) ? 'is-invalid' : ''; ?>" id="exampleInputPassword" name="password" placeholder="Password" value="<?= old('password'); ?>">
                 </div>
                 <div class="tombol">
                     <button type="submit" class="btn btn-light">

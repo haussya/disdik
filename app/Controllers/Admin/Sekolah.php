@@ -96,10 +96,12 @@ class Sekolah extends BaseController
   {
     $isValid = $this->validate([
       'npsn' => [
-        'rules' => 'required|is_unique[sekolah.npsn]',
+        'rules' => 'required|is_unique[sekolah.npsn]|min_length[8]|max_length[8]',
         'errors' => [
           'required' => 'NPSN wajib diisi',
           'is_unique' => 'NPSN telah digunakan',
+          'min_length' => 'minimal 8 huruf',
+          'max_length' => 'maksimal 8 huruf',
         ]
       ],
       'nama_sekolah' => [
