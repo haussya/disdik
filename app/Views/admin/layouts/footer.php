@@ -4,8 +4,8 @@
             <p>2022 &copy; OG</p>
         </div>
         <div class="float-end">
-            <p>Modified with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                href="https://www.instagram.com/nouvalrahman/">Nouval</a></p>
+            <p><span class="text-danger"></i></span><a
+                href="https://www.instagram.com/nouvalrahman/"></a></p>
         </div>
     </div>
 </footer>

@@ -44,9 +44,10 @@ class User extends BaseController
         ]
       ],
       'password' => [
-        'rules' => 'required',
+        'rules' => 'required|min_length[6]',
         'errors' => [
-          'required' => 'Password wajib diisi'
+          'required' => 'Password wajib diisi',
+          'min_length'=> 'Password minimal 6 karakter'
         ]
       ],
       'role' => [

@@ -27,6 +27,7 @@ class User extends Migration
                 'type'       => 'ENUM',
                 'constraint' => ['admin', 'user'],
             ],
+            
         ]);
 
         $this->forge->addKey('id_user', true);

@@ -25,10 +25,30 @@ class Auth extends BaseController
   public function signin()
   {
     $userModel = new UserModel();
-
     $username = $this->request->getPost('username');
     $password = sha1($this->request->getPost('password'));
     $user = $userModel->where('username', $username)->first();
+
+    $isValid = $this->validate([
+      'username' => [
+        'rules' => 'required',
+        'errors' => [
+          'required' => 'Username wajib diisi',
+          'is_unique' => 'Username telah digunakan',
+        ]
+      ],
+      'password' => [
+        'rules' => 'required','min_length[6]',
+        'errors' => [
+          'required' => 'Password wajib diisi',
+          'min_length'=> 'Password minimal 6 karakter'
+        ]
+      ],
+    ]);
+
+    if (!$isValid) {
+      return redirect()->back()->withInput();
+    }
 
     if (!$user) {
       session()->setFlashdata('pesan', 'Username tidak ditemukan');
