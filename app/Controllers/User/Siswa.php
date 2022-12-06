@@ -126,7 +126,7 @@ class Siswa extends BaseController
         }
 
         if ($this->request->getPost('beasiswa') == 'ya') {
-            if (!$this->validate('siswa_status')) {
+            if (!$this->validate('siswa_beasiswa')) {
                 return redirect()->back()->withInput();
             }
 
