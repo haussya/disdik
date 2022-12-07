@@ -9,8 +9,9 @@ $uri3 = $uri[3] ?? '';
     <div class="sidebar-wrapper active">
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
-                <div class="logo" width="150px">
-                    <a href="#"><img src="/assets/logo_disdik_rounded.png" alt="Logo" srcset=""></a>
+                <div class="logo">
+                    <a href="#" ><img src="/assets/logo_disdik_rounded.png" alt="Logo" srcset="" style="max-width: 70%; height: auto; display:block;  margin-left: auto;
+  margin-right: auto;"></a>
                 </div>
             </div>
         </div>

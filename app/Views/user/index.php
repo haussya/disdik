@@ -53,21 +53,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-body px-3 py-4-5">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img class="imgcard-center" src="<?= base_url("/assets/gambar_guru.png"); ?>">
-                                </div>
-                                <div class="text">
-                                    <p class="kartu">Guru</p>
-                                    <a class="link" href="/user/guru">Lihat Lebih Lanjut</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="col-6 col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-body px-3 py-4-5">
@@ -85,27 +71,78 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">
+                <div class="col-9">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Chart Jumlah Siswa</h4>
+                            <h4>Chart Status Siswa</h4>
                         </div>
-                        <div class="card-body">
-                            <div id="chart-profile-visit"></div>
+                        <div class="container" style="width: 40%; height: 30%;">
+                            <canvas id="myChart" width="200" height="100"></canvas>
+                        </div>
+                        <div class="container" style="width: 40%; height: 30%;">
+                            <canvas id="Chartsekolah" width="200" height="100"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-12 col-lg-3">
-            <div class="card">
-                <div class="card-body">
-                    <div id="chart-visitors-profile"></div>
-                </div>
-            </div>
-        </div>
+
     </section>
 </div>
+<script>
+const klm = document.getElementById('chart_kelamin');
+new Chart(klm, {
+    type: 'doughnut',
+    data: {
+        labels: [
+            'Laki-Laki',
+            'Perempuan',
+        ],
+        datasets: [{
+            label: '# of Votes',
+            data: [<?= $laki ?>, <?= $cewe ?>, ],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+            ],
+            borderColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+            ],
+            hoverOffset: 4
+        }]
+    }
+});
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['DO', 'Lulus', 'LTM', 'Aktif'],
+        datasets: [{
+            label: '# of Votes',
+            data: [<?= $do ?>, <?= $lulus ?>, <?= $ltm ?>, <?= $aktif ?>],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+
+        }
+    }
+});
+</script>
 <?= $this->endSection() ?>
 
 <?= $this->section('javascript') ?>

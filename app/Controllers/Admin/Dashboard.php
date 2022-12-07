@@ -28,6 +28,15 @@ class Dashboard extends BaseController
       if ($siswa['id_status'] == 4) return true;
       return false;
     });
+    $laki = array_filter($siswa, function ($siswa) {
+      if ($siswa['jenis_kelamin'] == 'L') return true;
+      return false;
+    });
+    $cewe = array_filter($siswa, function ($siswa) {
+      if ($siswa['jenis_kelamin'] == 'P') return true;
+      return false;
+    });
+   
 
     return view('admin/index', [
       'title'    => 'Dashboard',
@@ -35,6 +44,11 @@ class Dashboard extends BaseController
       'do'       => count($do),
       'lulus'    => count($lulus),
       'ltm'      => count($ltm),
+      'laki' => count($laki),
+      'cewe' => count($cewe)
     ]);
+
+   
   }
+  
 }
