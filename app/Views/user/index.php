@@ -4,6 +4,7 @@
 <div class="page-heading">
     <h3>Dashboard</h3>
 </div>
+
 <div class="page-content">
     <section class="row">
         <div class="col-12 col-lg-9">
@@ -17,7 +18,7 @@
                                 </div>
                                 <div class="text">
                                     <p class="kartu">Data Siswa</p>
-                                    <a class="link" href="user/datasiswa">Lihat Lebih Lanjut</a>
+                                    <a class="link" href="user/siswa">Lihat Lebih Lanjut</a>
                                 </div>
                             </div>
                         </div>
@@ -32,7 +33,7 @@
                                 </div>
                                 <div class="text">
                                     <p class="kartu">Beasiswa</p>
-                                    <a class="link" href="/user/beasiswa">Lihat Lebih Lanjut</a>
+                                    <a class="link" href="/user/siswa/beasiswa">Lihat Lebih Lanjut</a>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +48,7 @@
                                 </div>
                                 <div class="text">
                                     <p class="kartu">DO & LTM</p>
-                                    <a class="link" href="/user/doltm">Lihat Lebih Lanjut</a>
+                                    <a class="link" href="/user/siswa/do-ltm">Lihat Lebih Lanjut</a>
                                 </div>
                             </div>
                         </div>

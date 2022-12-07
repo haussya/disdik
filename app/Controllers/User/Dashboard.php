@@ -9,6 +9,7 @@ class Dashboard extends BaseController
 {
     public function index()
     { $siswaModel = new SiswaModel();
+    
         $siswa = $siswaModel->getSiswa();
     
         $aktif = array_filter($siswa, function ($siswa) {
@@ -35,9 +36,10 @@ class Dashboard extends BaseController
           if ($siswa['jenis_kelamin'] == 'P') return true;
           return false;
         });
- 
+        
+        
     
-        return view('admin/index', [
+        return view('user/index', [
           'title'    => 'Dashboard',
           'aktif'    => count($aktif),
           'do'       => count($do),
@@ -46,5 +48,7 @@ class Dashboard extends BaseController
           'laki' => count($laki),
           'cewe' => count($cewe)
         ]);
+        
+        
     }
 }
