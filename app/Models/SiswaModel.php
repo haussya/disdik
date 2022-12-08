@@ -57,4 +57,17 @@ class SiswaModel extends Model
 
         return $builder->find();
     }
+
+    public function getSiswaExcel(){
+        
+            return $this
+                ->join('domisili', 'domisili.id_domisili=siswa.id_domisili')
+                ->join('status', 'status.id_status=siswa.id_status')
+                ->join('sekolah', 'sekolah.id_sekolah=siswa.id_sekolah')
+                ->join('keterangan', 'keterangan.id_siswa=siswa.id_siswa','left')
+                ->join('faktor', 'faktor.id_faktor=keterangan.id_faktor','left')
+                ->join('beasiswa', 'beasiswa.id_siswa=siswa.id_siswa','left')
+                ->find();
+
+    }
 }

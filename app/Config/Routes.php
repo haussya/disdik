@@ -71,6 +71,7 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Admin', 'filter' => 'ad
         $routes->get('(:num)', 'Siswa::edit/$1');
         $routes->post('(:num)', 'Siswa::update/$1');
         $routes->add('(:num)/delete', 'Siswa::delete/$1');
+        $routes->add('export', 'Siswa::export');
     });
 
     $routes->group('faktor', function ($routes) {

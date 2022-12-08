@@ -5,6 +5,8 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\SekolahModel;
 use App\Models\UserModel;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+
 
 class User extends BaseController
 {
@@ -156,4 +158,5 @@ class User extends BaseController
     session()->setFlashdata('pesan', 'User berhasil dihapus');
     return redirect()->to('admin/user');
   }
+
 }
