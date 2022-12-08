@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-9">
                     <div class="card">
                         <div class="card-header">
@@ -85,34 +85,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
     </section>
 </div>
 <script>
-const klm = document.getElementById('chart_kelamin');
-new Chart(klm, {
-    type: 'doughnut',
-    data: {
-        labels: [
-            'Laki-Laki',
-            'Perempuan',
-        ],
-        datasets: [{
-            label: '# of Votes',
-            data: [<?= $laki ?>, <?= $cewe ?>, ],
-            backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-            ],
-            borderColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-            ],
-            hoverOffset: 4
-        }]
-    }
-});
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'pie',
