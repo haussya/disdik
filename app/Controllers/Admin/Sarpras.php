@@ -6,15 +6,17 @@ use App\Controllers\BaseController;
 use App\Models\FaktorModel;
 use App\Models\SarprasModel;
 use App\Models\SarprasSekolahModel;
+use App\Models\SekolahModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Sarpras extends BaseController
 {
-  protected $sarpras, $sarpras_sekolah;
+  protected $sarpras, $sarpras_sekolah, $sekolah;
 
   public function __construct()
   {
+    $this->sekolah = new SekolahModel();
     $this->sarpras = new SarprasModel();
     $this->sarpras_sekolah = new SarprasSekolahModel();
   }
@@ -59,36 +61,79 @@ class Sarpras extends BaseController
     return redirect()->to('admin/sarpras');
   }
 
-  
+
   public function export()
   {
-      $spreadsheet = new Spreadsheet();
-      $sarpras = $this->sarpras_sekolah->getSarprasExcel();
+    $spreadsheet = new Spreadsheet();
+    $sekolah = $this->sekolah->findAll();
+    $sarpras = $this->sarpras->findAll();
 
+    $spreadsheet->setActiveSheetIndex(0)
+      ->setCellValue('A1', 'nama_sp')
+      ->setCellValue('B1', 'jenjang')
+      ->setCellValue('C1', 'status_sekolah');
+
+    $words = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+    $slugs = [];
+    for ($i = 0; $i < count($sarpras); $i++) {
+      $row = $i + 4;
+      $letter = '';
+      $kontol = floor($row / 26) - 1;
+      if ($kontol >= 0) $letter .= $words[$kontol];
+      $letter .= $words[($row % 26) - 1];
+
+      $slugs[] = $sarpras[$i]['slug'];
 
       $spreadsheet->setActiveSheetIndex(0)
-          ->setCellValue('A2', 'Sekolah')
-          ->setCellValue('B1','Slug');
+        ->setCellValue($letter . '1', $sarpras[$i]['slug']);
+    }
 
+    $column = 2;
+    foreach ($sekolah as $school) {
+      $sarpras_sekolah = $this->sarpras_sekolah->getBySekolah($school['id_sekolah']);
 
-      $column = 2;
+      $sekolah_sarpras = [];
 
       foreach ($sarpras as $row) {
-          $spreadsheet->setActiveSheetIndex(0)
-              ->setCellValue('A' . $column, $row['nama_sekolah'])
-              ->setCellValue('B' . $column, $row['slug']);
-            
-          $column++;
+        $sekolah_sarpras[$row['slug']] = 0;
       }
 
-      $writer = new Xlsx($spreadsheet);
-      $filename = date('Y-m-d-His') . '-Data-Siswa';
+      foreach ($sarpras_sekolah as $row) {
+        $sekolah_sarpras[$row['slug']] = $row['jumlah'];
+      }
 
-      header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-      header('Content-Disposition: attachment;filename=' . $filename . '.xlsx');
-      header('Cache-Control: max-age=0');
+      $data_sarpras = [];
+      foreach ($sarpras as $row) {
+        $data_sarpras[$row['slug']] = intval($sekolah_sarpras[$row['slug']]);
+      }
 
-      $writer->save('php://output');
+      $spreadsheet->setActiveSheetIndex(0)
+        ->setCellValue('A' . $column, $school['nama_sekolah'])
+        ->setCellValue('B' . $column, $school['jenjang'])
+        ->setCellValue('C' . $column, $school['status']);
+
+      for ($i = 0; $i < count($slugs); $i++) {
+        $row = $i + 4;
+        $letter = '';
+        $kontol = floor($row / 26) - 1;
+        if ($kontol >= 0) $letter .= $words[$kontol];
+        $letter .= $words[($row % 26) - 1];
+
+        $spreadsheet->setActiveSheetIndex(0)
+          ->setCellValue($letter . $column, $data_sarpras[$slugs[$i]]);
+      }
+
+      $column++;
+    }
+
+    $writer = new Xlsx($spreadsheet);
+    $filename = date('Y-m-d-His') . '-Data-Siswa';
+
+    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    header('Content-Disposition: attachment;filename=' . $filename . '.xlsx');
+    header('Cache-Control: max-age=0');
+
+    $writer->save('php://output');
   }
-
 }

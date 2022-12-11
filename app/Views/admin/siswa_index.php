@@ -17,40 +17,18 @@
             </div>
 
             <?php if (session()->getFlashdata('pesan')) : ?>
-            <div class="alert alert-success order-last mt-2" role="alert">
-                <?= session()->getFlashdata('pesan'); ?>
-            </div>
+                <div class="alert alert-success order-last mt-2" role="alert">
+                    <?= session()->getFlashdata('pesan'); ?>
+                </div>
             <?php endif; ?>
 
             <?php if (session()->getFlashdata('error')) : ?>
-            <div class="alert alert-danger order-last mt-2" role="alert">
-                <?= session()->getFlashdata('error'); ?>
-            </div>
+                <div class="alert alert-danger order-last mt-2" role="alert">
+                    <?= session()->getFlashdata('error'); ?>
+                </div>
             <?php endif; ?>
         </div>
     </div>
-    <div class="d-flex align-items-center justify-content-center">
-        <div class="col-md-3 form-group px-3">
-            <select id="sekolah" class="form-control" name="sekolah">
-                <option value="" <?= old('sekolah') == '' ? 'selected' : '' ?>>Pilih Sekolah</option>
-                <?php foreach ($sekolah as $row) : ?>
-                <option value="<?= $row['id_sekolah'] ?>" <?= old('sekolah') == $row['id_sekolah'] ? 'selected' : '' ?>>
-                    <?= $row['nama_sekolah'] ?>
-                </option>
-                <?php endforeach; ?>
-            </select>
-        </div>
-        <div class="col-md-3 form-group">
-            <select id="status" class="form-control" name="status">
-                <option value="" <?= old('status') == '' ? 'selected' : '' ?>>Pilih status</option>
-                <?php foreach ($status as $row) : ?>
-                <option value="<?= $row['id_status'] ?>" <?= old('status') == $row['id_status'] ? 'selected' : '' ?>>
-                    <?= $row['nama_status'] ?></option>
-                <?php endforeach; ?>
-            </select>
-        </div>
-    </div>
-
 
     <section class="section">
         <div class="card">
@@ -60,14 +38,12 @@
                 </div>
                 <div>
                     <a href="/admin/siswa/create">
-                        <button class="btn btn-primary px-5">
+                        <button class="btn btn-lg btn-primary px-3">
                             Tambah
                         </button>
                     </a>
-                </div>
-                <div>
                     <a href="/admin/siswa/export">
-                        <button class="btn btn-primary px-5 ">
+                        <button class="btn btn-lg btn-info px-3 ml-2">
                             Print
                         </button>
                     </a>
@@ -75,6 +51,28 @@
             </div>
 
             <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 form-group px-3">
+                        <select id="sekolah" class="form-control" name="sekolah">
+                            <option value="" <?= isset($_GET['sekolah']) ? ($_GET['sekolah'] == '' ? 'selected' : '') : '' ?>>Pilih Sekolah</option>
+                            <?php foreach ($sekolah as $row) : ?>
+                                <option value="<?= $row['id_sekolah'] ?>" <?= isset($_GET['sekolah']) ? ($_GET['sekolah'] == $row['id_sekolah'] ? 'selected' : '') : '' ?>>
+                                    <?= $row['nama_sekolah'] ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3 form-group">
+                        <select id="status" class="form-control" name="status">
+                            <option value="" <?= isset($_GET['status']) ? ($_GET['status'] == '' ? 'selected' : '') : '' ?>>Pilih status</option>
+                            <?php foreach ($status as $row) : ?>
+                                <option value="<?= $row['id_status'] ?>" <?= isset($_GET['status']) ? ($_GET['status'] == $row['id_status'] ? 'selected' : '') : '' ?>>
+                                    <?= $row['nama_status'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
                 <table class="table table-striped" id="table">
                     <thead>
                         <tr>
@@ -88,18 +86,17 @@
                     </thead>
                     <tbody>
                         <?php foreach ($siswa as $row) : ?>
-                        <tr>
-                            <td><?= $row['nisn'] ?></td>
-                            <td><?= $row['nama'] ?></td>
-                            <td><?= $row['nama_sekolah'] ?></td>
-                            <td><?= $row['nama_domisili'] ?></td>
-                            <td><?= $row['nama_status'] ?></td>
-                            <td>
-                                <a href="/admin/siswa/<?= $row['id_siswa'] ?>" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="/admin/siswa/<?= $row['id_siswa'] ?>/delete"
-                                    class="btn btn-sm btn-danger">Hapus</a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td><?= $row['nisn'] ?></td>
+                                <td><?= $row['nama'] ?></td>
+                                <td><?= $row['nama_sekolah'] ?></td>
+                                <td><?= $row['nama_domisili'] ?></td>
+                                <td><?= $row['nama_status'] ?></td>
+                                <td>
+                                    <a href="/admin/siswa/<?= $row['id_siswa'] ?>" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="/admin/siswa/<?= $row['id_siswa'] ?>/delete" class="btn btn-sm btn-danger">Hapus</a>
+                                </td>
+                            </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
@@ -107,8 +104,25 @@
             </div>
         </div>
     </section>
-
 </div>
+
+<script>
+    let sekolah = '<?= isset($_GET['sekolah']) ? $_GET['sekolah'] : '' ?>'
+    let status = '<?= isset($_GET['status']) ? $_GET['status'] : '' ?>'
+    document.getElementById('sekolah').addEventListener('change', (e) => {
+        sekolah = e.target.value
+        redirect()
+    })
+    document.getElementById('status').addEventListener('change', (e) => {
+        status = e.target.value
+        redirect()
+    })
+
+    function redirect() {
+        location.replace(`?sekolah=${sekolah}&status=${status}`)
+    }
+</script>
+
 <?= $this->endSection() ?>
 
 <?= $this->section('styles') ?>
@@ -118,8 +132,8 @@
 <?= $this->section('javascript') ?>
 <script src="/assets/vendors/simple-datatables/simple-datatables.js"></script>
 <script>
-// Simple Datatable
-let table = document.querySelector('#table');
-let dataTable = new simpleDatatables.DataTable(table);
+    // Simple Datatable
+    let table = document.querySelector('#table');
+    let dataTable = new simpleDatatables.DataTable(table);
 </script>
 <?= $this->endSection() ?>

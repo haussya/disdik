@@ -30,9 +30,21 @@ class Siswa extends BaseController
 
     public function index()
     {
+        $siswa = $this->siswa->join('domisili', 'domisili.id_domisili=siswa.id_domisili')
+            ->join('status', 'status.id_status=siswa.id_status')
+            ->join('sekolah', 'sekolah.id_sekolah=siswa.id_sekolah');
+
+        if ($this->request->getGet('status')) {
+            $siswa->where('siswa.id_status', $this->request->getGet('status'));
+        }
+
+        if ($this->request->getGet('sekolah')) {
+            $siswa->where('siswa.id_sekolah', $this->request->getGet('sekolah'));
+        }
+
         return view('admin/siswa_index', [
             'title' => 'Data Siswa',
-            'siswa' => $this->siswa->getSiswa(),
+            'siswa' => $siswa->findAll(),
             'sekolah' => $this->sekolah->findAll(),
             'status' => $this->status->findAll(),
         ]);
@@ -204,7 +216,7 @@ class Siswa extends BaseController
             $this->beasiswa->insert($beasiswa);
         }
 
-       
+
 
         session()->setFlashdata('pesan', 'Siswa berhasil diubah');
         return redirect()->to('admin/siswa');
@@ -266,7 +278,7 @@ class Siswa extends BaseController
                 ->setCellValue('L' . $column, $row['nama_faktor'])
                 ->setCellValue('M' . $column, $row['nama_beasiswa'])
                 ->setCellValue('N' . $column, $row['besaran']);
-              
+
             $column++;
         }
 
@@ -279,5 +291,4 @@ class Siswa extends BaseController
 
         $writer->save('php://output');
     }
-
 }
