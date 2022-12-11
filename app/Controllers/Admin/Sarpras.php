@@ -67,8 +67,9 @@ class Sarpras extends BaseController
 
 
       $spreadsheet->setActiveSheetIndex(0)
-          ->setCellValue('A1', 'Sekolah')
+          ->setCellValue('A2', 'Sekolah')
           ->setCellValue('B1','Slug');
+
 
       $column = 2;
 
