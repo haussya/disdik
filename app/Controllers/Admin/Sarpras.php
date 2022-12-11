@@ -6,6 +6,8 @@ use App\Controllers\BaseController;
 use App\Models\FaktorModel;
 use App\Models\SarprasModel;
 use App\Models\SarprasSekolahModel;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Sarpras extends BaseController
 {
@@ -53,6 +55,39 @@ class Sarpras extends BaseController
     $this->sarpras->delete($sarpras['id_sarpras']);
 
     session()->setFlashdata('pesan', 'Sarpras berhasil dihapus');
+    session()->setFlashdata('pesanindex', 'Data berubah segera print');
     return redirect()->to('admin/sarpras');
   }
+
+  
+  public function export()
+  {
+      $spreadsheet = new Spreadsheet();
+      $sarpras = $this->sarpras_sekolah->getSarprasExcel();
+
+
+      $spreadsheet->setActiveSheetIndex(0)
+          ->setCellValue('A1', 'Sekolah')
+          ->setCellValue('B1','Slug');
+
+      $column = 2;
+
+      foreach ($sarpras as $row) {
+          $spreadsheet->setActiveSheetIndex(0)
+              ->setCellValue('A' . $column, $row['nama_sekolah'])
+              ->setCellValue('B' . $column, $row['slug']);
+            
+          $column++;
+      }
+
+      $writer = new Xlsx($spreadsheet);
+      $filename = date('Y-m-d-His') . '-Data-Siswa';
+
+      header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+      header('Content-Disposition: attachment;filename=' . $filename . '.xlsx');
+      header('Cache-Control: max-age=0');
+
+      $writer->save('php://output');
+  }
+
 }

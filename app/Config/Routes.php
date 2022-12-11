@@ -83,6 +83,7 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Admin', 'filter' => 'ad
         $routes->get('/', 'Sarpras::index');
         $routes->post('/', 'Sarpras::create');
         $routes->add('(:num)/delete', 'Sarpras::delete/$1');
+        $routes->add('export', 'Sarpras::export');
     });
 });
 

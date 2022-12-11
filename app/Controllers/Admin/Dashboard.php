@@ -11,6 +11,7 @@ class Dashboard extends BaseController
   {
     $siswaModel = new SiswaModel();
     $siswa = $siswaModel->getSiswa();
+  
 
     $aktif = array_filter($siswa, function ($siswa) {
       if ($siswa['id_status'] == 1) return true;
@@ -45,7 +46,8 @@ class Dashboard extends BaseController
       'lulus'    => count($lulus),
       'ltm'      => count($ltm),
       'laki' => count($laki),
-      'cewe' => count($cewe)
+      'cewe' => count($cewe),
+      'notif'
     ]);
 
    

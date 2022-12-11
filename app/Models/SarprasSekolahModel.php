@@ -19,4 +19,18 @@ class SarprasSekolahModel extends Model
       ->join('sarpras', 'sarpras.id_sarpras=sarpras_sekolah.id_sarpras')
       ->find();
   }
+
+  public function getSarprasExcel(){
+
+    return $this
+      ->select('sekolah.id_sekolah, slug, jumlah')
+      ->join('sekolah.id_sekolah')
+      ->join('jumlah','sekolah.id_sekolah=sarpras_sekolah.id_sekolah')
+      ->join('sekolah', 'sekolah.id_sekolah=sarpras_sekolah.id_sekolah')
+      ->join('sarpras', 'sarpras.id_sarpras=sarpras_sekolah.id_sarpras')
+      ->find();
+  }
+
+
+
 }

@@ -204,6 +204,8 @@ class Siswa extends BaseController
             $this->beasiswa->insert($beasiswa);
         }
 
+       
+
         session()->setFlashdata('pesan', 'Siswa berhasil diubah');
         return redirect()->to('admin/siswa');
     }

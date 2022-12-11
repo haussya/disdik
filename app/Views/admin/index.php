@@ -4,6 +4,14 @@
 <div class="page-heading">
     <h3>Dashboard</h3>
 </div>
+<div>
+    <?php if ($notif = 1) : ?>
+    <div class="alert alert-success order-last mt-2" role="alert">Tidak ada pembaruan data</div>
+    <?php elseif ($notif = 2) :?>
+    <div class="alert alert-danger">Data Sarpras dipebaharui</div>
+    <?php endif; ?>
+
+</div>
 <div class="page-content ">
     <section class="row">
         <div class="d-flex justify-content-between">
@@ -103,7 +111,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Chart Jumlah Kelamin Siswa</h4>
-                    </div>  
+                    </div>
                     <div class="container" style="max-width: 70%; height: auto;">
                         <canvas id="chart_kelamin" width="100px" height="100px"></canvas>
                     </div>

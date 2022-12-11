@@ -231,4 +231,6 @@ class Sekolah extends BaseController
     session()->setFlashdata('pesan', 'Sekolah berhasil dihapus');
     return redirect()->to('admin/sekolah');
   }
+
+  
 }
