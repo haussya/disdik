@@ -10,7 +10,7 @@ $uri3 = $uri[3] ?? '';
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="#" ><img src="/assets/logo_disdik_rounded.png" alt="Logo" srcset="" style="max-width: 70%; height: auto; display:block;  margin-left: auto;
+                    <a href="#"><img src="/assets/logo_disdik_rounded.png" alt="Logo" srcset="" style="max-width: 70%; height: auto; display:block;  margin-left: auto;
   margin-right: auto;"></a>
                 </div>
             </div>
@@ -61,6 +61,11 @@ $uri3 = $uri[3] ?? '';
                         <i class="bi bi-grid-fill"></i>
                         <span>Sarana Prasarana</span>
                     </a>
+                    <ul class="submenu <?= ($uri1 == 'siswa') ? 'active' : '' ?>">
+                        <li class="submenu-item <?= ($uri1 == 'siswa' && $uri2 == '') ? 'active' : '' ?>">
+                            <a href="/admin/siswa">Laporan</a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="sidebar-item">
