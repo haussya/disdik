@@ -4,14 +4,8 @@
 <div class="page-heading">
     <h3>Dashboard</h3>
 </div>
-<div>
-    <?php if ($notif = 1) : ?>
-    <div class="alert alert-success order-last mt-2" role="alert">Tidak ada pembaruan data</div>
-    <?php elseif ($notif = 2) :?>
-    <div class="alert alert-danger">Data Sarpras dipebaharui</div>
-    <?php endif; ?>
 
-</div>
+
 <div class="page-content ">
     <section class="row">
         <div class="d-flex justify-content-between">
@@ -96,7 +90,7 @@
             <div class="col-5">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Chart Status Siswa</h4>
+                        <h4>Status Siswa</h4>
                     </div>
                     <div class="container" style="max-width: 70%; height: auto;">
                         <canvas id="myChart" width="200" height="100"></canvas>
@@ -110,7 +104,7 @@
             <div class="col-5">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Chart Jumlah Kelamin Siswa</h4>
+                        <h4>Jumlah Kelamin Siswa</h4>
                     </div>
                     <div class="container" style="max-width: 70%; height: auto;">
                         <canvas id="chart_kelamin" width="100px" height="100px"></canvas>
@@ -135,7 +129,7 @@ new Chart(klm, {
             'Perempuan',
         ],
         datasets: [{
-            label: '# of Votes',
+            label: 'Jumlah ',
             data: [<?= $laki ?>, <?= $cewe ?>, ],
             backgroundColor: [
                 'rgb(255, 99, 132)',
@@ -157,7 +151,7 @@ const myChart = new Chart(ctx, {
     data: {
         labels: ['DO', 'Lulus', 'LTM', 'Aktif'],
         datasets: [{
-            label: '# of Votes',
+            label: 'Jumlah ',
             data: [<?= $do ?>, <?= $lulus ?>, <?= $ltm ?>, <?= $aktif ?>],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',

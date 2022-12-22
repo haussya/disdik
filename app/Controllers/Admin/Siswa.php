@@ -120,6 +120,7 @@ class Siswa extends BaseController
             'id_sekolah' => $this->request->getPost('sekolah'),
         ];
 
+
         if ($siswa['id_status'] != 1 && $siswa['id_status'] != 2) {
             if (!$this->validate('siswa_status')) {
                 return redirect()->back()->withInput();
@@ -155,6 +156,7 @@ class Siswa extends BaseController
             $this->beasiswa->insert($beasiswa);
         }
 
+    
         session()->setFlashdata('pesan', 'Siswa berhasil ditambahkan');
         return redirect()->to('admin/siswa');
     }

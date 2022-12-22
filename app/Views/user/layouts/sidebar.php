@@ -50,6 +50,14 @@ $uri3 = $uri[3] ?? '';
                     </ul>
                 </li>
 
+                
+                <li class="sidebar-item <?= ($uri1 == 'akun') ? 'active' : '' ?> ">
+                    <a href="/user/akun" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Akun</span>
+                    </a>
+                </li>
+
                 <li class="sidebar-item">
                     <a href="/logout" class='sidebar-link text-danger'>
                         <i class="bi bi-box-arrow-left text-danger"></i>

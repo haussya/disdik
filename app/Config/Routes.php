@@ -103,6 +103,9 @@ $routes->group('user', ['namespace' => 'App\Controllers\User', 'filter' => 'user
 
     $routes->get('sarpras', 'Sarpras::index');
     $routes->post('sarpras', 'Sarpras::save');
+
+    $routes->get('akun', 'Akun::index');
+    $routes->post('akun', 'Akun::save');
 });
 
 
