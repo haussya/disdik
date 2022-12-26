@@ -49,7 +49,12 @@ $uri3 = $uri[3] ?? '';
                         </li>
                     </ul>
                 </li>
-
+                <li class="sidebar-item <?= ($uri1 == 'sekolah') ? 'active' : '' ?> ">
+                    <a href="/user/sekolah" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Informasi Sekolah</span>
+                    </a>
+                </li>
                 
                 <li class="sidebar-item <?= ($uri1 == 'akun') ? 'active' : '' ?> ">
                     <a href="/user/akun" class='sidebar-link'>

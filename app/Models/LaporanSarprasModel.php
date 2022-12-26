@@ -24,7 +24,7 @@ class LaporanSarprasModel extends Model
     return $this
       ->join('sekolah', 'sekolah.id_sekolah=laporan_sarpras.id_sekolah')
       ->join('sarpras', 'sarpras.id_sarpras=laporan_sarpras.id_sarpras')
-      ->where('id_sekolah', $id_sekolah)
+      ->where('laporan_sarpras.id_sekolah', $id_sekolah)
       ->findAll();
   }
 }

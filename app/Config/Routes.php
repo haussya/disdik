@@ -58,6 +58,7 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Admin', 'filter' => 'ad
         $routes->get('(:num)', 'Sekolah::edit/$1');
         $routes->get('(:num)/sarpras', 'Sekolah::sarpras/$1');
         $routes->get('(:num)/sarpras/(:num)', 'Sekolah::laporan_sarpras/$1/$2');
+        $routes->post('(:num)/sarpras/(:num)', 'Sekolah::edit_sarpras/$1/$2');
         $routes->post('(:num)', 'Sekolah::update/$1');
         $routes->add('(:num)/delete', 'Sekolah::delete/$1');
     });
@@ -103,12 +104,18 @@ $routes->group('user', ['namespace' => 'App\Controllers\User', 'filter' => 'user
     });
 
     $routes->get('sarpras', 'Sarpras::index');
+    $routes->get('sarpras/(:num)', 'Sarpras::laporan_sarpras/$1');
+    $routes->post('sarpras/(:num)', 'Sarpras::edit_sarpras/$1');
+
+    $routes->get('sekolah', 'Sekolah::index');
+    $routes->post('sekolah', 'Sekolah::save');
+
+    $routes->get('sarpras', 'Sarpras::index');
     $routes->post('sarpras', 'Sarpras::save');
 
     $routes->get('akun', 'Akun::index');
     $routes->post('akun', 'Akun::save');
 });
-
 
 /*
  * --------------------------------------------------------------------
