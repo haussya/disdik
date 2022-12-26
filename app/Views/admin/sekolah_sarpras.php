@@ -25,37 +25,54 @@
     </div>
   </div>
 
-  <form method="POST" action="/admin/sekolah/<?= $sekolah['id_sekolah'] ?>/sarpras">
-    <?= csrf_field(); ?>
-    <section id="multiple-column-form">
-      <div class="row match-height">
-        <div class="col-12">
-          <div class="card mb-5">
-            <div class="card-content">
-              <div class="card-body">
-                <div class="form form-horizontal">
-                  <div class="row">
-                    <?php foreach ($sarpras as $row) : ?>
-                      <div class="col-md-4">
-                        <label for="<?= $row['slug'] ?>"><?= $row['nama_sarpras'] ?></label>
-                      </div>
-                      <div class="col-md-8 form-group">
-                        <input type="text" id="<?= $row['slug'] ?>" class="form-control" name="<?= $row['slug'] ?>" value="<?= $row['jumlah'] ?>">
-                      </div>
-                    <?php endforeach; ?>
-
-                    <div class="col-12 d-flex justify-content-end mt-3">
-                      <button type="submit" class="btn btn-primary mx-2">Submit</button>
-                      <a href="/admin/sekolah" class="btn btn-light-secondary">Kembali</a>
+  <section id="multiple-column-form">
+    <div class="row match-height">
+      <div class="col-12">
+        <div class="card mb-5">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="form form-horizontal">
+                <div class="row">
+                  <h5 class="mb-4">Data Sarana Prasarana</h5>
+                  <?php foreach ($sarpras as $row) : ?>
+                    <div class="col-md-4">
+                      <label for="<?= $row['slug'] ?>"><?= $row['nama_sarpras'] ?></label>
                     </div>
-                  </div>
+                    <div class="col-md-8 form-group d-flex">
+                      <input type="text" readonly id="<?= $row['slug'] ?>" class="form-control" name="<?= $row['slug'] ?>" value="<?= $row['jumlah'] ?>">
+                      <a href="<?= base_url('/admin/sekolah/' . $sekolah['id_sekolah'] . "/sarpras/" . $row['id_sarpras']) ?>">
+                        <button class="btn btn-primary mx-3">Edit</button>
+                      </a>
+                    </div>
+                  <?php endforeach; ?>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-5">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="form form-horizontal">
+                <div class="row">
+                  <h5 class="mb-4">Laporan Sarana Prasarana</h5>
+                  <?php foreach ($sarpras as $row) : ?>
+                    <div class="col-md-4">
+                      <label for="<?= $row['slug'] ?>"><?= $row['nama_sarpras'] ?></label>
+                    </div>
+                    <div class="col-md-8 form-group d-flex">
+                      <input type="text" readonly id="<?= $row['slug'] ?>" class="form-control" name="<?= $row['slug'] ?>" value="<?= $row['jumlah'] ?>">
+                      <button class="btn btn-primary mx-3">Edit</button>
+                    </div>
+                  <?php endforeach; ?>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </form>
+    </div>
+  </section>
 </div>
 <?= $this->endSection() ?>

@@ -26,11 +26,11 @@ class LaporanSarpras extends Migration
                 'unsigned' => true,
             ],
             'tanggal_laporan' => [
-                'type' => 'DATE',
+                'type' => 'DATETIME',
             ],
-            'status_sarpras' => [
-                'type' => 'ENUM',
-                'constraint' => ['Belum Diperbaiki', 'Sudah Diperbaiki'],
+            'keterangan' => [
+                'type' => 'VARCHAR',
+                'constraint' => 100,
             ],
             'foto' => [
                 'type' => 'VARCHAR',
@@ -42,11 +42,11 @@ class LaporanSarpras extends Migration
         $this->forge->addForeignKey('id_sekolah', 'sekolah', 'id_sekolah', 'CASCADE', 'CASCADE');
 
         $this->forge->addKey('id_laporan', true);
-        $this->forge->createTable('laporan_sekolah');
+        $this->forge->createTable('laporan_sarpras');
     }
 
     public function down()
     {
-        $this->forge->dropTable('laporan_sekolah');
+        $this->forge->dropTable('laporan_sarpras');
     }
 }

@@ -31,6 +31,9 @@ class Sekolah extends Migration
                 'type'       => 'ENUM',
                 'constraint' => ['negeri', 'swasta'],
             ],
+            'modified_at' => [
+                'type'       => 'DATETIME',
+            ],
             'id_user'  => [
                 'type'           => 'INT',
                 'constraint'     => 10,

@@ -57,6 +57,7 @@ class Sekolah extends BaseController
     $data_sarpras = [];
     foreach ($sarpras as $row) {
       $data_sarpras[] = [
+        'id_sarpras' => $row['id_sarpras'],
         'nama_sarpras' => $row['nama_sarpras'],
         'slug' => $row['slug'],
         'jumlah' => intval($sekolah_sarpras[$row['slug']])
@@ -70,26 +71,33 @@ class Sekolah extends BaseController
     ]);
   }
 
-  public function sarpras_edit($id)
+  public function laporan_sarpras($id_sekolah, $id_sarpras)
   {
-    $sarpras = $this->sarpras->findAll();
+    $sekolah = $this->sekolah->find($id_sekolah);
+    $sarpras = $this->sarpras->find($id_sarpras);
 
-    $data = [];
-    foreach ($sarpras as $row) {
-      $sarpras_current = $this->sarpras->where('slug', $row['slug'])->first();
-      $data[] = [
-        'id_sekolah' => $id,
-        'id_sarpras' => $sarpras_current['id_sarpras'],
-        'jumlah' => $this->request->getPost($sarpras_current['slug'])
-      ];
+    return view('/admin/sarpras_laporan', [
+      'title' => 'Laporan Sarpras',
+      'validation' => \Config\Services::validation(),
+      'sekolah' => $sekolah,
+      'sarpras' => $sarpras,
+    ]);
+  }
+
+  public function edit_sarpras($id_sekolah, $id_sarpras)
+  {
+    if (!$this->validate('laporan_sarpras')) {
+      return redirect()->back()->withInput();
     }
 
-    $this->sarpras_sekolah->where('id_sekolah', $id)->delete();
-    $this->sarpras_sekolah->insertBatch($data);
 
-    session()->setFlashdata('pesan', 'Sarpras sekolah berhasil diedit');
 
-    return redirect()->back();
+    return view('/admin/sarpras_laporan', [
+      'title' => 'Laporan Sarpras',
+      'validation' => \Config\Services::validation(),
+      // 'sekolah' => $sekolah,
+      // 'sarpras' => $sarpras,
+    ]);
   }
 
   public function save()
@@ -231,6 +239,4 @@ class Sekolah extends BaseController
     session()->setFlashdata('pesan', 'Sekolah berhasil dihapus');
     return redirect()->to('admin/sekolah');
   }
-
-  
 }

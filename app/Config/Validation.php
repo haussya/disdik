@@ -163,4 +163,35 @@ class Validation extends BaseConfig
             ],
         ],
     ];
+
+    public $laporan_sarpras = [
+        'tanggal_laporan' => [
+            'rules' => 'required',
+            'errors' => [
+                'required' => 'Tanggal wajib diisi',
+            ],
+        ],
+        'keterangan' => [
+            'rules' => 'required',
+            'errors' => [
+                'required' => 'Keterangan wajib diisi',
+            ],
+        ],
+        'jumlah' => [
+            'rules' => 'required|integer',
+            'errors' => [
+                'required' => 'Jumlah wajib diisi',
+                'integer' => 'Jumlah tidak valid',
+            ],
+        ],
+        'foto' => [
+            'rules' => 'uploaded[foto]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]|max_size[foto,8024]',
+            'errors' => [
+                'uploaded' => 'Foto harus diisi.',
+                'is_image' => 'File harus berupa gambar',
+                'mime_in'  => 'File harus berupa gambar',
+                'max_size' => 'Ukuran maksimal 1mb',
+            ]
+        ],
+    ];
 }
