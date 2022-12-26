@@ -8,7 +8,7 @@ class SiswaModel extends Model
 {
     protected $table = 'siswa';
     protected $primaryKey = 'id_siswa';
-    protected $allowedFields = ['nisn', 'nama', 'jenis_kelamin', 'tanggal_lahir', 'tingkat', 'alamat', 'nama_ibu', 'id_domisili', 'id_status', 'id_sekolah'];
+    protected $allowedFields = ['nisn', 'nama', 'jenis_kelamin', 'tanggal_lahir', 'tingkat', 'alamat', 'nama_ibu', 'id_domisili', 'id_status', 'id_sekolah', 'modified_at'];
 
     public function getSiswa($id = null)
     {
@@ -17,7 +17,9 @@ class SiswaModel extends Model
                 ->join('domisili', 'domisili.id_domisili=siswa.id_domisili')
                 ->join('status', 'status.id_status=siswa.id_status')
                 ->join('sekolah', 'sekolah.id_sekolah=siswa.id_sekolah')
+                ->groupBy('nisn')
                 ->find();
+
         }
 
         return $this
@@ -26,6 +28,17 @@ class SiswaModel extends Model
             ->join('status', 'status.id_status=siswa.id_status')
             ->join('sekolah', 'sekolah.id_sekolah=siswa.id_sekolah')
             ->first();
+    }
+
+    public function getSiswaNISN($nisn){
+
+        return $this
+        ->join('domisili', 'domisili.id_domisili=siswa.id_domisili')
+        ->join('status', 'status.id_status=siswa.id_status')
+        ->join('sekolah', 'sekolah.id_sekolah=siswa.id_sekolah')
+        ->where('nisn',$nisn)
+        ->find();
+
     }
 
     public function getSiswaLTM($id_sekolah = null)

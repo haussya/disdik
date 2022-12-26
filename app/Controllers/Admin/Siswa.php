@@ -32,7 +32,9 @@ class Siswa extends BaseController
     {
         $siswa = $this->siswa->join('domisili', 'domisili.id_domisili=siswa.id_domisili')
             ->join('status', 'status.id_status=siswa.id_status')
-            ->join('sekolah', 'sekolah.id_sekolah=siswa.id_sekolah');
+            ->join('sekolah', 'sekolah.id_sekolah=siswa.id_sekolah')
+            ->select('nisn,nama,nama_sekolah,nama_domisili,nama_status')
+            ->groupBy('nisn');
 
         if ($this->request->getGet('status')) {
             $siswa->where('siswa.id_status', $this->request->getGet('status'));
@@ -87,6 +89,9 @@ class Siswa extends BaseController
             session()->setFlashdata('error', 'Siswa tidak ditemukan');
             return redirect()->to('admin/siswa');
         }
+        $riwayat = $this->siswa->getSiswaNISN($siswa['nisn']);
+
+        
 
         return view('admin/siswa_edit', [
             'title' => 'Tambah Siswa',
@@ -97,6 +102,7 @@ class Siswa extends BaseController
             'status' => $this->status->findAll(),
             'faktor' => $this->faktor->findAll(),
             'domisili' => $this->domisili->findAll(),
+            'riwayat' => $riwayat,
             'validation' => \Config\Services::validation(),
         ]);
     }
@@ -118,8 +124,8 @@ class Siswa extends BaseController
             'id_domisili' => $this->request->getPost('domisili'),
             'id_status' => $this->request->getPost('status'),
             'id_sekolah' => $this->request->getPost('sekolah'),
+            'modified_at' => date('Y/m/d')
         ];
-
 
         if ($siswa['id_status'] != 1 && $siswa['id_status'] != 2) {
             if (!$this->validate('siswa_status')) {
