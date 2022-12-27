@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <form method="POST" action="/admin/siswa/create">
+    <form method="POST" action="/admin/siswa/<?= $siswa['id_siswa'] ?>">
         <?= csrf_field(); ?>
         <section id="multiple-column-form">
             <div class="row match-height">
@@ -302,44 +302,13 @@
                     </section>
 
                     <section class="col-12 d-flex justify-content-end mt-3">
-                        <button type="submit" class="btn btn-primary mx-2">Submit</button>
+                        <button type="update" class="btn btn-primary mx-2">Submit</button>
                         <a href="/admin/siswa" class="btn btn-light-secondary">Kembali</a>
                     </section>
                 </div>
             </div>
         </section>
     </form>
-    <div class="card-body">
-
-        <table class="table table-striped" id="table">
-            <thead>
-                <tr>
-                    <th>NISN</th>
-                    <th>Nama</th>
-                    <th>Sekolah</th>
-                    <th>Domisili</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($riwayat as $row) : ?>
-                <tr>
-                    <td><?= $row['nisn'] ?></td>
-                    <td><?= $row['nama'] ?></td>
-                    <td><?= $row['nama_sekolah'] ?></td>
-                    <td><?= $row['nama_domisili'] ?></td>
-                    <td><?= $row['nama_status'] ?></td>
-                    <td>
-                        <a href="/admin/siswa/<?= $row['id_siswa'] ?>" class="btn btn-sm btn-warning">Edit</a>
-                        <a href="/admin/siswa/<?= $row['id_siswa'] ?>/delete" class="btn btn-sm btn-danger">Hapus</a>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-
-    </div>
 </div>
 <script>
 const siswa_status = document.getElementsByName('status')[0]

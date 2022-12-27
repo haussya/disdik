@@ -17,7 +17,6 @@ class SiswaModel extends Model
                 ->join('domisili', 'domisili.id_domisili=siswa.id_domisili')
                 ->join('status', 'status.id_status=siswa.id_status')
                 ->join('sekolah', 'sekolah.id_sekolah=siswa.id_sekolah')
-                ->groupBy('nisn')
                 ->find();
 
         }

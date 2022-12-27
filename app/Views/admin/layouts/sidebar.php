@@ -61,12 +61,6 @@ $uri3 = $uri[3] ?? '';
                         <i class="bi bi-grid-fill"></i>
                         <span>Sarana Prasarana</span>
                     </a>
-                    <ul class="submenu <?= ($uri1 == 'siswa') ? 'active' : '' ?>">
-                        <li class="submenu-item <?= ($uri1 == 'siswa' && $uri2 == '') ? 'active' : '' ?>">
-                            <a href="/admin/siswa">Laporan</a>
-                        </li>
-                    </ul>
-                </li>
 
                 <li class="sidebar-item">
                     <a href="/logout" class='sidebar-link text-danger'>

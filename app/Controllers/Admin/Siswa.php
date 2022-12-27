@@ -15,7 +15,13 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Siswa extends BaseController
 {
-    protected $siswa, $sekolah, $keterangan, $status, $beasiswa, $faktor, $domisili;
+    protected $siswa;
+    protected $sekolah;
+    protected $keterangan;
+    protected $status;
+    protected $beasiswa;
+    protected $faktor;
+    protected $domisili;
 
     public function __construct()
     {
@@ -30,11 +36,10 @@ class Siswa extends BaseController
 
     public function index()
     {
-        $siswa = $this->siswa->join('domisili', 'domisili.id_domisili=siswa.id_domisili')
+        $siswa = $this->siswa
+        ->join('domisili', 'domisili.id_domisili=siswa.id_domisili')
             ->join('status', 'status.id_status=siswa.id_status')
-            ->join('sekolah', 'sekolah.id_sekolah=siswa.id_sekolah')
-            ->select('nisn,nama,nama_sekolah,nama_domisili,nama_status')
-            ->groupBy('nisn');
+            ->join('sekolah', 'sekolah.id_sekolah=siswa.id_sekolah');
 
         if ($this->request->getGet('status')) {
             $siswa->where('siswa.id_status', $this->request->getGet('status'));
@@ -89,9 +94,9 @@ class Siswa extends BaseController
             session()->setFlashdata('error', 'Siswa tidak ditemukan');
             return redirect()->to('admin/siswa');
         }
-        $riwayat = $this->siswa->getSiswaNISN($siswa['nisn']);
-
         
+
+
 
         return view('admin/siswa_edit', [
             'title' => 'Tambah Siswa',
@@ -102,7 +107,6 @@ class Siswa extends BaseController
             'status' => $this->status->findAll(),
             'faktor' => $this->faktor->findAll(),
             'domisili' => $this->domisili->findAll(),
-            'riwayat' => $riwayat,
             'validation' => \Config\Services::validation(),
         ]);
     }
@@ -162,7 +166,7 @@ class Siswa extends BaseController
             $this->beasiswa->insert($beasiswa);
         }
 
-    
+
         session()->setFlashdata('pesan', 'Siswa berhasil ditambahkan');
         return redirect()->to('admin/siswa');
     }
